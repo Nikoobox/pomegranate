@@ -3,7 +3,7 @@ const router = express.Router();
 const passport = require('passport');
 const validateKitchenInput = require("../../validation/kitchen");
 const Kitchen = require("../../models/Kitchen");
-const Item = require("../../models/Item");
+// const Item = require("../../models/Item");
 
 router.get("/kitchen", (req, res) => {
     res.json({ msg: 'This is the Kitchen route' })
@@ -31,7 +31,7 @@ router.get("/kitchen", (req, res) => {
 //     .catch(err => res.status(400).json(err));
 // })
 
-router.post("/", (req, res) => {
+router.post("/",
     passport.authenticate("jwt", { session: false }),
         (req, res) => {
             const { isValid, errors } = validateKitchenInput(req.body);
@@ -49,6 +49,6 @@ router.post("/", (req, res) => {
                 .save()
                 .then(kitchen => res.json(kitchen));
         }
-})
+)
 
 module.exports = router;
