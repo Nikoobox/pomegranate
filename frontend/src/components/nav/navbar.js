@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import './navbar.css'
+// import './navbar.scss'
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -28,6 +28,7 @@ class NavBar extends React.Component {
         } else {
             return (
                 <div className='NavBar'>
+                    <div className='login-container'></div>   
                     <Link to={'/signup'} className='Links1'>Signup</Link>
                     <Link to={'/login'} className='Links2'>Login</Link>
                 </div>
@@ -38,7 +39,6 @@ class NavBar extends React.Component {
     render() {
         return (
             <div>
-                <h1>Pomegranate</h1>
                 { this.getLinks()}
             </div>
         );
