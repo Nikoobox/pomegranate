@@ -1,6 +1,9 @@
 import axios from 'axios';
 
+export const getKitchens = (userId) => {
+    return axios.get(`/api/kitchens/user/${userId}`);
+}
+
 export const postKitchen = (kitchenData) => {
-    debugger;
     return axios.post('/api/kitchens/', kitchenData);
 }
