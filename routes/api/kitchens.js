@@ -23,13 +23,13 @@ router.get("/kitchen", (req, res) => {
 //     .catch(err => res.status(400).json(err));
 // })
 
-// router.get("/:kitchen_id", (req, res) => {
-//     Item
-//     .find({ kitchen: req.params.kitchen_id })
-//     .sort({ date: -1 })
-//     .then(items => res.json(items))
-//     .catch(err => res.status(400).json(err));
-// })
+router.get("/user/:user_id", (req, res) => {
+    Kitchen
+        .find({ user: req.params.user_id })
+        .sort({ name: -1 })
+        .then(kitchen => res.json(kitchen))
+        .catch(err => res.status(400).json(err));
+})
 
 router.post("/",
     passport.authenticate("jwt", { session: false }),
