@@ -17,12 +17,15 @@ class Kitchen extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createKitchen(this.state).then(kitchen => {
-            return this.props.history.push(`/${kitchen.kitchen.data._id}/items`)
-        })
+        this.props.createKitchen(this.state)
+            .then(kitchen => {
+                return this.props.history.push(`/${kitchen.kitchen.data._id}/items`)
+            })
     }
 
     render() {
+        // const {errors}=this.props.errors;
+        console.log(this.props);
         if (this.props.kitchen) {
             return (
                 <div>
@@ -39,6 +42,10 @@ class Kitchen extends React.Component {
                             value="Create a new Kitchen"
                         />
                     </form>
+
+                    {this.props.errors.map((err,idx)=>{
+                        return <div>{err}</div>
+                    })}
                 </div>
             )
         } else {

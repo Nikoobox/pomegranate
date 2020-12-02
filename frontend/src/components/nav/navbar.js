@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom';
 // import './navbar.scss'
 
 class NavBar extends React.Component {
@@ -18,8 +19,16 @@ class NavBar extends React.Component {
     getLinks() {
         if (this.props.loggedIn) {
             return (
+                
                 <div>
+<<<<<<< HEAD
                     <Link to={'/browse'}>Nav Bar Links Here (Your Kitchens, search for recipes, etc)</Link>
+=======
+
+                    {/* <Link to={'/tweets'}>All Tweets</Link>
+                    <Link to={'/profile'}>Profile</Link>
+                    <Link to={'/new_tweet'}>Write a Tweet</Link> */}
+>>>>>>> master
                     <button onClick={this.logoutUser}>Logout</button>
                 </div>
             );
