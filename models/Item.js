@@ -1,0 +1,32 @@
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+const ItemSchema = new Schema({
+  kitchen: {
+    type: Schema.Types.ObjectId,
+    ref: "kitchens",
+  },
+  // type: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: "types",
+  // },
+  name: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  quantity: {
+    type: Number,
+    required: true,
+  },
+  expirationDate: {
+    type: Date
+  },
+  date: {
+    type: Date,
+    default: Date.now,
+  },
+});
+
+
+module.exports = Item = mongoose.model("item", ItemSchema);
