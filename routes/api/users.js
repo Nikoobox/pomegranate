@@ -38,6 +38,7 @@ router.post('/register', (req, res) => {
                     username: req.body.username,
                     email: req.body.email,
                     password: req.body.password
+                    // assign a kitchen
                 })
 
                 bcrypt.genSalt(10, (err, salt) => {
@@ -45,12 +46,14 @@ router.post('/register', (req, res) => {
                         if (err) throw err;
                         newUser.password = hash;
                         newUser.save()
+                        
                             .then(user => res.json(user))
                             .catch(err => console.log(err));
                     })
                 })
             }
         })
+
 })
 
 

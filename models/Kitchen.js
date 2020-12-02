@@ -7,9 +7,11 @@ const KitchenSchema = new Schema({
         ref: 'users'
     },
     name: {
-        // how to prefill the kitchen name with the user_id name?
         type: String,
         required: true
+    },
+    savedItems: {
+        type: Array
     },
     date: {
         type: Date,
@@ -18,3 +20,4 @@ const KitchenSchema = new Schema({
 });
 
 module.exports = Kitchen = mongoose.model('kitchen', KitchenSchema);
+// module.exports = Kitchen = mongoose.model('items', KitchenSchema);
