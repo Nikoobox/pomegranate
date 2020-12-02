@@ -21,14 +21,8 @@ class NavBar extends React.Component {
             return (
                 
                 <div>
-<<<<<<< HEAD
-                    <Link to={'/browse'}>Nav Bar Links Here (Your Kitchens, search for recipes, etc)</Link>
-=======
 
-                    {/* <Link to={'/tweets'}>All Tweets</Link>
-                    <Link to={'/profile'}>Profile</Link>
-                    <Link to={'/new_tweet'}>Write a Tweet</Link> */}
->>>>>>> master
+                    <Link to={'/browse'}>Nav Bar Links Here (Your Kitchens, search for recipes, etc)</Link>
                     <button onClick={this.logoutUser}>Logout</button>
                 </div>
             );
