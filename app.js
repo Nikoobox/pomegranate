@@ -24,7 +24,7 @@ mongoose
 
 app.get('/', (req, res) => {
     const user = new User({
-        handle: 'nick',
+        username: 'nick',
         email: 'nick@nick.com',
         password: '1234567890'
     })
