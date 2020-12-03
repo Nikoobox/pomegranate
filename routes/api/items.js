@@ -26,7 +26,7 @@ router.get("/:itemId",
 )
 
 router.get('/user/:userId',
-    (req,res) => {
+    (req, res) => {
     Item.find({ user: req.params.userId })
         .then(items => res.json(items))
         .catch(err => 
