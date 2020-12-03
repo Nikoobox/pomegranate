@@ -4,7 +4,6 @@ import { fetchRecipe } from '../../actions/recipe_actions';
 import ItemIndex from './itemindex';
 
 const mapStateToProps = state => {
-  
     return {
         items: state.items,
         userId: state.session.user.id,

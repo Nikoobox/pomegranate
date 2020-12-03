@@ -8,13 +8,12 @@ export class ItemIndex extends React.Component {
         this.state = {
             name: "",
             quantity: "",
-            // type: "",
+            type: "",
             expirationDate: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     componentDidMount() {
-       
         this.props.getUserItems(this.props.userId);
             this.props.fetchRecipe('broccoli')
     }
@@ -34,9 +33,9 @@ export class ItemIndex extends React.Component {
         let item = {
             name: this.state.name,
             quantity: this.state.quantity,
-            // type: this.state.type,
-            expirationDate: this.state.expirationDate,
-            user: this.props.userId
+            type: this.state.type,
+            expirationDate: this.state.expirationDate
+            // user: this.props.userId
         };
 
         this.props.createItem(item)
@@ -68,22 +67,32 @@ export class ItemIndex extends React.Component {
                     </ul>
                 </div>
                 <form onSubmit={this.handleSubmit}>
-                        <input type="text"
+                        <input
+                            type="text"
                             value={this.state.name}
                             onChange={this.update('name')}
                             placeholder="Item name"
                         />
                         <br />
-                        <input type="number"
+                        <input
+                            type="number"
                             value={this.state.quantity}
                             onChange={this.update('quantity')}
                             placeholder="Item quantity"
                         />
                         <br />
-                        <input type="date"
+                        <input
+                            type="date"
                             value={this.state.expirationDate}
                             onChange={this.update('expirationDate')}
                             placeholder="Enter an Expiration Date"
+                        />
+                        <br />
+                        <input
+                            type="text"
+                            value={this.state.type}
+                            onChange={this.update('type')}
+                            placeholder="Enter an item type"
                         />
                         <br />
                         <input type="submit" value="Add Item"/>

@@ -4,7 +4,12 @@ const Schema = mongoose.Schema;
 const ItemSchema = new Schema({
   kitchen: {
     type: Schema.Types.ObjectId,
-    ref: "kitchens",
+    ref: "users",
+  },
+  name: {
+    type: String,
+    required: true,
+    unique: true
   },
   quantity: {
     type: Number,
