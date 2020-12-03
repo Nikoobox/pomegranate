@@ -26,7 +26,10 @@ class Kitchen extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createKitchen(this.state);
+        this.props.createKitchen(this.state)
+            .then(kitchen => {
+                return this.props.history.push(`/${kitchen.kitchen.data._id}/items`)
+            })
     }
 
     renderErrors() {
@@ -39,6 +42,7 @@ class Kitchen extends React.Component {
                 ))}
             </ul>
         );
+
     }
 
     render() {

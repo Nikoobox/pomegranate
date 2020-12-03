@@ -30,6 +30,11 @@ class NavBar extends React.Component {
                     <div className='navbar-logout-cont'>
                         <button onClick={this.logoutUser}>Logout</button>
                     </div>
+
+                <div>
+
+           
+
                 </div>
             );
         } else {
