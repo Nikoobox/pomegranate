@@ -49,11 +49,12 @@ class ItemEdit extends React.Component {
 
     render() {
         if (this.props.item && this.checkEmptyState()) {
+            debugger;
             this.setState({
                 name: this.props.item.name,
                 quantity: this.props.item.quantity,
-                expirationDate: new Date(this.props.item.expirationDate),
-                type: this.props.item.type,
+                expirationDate: this.props.item.expirationDate.slice(0, 10),
+                type: this.props.item.type
             })
         }
         return (

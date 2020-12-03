@@ -27,10 +27,10 @@ class MainPage extends React.Component {
                         <img src={pom_logo} />
                     </div> 
                     <div className='name'>
-                        Pomengranate
+                        Pomegranate
                     </div> 
                     <div className='sub-name'>
-                        Start by selecting ingredients you already have on your kitchen from several categories.
+                        Start by selecting ingredients you already have in your kitchen from several categories.
                         As you add available ingredients, we will suggest you recipes.
                     </div> 
                 </div> 
@@ -38,7 +38,6 @@ class MainPage extends React.Component {
                     <Link to='/login'><button className="login">Login</button></Link>
                     <Link to='/signup'><button className="signup">Signup</button></Link>
                     <Link to='#'><button className="demo" onClick={this.loginGuest}>Demo</button></Link>
-
                 </div>
             </div>
         );

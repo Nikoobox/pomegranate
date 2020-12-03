@@ -28,13 +28,30 @@ export class ItemIndex extends React.Component {
         });
     }
 
+    formatDate(date) {
+        const expDate = new Date(date);
+        const daySeconds = 86400000;
+        const actualDate = new Date(expDate.getTime() + daySeconds);
+        let year = actualDate.getFullYear();
+        let month = actualDate.getMonth() + 1;
+        let day = actualDate.getDate();
+        if (month.length < 2) {
+            month = '0' + month;
+        }
+        if (day.length < 2) {
+            day = '0' + day;
+        }
+        return [year, month, day].join('-');
+    }
+
     handleSubmit(e) {
         e.preventDefault();
+        
         let item = {
             name: this.state.name,
             quantity: this.state.quantity,
             type: this.state.type,
-            expirationDate: this.state.expirationDate
+            expirationDate: this.formatDate(this.state.expirationDate)
             // user: this.props.userId
         };
 
@@ -48,7 +65,7 @@ export class ItemIndex extends React.Component {
 
     render() {
         const items = Object.values(this.props.items).map(item => {
-            return <ItemShow item={item} history={this.props.history}/>
+            return <ItemShow key={item._id} item={item} history={this.props.history}/>
         });
         const recipes = Object.values(this.props.recipes).map(ingredients => {
             return (
