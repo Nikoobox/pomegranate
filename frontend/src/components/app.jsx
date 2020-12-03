@@ -6,11 +6,8 @@ import Footer from './footer/footer';
 import MainPageContainer from './main/main_page_container';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
-import KitchenFormContainer from './kitchen_form/kitchen_form_container';
 import ItemIndexContainer from './item/item_index_container';
-import ItemShow from './item/itemshow';
-
-
+import ItemEditContainer from './item_edit/item_edit_container';
 
 const App = () => (
   <div>
@@ -19,14 +16,11 @@ const App = () => (
       <AuthRoute exact path="/" component={MainPageContainer} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <ProtectedRoute path="/browse" component={KitchenFormContainer} />
-      <ProtectedRoute path="/browse" component={KitchenFormContainer} />
-      <ProtectedRoute exact path="/:kitchenId/items" component={ItemIndexContainer} />
-      <ProtectedRoute exact path="/:itemId" component={ItemShow} />
+      <ProtectedRoute exact path="/browse" component={ItemIndexContainer} />
+      <ProtectedRoute exact path="/item/:itemId/edit" component={ItemEditContainer} />
     </Switch>
     <Footer />
   </div>
-
 );
 
 export default App;

@@ -41,9 +41,10 @@ export const getAllItems = () => dispatch => {
         })
 }
 
-export const getKitchenItems = () => dispatch => {
-    return ItemAPIUtil.getKitchenItems()
+export const getUserItems = userId => dispatch => {
+    return ItemAPIUtil.getUserItems(userId)
         .then(items => {
+            debugger;
             return dispatch(receiveItems(items))
         })
 }
@@ -51,7 +52,7 @@ export const getKitchenItems = () => dispatch => {
 
 export const getItem = itemId => dispatch => {
     return ItemAPIUtil.getItem(itemId)
-        .then((item) => {
+        .then(item => {
             return dispatch(receiveItem(item));
         });
 };
@@ -64,16 +65,18 @@ export const createItem = item => dispatch => {
         });
 };
 
-export const updateItem = item => dispatch => {
+export const editItem = item => dispatch => {
     return ItemAPIUtil.patchItem(item)
         .then((item) => {
-            return dispatch(receiveItem(item));
+            return dispatch(receiveItem(item)),
+            err => dispatch(receiveItemErrors(err))
         });
 };
 
 export const deleteItem = itemId => dispatch => {
     return ItemAPIUtil.deleteItem(itemId)
-        .then((item) => {
-            return dispatch(removeItem(item.id));
+        .then(item => {
+            debugger;
+            return dispatch(removeItem(item.data));
         });
 };

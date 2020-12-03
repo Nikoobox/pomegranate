@@ -4,8 +4,8 @@ export const getAllItems = () => {
     return axios.get('/api/items/');
 }
 
-export const getKitchenItems = (kitchenId) => {
-    return axios.get(`/api/items/${kitchenId}`);
+export const getUserItems = userId => {
+    return axios.get(`/api/items/user/${userId}`);
 }
 
 export const getItem = itemId => {

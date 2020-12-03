@@ -6,7 +6,6 @@ const passport = require('passport');
 const User = require('./models/User');
 const bodyParser = require('body-parser');
 const users = require('./routes/api/users');
-const kitchens = require('./routes/api/kitchens');
 const items = require('./routes/api/items');
 
 const path = require('path');
@@ -47,7 +46,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use("/api/users", users);
-app.use("/api/kitchens", kitchens);
 app.use("/api/items", items);
 
 const port = process.env.PORT || 5000;
