@@ -1,5 +1,6 @@
 import React from 'react'
 import ItemShow from './itemshow';
+import {Link} from 'react-router-dom';
 
 export class ItemIndex extends React.Component {
     constructor(props) {
@@ -15,8 +16,13 @@ export class ItemIndex extends React.Component {
     componentDidMount() {
         debugger;
         this.props.getUserItems(this.props.userId);
+            this.props.fetchRecipe('broccoli')
     }
 
+    // recipes() {
+    //     this.props.fetchRecipe(`${this.props.items.join(',+')}`)
+    // }
+    
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
@@ -37,14 +43,31 @@ export class ItemIndex extends React.Component {
         // .then(() => {this.props.history.push("/browse")});
     }
 
+    // itemRemider(item) {
+    //     window.alert(`you are almost out of ${item}`)
+    // }
+
     render() {
         debugger;
         const items = Object.values(this.props.items).map(item => {
             return <ItemShow item={item} history={this.props.history}/>
         });
-        // types: 
+        const recipes = Object.values(this.props.recipes).map(ingredients => {
+            return (
+                <div>
+                    <a>{ingredients.title}</a> 
+                    <img src={ingredients.image} alt={ingredients.tile}/>
+                </div>
+            )
+        })
         return (
             <div className='item-container'>
+
+                <div>
+                    <ul>
+                        {recipes}
+                    </ul>
+                </div>
                 <form onSubmit={this.handleSubmit}>
                         <input type="text"
                             value={this.state.name}
