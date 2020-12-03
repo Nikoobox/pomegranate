@@ -3,7 +3,7 @@ import React from 'react'
 class ItemEdit extends React.Component {
     constructor(props) {
         super(props);
-        debugger;
+
         this.state = {
             name: "",
             quantity: "",
@@ -40,7 +40,7 @@ class ItemEdit extends React.Component {
     }
 
     render() {
-        debugger;
+
         return (
             <div className="item-edit-page">
                 <p>Hi</p>

@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router-dom';
 import pom_logo from '../../images/pom_logo_0.png';
+import { Dropdown } from 'react-bootstrap';
+import { FaHamburger } from 'react-icons/fa'
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -27,9 +29,24 @@ class NavBar extends React.Component {
                             <div className='logo-name'>Pomegranate</div>
                         </Link>
                     {/* </div> */}
-                    <div className='navbar-logout-cont'>
+                    {/* <div className='navbar-logout-cont'>
                         <button onClick={this.logoutUser}>Logout</button>
-                    </div>
+                    </div> */}
+
+                    <div className='dropdown-container'>
+                    <Dropdown>
+                        <Dropdown.Toggle variant="success" id="dropdown-basic">
+                            <FaHamburger className='hamburger-icon'/>
+                        </Dropdown.Toggle>
+
+                        <Dropdown.Menu>
+                            <Dropdown.Item >My account</Dropdown.Item>
+                            <Dropdown.Item >Something else</Dropdown.Item>
+                            <Dropdown.Item >Something else</Dropdown.Item>
+                            <Dropdown.Item onClick={this.logoutUser} className='dropdown-logout'>Logout</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                    </div> 
 
                 </div>
 
@@ -44,6 +61,8 @@ class NavBar extends React.Component {
                         <div className='logo-img'><img src={pom_logo} /></div>
                         <div className='logo-name'>Pomegranate</div>
                     </Link>
+
+                    
                 
                 </div>
             );

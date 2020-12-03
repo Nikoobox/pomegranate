@@ -14,7 +14,7 @@ export class ItemIndex extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     componentDidMount() {
-        debugger;
+       
         this.props.getUserItems(this.props.userId);
             this.props.fetchRecipe('broccoli')
     }
@@ -48,7 +48,6 @@ export class ItemIndex extends React.Component {
     // }
 
     render() {
-        debugger;
         const items = Object.values(this.props.items).map(item => {
             return <ItemShow item={item} history={this.props.history}/>
         });
