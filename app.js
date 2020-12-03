@@ -18,8 +18,6 @@ if (process.env.NODE_ENV === 'production') {
     })
 }
 
-const path = require('path');
-
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('frontend/build'));
     app.get('/', (req, res) => {

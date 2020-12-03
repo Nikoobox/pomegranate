@@ -44,7 +44,7 @@ export class ItemIndex extends React.Component {
         // })
         // debugger;
         return (
-            <div>
+            <div className='item-container'>
 
             
                 <form onSubmit={this.handleSubmit}>
