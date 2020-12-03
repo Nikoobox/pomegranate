@@ -9,7 +9,6 @@ const KitchenErrorsReducer = (state = _nullErrors, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_KITCHEN_ERRORS:
-            debugger
             return action.errors;
         case RECEIVE_KITCHEN:
             return _nullErrors;

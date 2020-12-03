@@ -4,9 +4,18 @@ class Kitchen extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: ""
+            name: "",
+            errors: {}
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.signedIn === true) {
+            this.props.history.push('/browse');
+        }
+
+        this.setState({ errors: nextProps.errors })
     }
 
     update(field) {
@@ -17,17 +26,32 @@ class Kitchen extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // if(this.props.signedIn){
-            this.props.createKitchen(this.state);
-        // }
+        this.props.createKitchen(this.state)
+            .then(kitchen => {
+                return this.props.history.push(`/${kitchen.kitchen.data._id}/items`)
+            })
+    }
+
+    renderErrors() {
+        return (
+            <ul>
+                {Object.keys(this.state.errors).map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {this.state.errors[error]}
+                    </li>
+                ))}
+            </ul>
+        );
+
     }
 
     render() {
         // const {errors}=this.props.errors;
         console.log(this.props);
+        // console.log(this.state)
         if (this.props.kitchen) {
             return (
-                <div>
+                <div className='kitchen-form-container'>
                     <form onSubmit={this.handleSubmit}>
                         <label htmlFor="name">Kitchen Name</label>
                         <input
@@ -42,9 +66,11 @@ class Kitchen extends React.Component {
                         />
                     </form>
 
-                    {this.props.errors.map((err,idx)=>{
+                    {this.renderErrors()}
+
+                    {/* {this.props.errors.map((err,idx)=>{
                         return <div>{err}</div>
-                    })}
+                    })} */}
                 </div>
             )
         } else {

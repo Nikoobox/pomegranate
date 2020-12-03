@@ -1,18 +1,46 @@
+
 @import 'styles/config';
 @import 'styles/buttons';
 @import 'components/nav/navbar';
+@import 'components/main/main';
+@import 'components/footer/footer';
+@import 'components/session/login';
+@import 'components/kitchen_form/kitchen_browse';
+@import 'components/item/item';
+
+// item-container.scss
+*{
+  // border:0;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    
+}
+
+@import "styles/config";
+@import "styles/buttons";
+@import "components/nav/navbar";
+
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
+a{
+  text-decoration: none;
+  color: black;
+}
+button{
+  border-radius:0;
+  border: 1px solid black;
+}

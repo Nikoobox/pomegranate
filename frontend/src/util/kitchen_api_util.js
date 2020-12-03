@@ -7,3 +7,7 @@ export const getKitchens = (userId) => {
 export const postKitchen = (kitchenData) => {
     return axios.post('/api/kitchens/', kitchenData);
 }
+
+export const getKitchen = (kitchenId) => {
+    return axios.get(`/api/kitchens/${kitchenId}`);
+}
