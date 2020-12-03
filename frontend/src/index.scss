@@ -1,6 +1,24 @@
+
+@import 'styles/config';
+@import 'styles/buttons';
+@import 'components/nav/navbar';
+@import 'components/main/main';
+@import 'components/footer/footer';
+@import 'components/session/login';
+@import 'components/kitchen_form/kitchen_browse';
+
+*{
+  // border:0;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    
+}
+
 @import "styles/config";
 @import "styles/buttons";
 @import "components/nav/navbar";
+
 
 body {
   margin: 0;
@@ -15,7 +33,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> master
+a{
+  text-decoration: none;
+  color: black;
+}
+button{
+  border-radius:0;
+  border: 1px solid black;
+}

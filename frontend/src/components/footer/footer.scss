@@ -1,0 +1,21 @@
+.footer-container{
+    background: $mainGreen;
+    height: 50px;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding: 0 30px;
+    bottom:0;
+    z-index: 100;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    position: fixed;
+    
+    .footer-message{
+        color: black;
+        font-size:14px;
+    }
+    
+}

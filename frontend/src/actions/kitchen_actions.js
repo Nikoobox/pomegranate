@@ -42,7 +42,6 @@ export const getKitchen = kitchenId => dispatch => {
         .then(kitchen => {
             return dispatch(receiveKitchen(kitchen))
         }, err => {
-            debugger
             return dispatch(receiveKitchenErrors(err.response.data))
         });
 }

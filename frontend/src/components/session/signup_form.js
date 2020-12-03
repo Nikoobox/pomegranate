@@ -9,20 +9,20 @@ class SignupForm extends React.Component {
             username: '',
             password: '',
             password2: '',
-            errors: {}
+            // errors: {}
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.clearedErrors = false;
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.signedIn === true) {
-            this.props.history.push('/browse');
-        }
+    // componentWillReceiveProps(nextProps) {
+        // if (nextProps.signedIn === true) {
+        //     this.props.history.push('/browse');
+        // }
 
-        this.setState({ errors: nextProps.errors })
-    }
+        // this.setState({ errors: nextProps.errors })
+    // }
 
     update(field) {
         return e => this.setState({
@@ -38,15 +38,19 @@ class SignupForm extends React.Component {
             password: this.state.password,
             password2: this.state.password2
         };
-        this.props.signup(user).then(() => {this.props.history.push("/browse")});
+
+        this.props.signup(user).then(()=>{
+            this.props.login(user)
+        });
+  
     }
 
     renderErrors() {
         return (
             <ul>
-                {Object.keys(this.state.errors).map((error, i) => (
+                {Object.keys(this.props.errors).map((error, i) => (
                     <li key={`error-${i}`}>
-                        {this.state.errors[error]}
+                        {this.props.errors[error]}
                     </li>
                 ))}
             </ul>
@@ -55,8 +59,9 @@ class SignupForm extends React.Component {
 
     render() {
         return (
-            <div className="signup-form-container">
+            <div className='login-signup-form-container'>
                 <form onSubmit={this.handleSubmit}>
+                    <div>Join Pomegranate</div>  
                     <div className="signup-form">
                         <br />
                         <input type="text"

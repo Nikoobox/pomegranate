@@ -59,8 +59,9 @@ class LoginForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='login-signup-form-container'>
                 <form onSubmit={this.handleSubmit}>
+                    <div>Welcome Back</div>   
                     <div>
                         <input type="text"
                             value={this.state.email}

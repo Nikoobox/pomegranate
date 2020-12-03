@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router-dom';
-// import './navbar.scss'
+import pom_logo from '../../images/pom_logo.png';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -20,18 +20,33 @@ class NavBar extends React.Component {
         if (this.props.loggedIn) {
             return (
                 
+                <div className='navbar'>
+                    {/* <div className='navbar-logo-cont'> */}
+                        <Link to='/' className='navbar-logo-cont'>
+                            <div className='logo-img'><img src={pom_logo }/></div>
+                            <div className='logo-name'>Pomegranate</div>
+                        </Link>
+                    {/* </div> */}
+                    <div className='navbar-logout-cont'>
+                        <button onClick={this.logoutUser}>Logout</button>
+                    </div>
+
                 <div>
 
-                    <Link to={'/browse'}>Nav Bar Links Here (Your Kitchens, search for recipes, etc)</Link>
-                    <button onClick={this.logoutUser}>Logout</button>
+           
+
                 </div>
             );
         } else {
             return (
-                <div className='NavBar'>
-                    <div className='login-container'></div>   
-                    <Link to={'/signup'} className='Links1'>Signup</Link>
-                    <Link to={'/login'} className='Links2'>Login</Link>
+                <div className='navbar'>
+                    <div className='login-container'>
+                        <Link to={'/login'} className='login-button'>Login</Link>
+                    </div> 
+
+                    <div className='signup-container'>
+                        <Link to={'/signup'} className='signup-button'>Signup</Link>
+                    </div>
                 </div>
             );
         }
