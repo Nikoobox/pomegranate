@@ -2,22 +2,13 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const ItemSchema = new Schema({
-  user: {
+  kitchen: {
     type: Schema.Types.ObjectId,
-    ref: "users",
-  },
-  // type: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: "types",
-  // },
-  name: {
-    type: String,
-    required: true,
-    unique: true
+    ref: "kitchens",
   },
   quantity: {
     type: Number,
-    required: true
+    required: true,
   },
   type: {
     type: String,
