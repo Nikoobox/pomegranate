@@ -52,7 +52,7 @@ router.post("/",
         user: req.user.id
         // source: "user"
     });
-    debugger;
+  
     newItem
         .save()
         .then(item => res.json(item),

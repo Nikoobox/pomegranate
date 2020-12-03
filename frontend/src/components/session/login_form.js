@@ -50,7 +50,7 @@ class LoginForm extends React.Component {
         return (
             <ul>
                 {Object.keys(this.state.errors).map((error, i) => (
-                    <li key={`error-${i}`}>
+                    <li key={`error-${i}`} className='error'>
                         {this.state.errors[error]}
                     </li>
                 ))}
@@ -64,27 +64,29 @@ class LoginForm extends React.Component {
                 <form onSubmit={this.handleSubmit} className='form'>
                     <div className='welcome-message'>Welcome Back</div>   
                     
-                        <input type="text"
-                            value={this.state.email}
-                            onChange={this.update('email')}
-                            placeholder="Email"
-                        />
-                        <br />
-                        <input type="password"
-                            value={this.state.password}
-                            onChange={this.update('password')}
-                            placeholder="Password"
-                        />
-                        <br />
-                        <div className='submit-btn-container'>
-                            <button> Submit
-                            </button>
-                        </div> 
+                    <input type="text"
+                        value={this.state.email}
+                        onChange={this.update('email')}
+                        placeholder="Email"
+                    />
+                    {/* <br /> */}
+                    <input type="password"
+                        value={this.state.password}
+                        onChange={this.update('password')}
+                        placeholder="Password"
+                    />
+                    {/* <br /> */}
+                    <div className='submit-btn-container'>
+                        <button> Submit
+                        </button>
+                    </div> 
+                    <div className='error-container'>
+                        {this.renderErrors()}
+                    </div>
                     
                     <div className='form-sign-button'>
                     Not a user? please <Link to={'/signup'} className='sign-button'>Signup</Link>
 
-                            {this.renderErrors()}
                     </div>
                 </form>
             </div>

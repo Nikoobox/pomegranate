@@ -1,5 +1,5 @@
 .footer-container{
-    background: $mainGrey;
+    background: $mainYellow;
     height: 50px;
     width:100%;
     display: flex;
@@ -12,10 +12,24 @@
     font-weight: 300;
     letter-spacing: 0.5px;
     position: fixed;
+    color: #8a703c;
+    .footer-left{
+        font-size:14px;
+    }
     
     .footer-message{
-        color: black;
-        font-size:14px;
+        color: #8a703c;
+    }
+    .social{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        a{
+            margin-left:5px;
+            font-size: 26px;
+            color: #8a703c;
+
+        }
     }
     
 }
