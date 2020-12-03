@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router-dom';
-import pom_logo from '../../images/pom_logo.png';
+import pom_logo from '../../images/pom_logo_0.png';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -40,13 +40,11 @@ class NavBar extends React.Component {
         } else {
             return (
                 <div className='navbar'>
-                    <div className='login-container'>
-                        <Link to={'/login'} className='login-button'>Login</Link>
-                    </div> 
-
-                    <div className='signup-container'>
-                        <Link to={'/signup'} className='signup-button'>Signup</Link>
-                    </div>
+                    <Link to='/' className='navbar-logo-cont'>
+                        <div className='logo-img'><img src={pom_logo} /></div>
+                        <div className='logo-name'>Pomegranate</div>
+                    </Link>
+                
                 </div>
             );
         }

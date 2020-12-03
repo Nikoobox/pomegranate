@@ -34,6 +34,8 @@ export const createKitchen = kitchenData => dispatch => {
     return KitchenAPIUtil.postKitchen(kitchenData)
         .then(kitchen => {
             return dispatch(receiveKitchen(kitchen))
+        }, err => {
+            return dispatch(receiveKitchenErrors(err.response.data))
         });
 }
 
