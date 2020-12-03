@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const ItemSchema = new Schema({
-  user: {
+  kitchen: {
     type: Schema.Types.ObjectId,
     ref: "users",
   },
@@ -13,7 +13,7 @@ const ItemSchema = new Schema({
   },
   quantity: {
     type: Number,
-    required: true
+    required: true,
   },
   type: {
     type: String,
