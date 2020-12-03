@@ -11,7 +11,6 @@ const ItemReducer = (state = {}, action) => {
             })
             return items;
         case RECEIVE_ITEM:
-            
             return { ...state, [action.item.data._id]: action.item.data };
         case REMOVE_ITEM:
             delete newState[action.id]

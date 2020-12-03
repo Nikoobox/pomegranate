@@ -15,7 +15,7 @@ export class ItemIndex extends React.Component {
     }
     componentDidMount() {
         this.props.getUserItems(this.props.userId);
-            this.props.fetchRecipe('broccoli')
+        this.props.fetchRecipe('broccoli');
     }
 
     // recipes() {
