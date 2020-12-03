@@ -1,6 +1,9 @@
 import React from 'react'
 import ItemShow from './itemshow';
 import {Link} from 'react-router-dom';
+// import DayPickerInput from 'react-day-picker/DayPickerInput';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
 
 export class ItemIndex extends React.Component {
     constructor(props) {
@@ -28,6 +31,12 @@ export class ItemIndex extends React.Component {
         });
     }
 
+    handleChange(date) {
+        this.setState({
+            startDate: date
+        })
+    }å
+
     handleSubmit(e) {
         e.preventDefault();
         let item = {
@@ -35,16 +44,12 @@ export class ItemIndex extends React.Component {
             quantity: this.state.quantity,
             type: this.state.type,
             expirationDate: this.state.expirationDate
-            // user: this.props.userId
         };
 
         this.props.createItem(item)
-        // .then(() => {this.props.history.push("/browse")});
+     
     }
 
-    // itemRemider(item) {
-    //     window.alert(`you are almost out of ${item}`)
-    // }
 
     render() {
         const items = Object.values(this.props.items).map(item => {
@@ -87,6 +92,14 @@ export class ItemIndex extends React.Component {
                             onChange={this.update('expirationDate')}
                             placeholder="Enter an Expiration Date"
                         />
+                        <br />
+                        {/* <DatePicker 
+                            placeholder="Enter an Expiration Date 2"
+                            onChange={this.update('expirationDate')}
+                            value={this.state.expirationDate}
+                            name="expirationDate"
+                            dateFormat="MM/dd/yyyy"
+                        /> */}
                         <br />
                         <input
                             type="text"
