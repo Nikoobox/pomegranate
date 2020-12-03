@@ -40,10 +40,7 @@ class SignupForm extends React.Component {
         };
 
         this.props.signup(user)
-            .then(user => {
-                debugger;
-                this.props.login(user);
-            });
+            .then(user => this.props.login(JSON.parse(user.user.config.data)));
   
     }
 

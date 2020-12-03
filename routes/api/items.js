@@ -25,8 +25,9 @@ router.get("/:itemId",
     }
 )
 
-router.get('/user/:userId', (req,res)=>{
-    Item.find({user: req.params.user_id})
+router.get('/user/:userId',
+    (req,res) => {
+    Item.find({ user: req.params.userId })
         .then(items => res.json(items))
         .catch(err => 
             res.status(404).json({itemsnotfound: 'No items from that user were found'}
@@ -47,8 +48,8 @@ router.post("/",
         name: req.body.name,
         quantity: req.body.quantity,
         expirationDate: req.body.expirationDate,
-        // type: req.body.type,
-        user: req.body.user,
+        type: req.body.type,
+        user: req.user.id
         // source: "user"
     });
     debugger;

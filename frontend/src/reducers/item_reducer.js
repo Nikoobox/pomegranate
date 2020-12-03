@@ -5,7 +5,7 @@ const ItemReducer = (state = {}, action) => {
     let newState = Object.assign({}, state);
     switch (action.type) {
         case RECEIVE_ITEMS:
-            debugger;
+            // debugger;
             let items = {}
             action.items.data.map(item => {
                 return items = Object.assign(newState, { [item._id]: item } )
@@ -15,7 +15,7 @@ const ItemReducer = (state = {}, action) => {
             // debugger;
             return { ...state, [action.item.data._id]: action.item.data };
         case REMOVE_ITEM:
-            debugger;
+            // debugger;
             delete newState[action.id]
             return newState
         default:
