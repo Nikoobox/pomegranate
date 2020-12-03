@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router-dom';
 
 class LoginForm extends React.Component {
@@ -60,9 +61,9 @@ class LoginForm extends React.Component {
     render() {
         return (
             <div className='login-signup-form-container'>
-                <form onSubmit={this.handleSubmit}>
-                    <div>Welcome Back</div>   
-                    <div>
+                <form onSubmit={this.handleSubmit} className='form'>
+                    <div className='welcome-message'>Welcome Back</div>   
+                    
                         <input type="text"
                             value={this.state.email}
                             onChange={this.update('email')}
@@ -75,8 +76,15 @@ class LoginForm extends React.Component {
                             placeholder="Password"
                         />
                         <br />
-                        <input type="submit" value="Submit" />
-                        {this.renderErrors()}
+                        <div className='submit-btn-container'>
+                            <button> Submit
+                            </button>
+                        </div> 
+                    
+                    <div className='form-sign-button'>
+                    Not a user? please <Link to={'/signup'} className='sign-button'>Signup</Link>
+
+                            {this.renderErrors()}
                     </div>
                 </form>
             </div>
