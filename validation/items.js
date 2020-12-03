@@ -14,9 +14,9 @@ module.exports = function validateItemInput(data) {
         errors.quantity = "Please enter quantity field, such as 2 apples";
     }
 
-    // if (Validator.isEmpty(data.type)) {
-    //     errors.type = "Please choose type field";
-    // }
+    if (Validator.isEmpty(data.type)) {
+        errors.type = "Please choose type field";
+    }
 
     return {
         errors,

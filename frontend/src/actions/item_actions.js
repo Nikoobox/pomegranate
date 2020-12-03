@@ -44,9 +44,9 @@ export const getAllItems = () => dispatch => {
 export const getUserItems = userId => dispatch => {
     return ItemAPIUtil.getUserItems(userId)
         .then(items => {
-            
-            return dispatch(receiveItems(items))
+            return dispatch(receiveItems(items));
         })
+        .catch(err => console.log(err));
 }
 
 
@@ -60,23 +60,22 @@ export const getItem = itemId => dispatch => {
 export const createItem = item => dispatch => {
     return ItemAPIUtil.postItem(item)
         .then(item => {
-            return dispatch(receiveItem(item)),
-            err => dispatch(receiveItemErrors(err))
-        });
+            return dispatch(receiveItem(item));
+        })
+        .catch(err => dispatch(receiveItemErrors(err)));
 };
 
 export const editItem = item => dispatch => {
     return ItemAPIUtil.patchItem(item)
         .then((item) => {
-            return dispatch(receiveItem(item)),
-            err => dispatch(receiveItemErrors(err))
-        });
+            return dispatch(receiveItem(item))
+        })
+        .catch(err => dispatch(receiveItemErrors(err)));
 };
 
 export const deleteItem = itemId => dispatch => {
     return ItemAPIUtil.deleteItem(itemId)
         .then(item => {
-           
             return dispatch(removeItem(item.data));
         });
 };
