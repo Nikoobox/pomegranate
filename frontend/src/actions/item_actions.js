@@ -44,7 +44,7 @@ export const getAllItems = () => dispatch => {
 export const getUserItems = userId => dispatch => {
     return ItemAPIUtil.getUserItems(userId)
         .then(items => {
-            debugger;
+            
             return dispatch(receiveItems(items))
         })
 }
@@ -76,7 +76,7 @@ export const editItem = item => dispatch => {
 export const deleteItem = itemId => dispatch => {
     return ItemAPIUtil.deleteItem(itemId)
         .then(item => {
-            debugger;
+           
             return dispatch(removeItem(item.data));
         });
 };
