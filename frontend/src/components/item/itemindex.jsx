@@ -66,7 +66,7 @@ export class ItemIndex extends React.Component {
                         {recipes}
                     </ul>
                 </div>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} className='item-form'>
                         <input
                             type="text"
                             value={this.state.name}
@@ -96,10 +96,10 @@ export class ItemIndex extends React.Component {
                         />
                         <br />
                         <input type="submit" value="Add Item"/>
-                </form>
                 <ul>
                     {items}
                 </ul>
+                </form>
             </div>
         )
     }
