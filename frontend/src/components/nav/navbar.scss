@@ -1,7 +1,6 @@
 .navbar {
     display: flex;
     background: white;
-    // flex-direction: start;
     align-items: center; 
     justify-content: space-between;
     z-index: 100;;
@@ -9,7 +8,7 @@
     position:fixed;
     top:0;
     width:100%;
-    padding: 10px 20px;
+    padding: 10px 30px;
     .navbar-logo-cont{
         display:flex;
         align-items: center;
@@ -26,16 +25,23 @@
         }
     }
     .dropdown-container{
+        .dropdown-toggle{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
         .dropdown-menu.show{
+            margin-right:10px;
+            margin-top:5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             padding:20px;
             color:black;
             display:flex;
             flex-direction:column;
-            // border: 1px black solid;
             .dropdown-item{
                 padding:10px 5px;
-                margin-bottom:5px;
+                // margin-bottom:5px;
                 transition: ease-out all 0.2s;
                 &:hover{
                     background:$mainYellowLignt;
@@ -59,7 +65,6 @@
         justify-content: center;
         button {
             padding: 5px 10px;
-            
             &:hover{
                 cursor:pointer;
             }

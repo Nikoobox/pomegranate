@@ -15,11 +15,6 @@ class ItemEdit extends React.Component {
 
     componentDidMount() {
         this.props.getItem(this.props.itemId);
-        // this.setState({
-        //     name: this.props.item.name,
-        //     quantity: this.props.item.quantity,
-        //     expirationDate: this.props.item.expirationDate,
-        // })
     }
 
     update(field) {
