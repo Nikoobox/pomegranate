@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const ItemSchema = new Schema({
-  kitchen: {
+  user: {
     type: Schema.Types.ObjectId,
-    ref: "kitchens",
+    ref: "users",
   },
   // type: {
   //   type: Schema.Types.ObjectId,
@@ -17,7 +17,11 @@ const ItemSchema = new Schema({
   },
   quantity: {
     type: Number,
-    required: true,
+    required: true
+  },
+  type: {
+    type: String,
+    required: true
   },
   expirationDate: {
     type: Date

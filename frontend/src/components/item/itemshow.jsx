@@ -1,15 +1,23 @@
-import React, { Component } from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import ItemEdit from './../item_edit/item_edit';
 
-export class ItemShow extends React.Component {
-    componentDidMount() {
-        this.props.getItem(this.props.id)
-    }
+class ItemShow extends React.Component {
 
     render() {
+        const { item } = this.props;
+        const date = new Date(item.expirationDate);
+        <ItemEdit item={item} />
         return (
            <div>
-               <h1>{this.props.item.data.name}</h1>
-                 {/* <p>You have {this.props.item.quantity} of this item.</p> */}
+                <Link to={`item/${item._id}/edit`}>
+                    <h1>{item.name}</h1>
+                    <p>You have {item.quantity} of this item.</p>
+                </Link>
+                <p>This item will expire on {date.toDateString()}.</p>
+
+
+                
            </div>
         )
     }
