@@ -1,22 +1,55 @@
-.NavBar {
+.navbar {
     display: flex;
-    background: yellow;
-    flex-direction: row;
+    background: rgb(244, 244, 244);
+    // flex-direction: start;
+    align-items: center; 
     justify-content: space-between;
+    // margin:50px;
+    height: 50px;
+    position:fixed;
+    top:0;
+    width:100%;
+    padding: 5px 20px;
+    .navbar-logo-cont{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        .logo-img{
+            width:30px;
+            margin:10px;
+            img{
+                width:100%;
+            }
+        }
+        .logo-name{
+            font-size:20px;
+        }
+    }
+    .navbar-logout-cont{
+        // display:flex;
+        // align-items: end;
+        // justify-content: center;
+        button {
+            padding: 5px 10px;
+            
+            &:hover{
+                cursor:pointer;
+            }
+            // height: 20px;
+            // display:inline;
+            // height:100%;
+        }
+    }
+    .login-button {
+        width: 100px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .signup-button {
+        width: 100px;
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
-.NavBar button {
-    height: 20px;
-}
 
-.Links1 {
-    width: 100px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.Links2 {
-    width: 400px;
-    display: flex;
-    justify-content: space-between;
-}
