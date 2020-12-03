@@ -9,10 +9,6 @@ import SignupFormContainer from './session/signup_form_container';
 import KitchenFormContainer from './kitchen_form/kitchen_form_container';
 import UserKitchensContainer from './user_kitchens/user_kitchens_container';
 
-
-
-
-
 const App = () => (
     <div>
         <NavBarContainer />
@@ -20,8 +16,8 @@ const App = () => (
             <AuthRoute exact path="/" component={MainPage} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
-            <Route exact path="/browse" component={KitchenFormContainer} />
-
+            <ProtectedRoute exact path="/browse" component={KitchenFormContainer} />
+            <ProtectedRoute exact path="/kitchens" component={UserKitchensContainer} />
         </Switch>
     </div>
 );
