@@ -51,7 +51,7 @@ router.post("/",
         user: req.body.user,
         // source: "user"
     });
-    debugger;
+  
     newItem
         .save()
         .then(item => res.json(item),

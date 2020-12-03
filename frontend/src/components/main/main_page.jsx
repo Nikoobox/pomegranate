@@ -37,7 +37,7 @@ class MainPage extends React.Component {
                 <div className="login-logout-container">
                     <Link to='/login'><button className="login">Login</button></Link>
                     <Link to='/signup'><button className="signup">Signup</button></Link>
-                    <Link to='#'><button className="demo">Demo</button></Link>
+                    <Link to='#'><button className="demo" onClick={this.loginGuest}>Demo</button></Link>
                 </div>
             </div>
         );
