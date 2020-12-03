@@ -16,6 +16,7 @@ class ItemEdit extends React.Component {
 
     componentDidMount() {
         this.props.getItem(this.props.itemId);
+
     }
 
     checkEmptyState() {
@@ -28,6 +29,7 @@ class ItemEdit extends React.Component {
         } else {
             return false;
         }
+
     }
 
     update(field) {
