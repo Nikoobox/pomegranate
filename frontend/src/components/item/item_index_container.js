@@ -1,22 +1,19 @@
 import { connect } from 'react-redux';
-import {getAllItems, createItem } from '../../actions/item_actions';
-import { getKitchen } from '../../actions/kitchen_actions';
+import { getUserItems, createItem } from '../../actions/item_actions';
 import ItemIndex from './itemindex';
 
-const mapStateToProps = (state, ownProps) => {
-    const kitchenId = ownProps.match.params.kitchenId
+const mapStateToProps = state => {
+    debugger;
     return {
-        items: state.items.data,
-        kitchenId
+        items: state.items,
+        userId: state.session.user.id
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
         createItem: item => dispatch(createItem(item)),
-        getAllItems: () => dispatch(getAllItems()),
-        getKitchen: kitchenId => dispatch(getKitchen(kitchenId))
-
+        getUserItems: userId => dispatch(getUserItems(userId))
     }
 }
 

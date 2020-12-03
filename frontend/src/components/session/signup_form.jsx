@@ -8,7 +8,7 @@ class SignupForm extends React.Component {
             email: '',
             username: '',
             password: '',
-            password2: '',
+            password2: ''
             // errors: {}
         };
 
@@ -39,9 +39,11 @@ class SignupForm extends React.Component {
             password2: this.state.password2
         };
 
-        this.props.signup(user).then(()=>{
-            this.props.login(user)
-        });
+        this.props.signup(user)
+            .then(user => {
+                debugger;
+                this.props.login(user);
+            });
   
     }
 
@@ -73,7 +75,7 @@ class SignupForm extends React.Component {
                         <input type="text"
                             value={this.state.username}
                             onChange={this.update('username')}
-                            placeholder="Username"
+                            placeholder="kitchen name"
                         />
                         <br />
                         <input type="password"

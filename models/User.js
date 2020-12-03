@@ -13,6 +13,9 @@ const UserSchema = new Schema({
     password: {
         type: String,
         required: true
+    },
+    savedItemIds: {
+        type: Array
     }
 }, {
     timestamps: true

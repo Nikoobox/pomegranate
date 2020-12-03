@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { logout } from '../../actions/session_actions';
+import { login } from '../../actions/session_actions';
 
 import MainPage from './main_page';
 
@@ -7,7 +7,11 @@ const mapStateToProps = state => ({
     loggedIn: state.session.isAuthenticated
 });
 
+const mapDispatchToProps = dispatch => ({
+    login: user => dispatch(login(user))
+});
+
 export default connect(
     mapStateToProps,
-    { logout }
+    mapDispatchToProps
 )(MainPage);

@@ -13,8 +13,8 @@ export class ItemIndex extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     componentDidMount() {
-        this.props.getAllItems();
-        this.props.getKitchen(this.props.kitchenId)
+        debugger;
+        this.props.getUserItems(this.props.userId);
     }
 
     update(field) {
@@ -30,7 +30,7 @@ export class ItemIndex extends React.Component {
             quantity: this.state.quantity,
             // type: this.state.type,
             expirationDate: this.state.expirationDate,
-            kitchen: this.props.kitchenId
+            user: this.props.userId
         };
 
         this.props.createItem(item)
@@ -38,15 +38,13 @@ export class ItemIndex extends React.Component {
     }
 
     render() {
-        // debugger;
-        // const items = this.props.items.map(item => {
-        //     <ItemShow item={item} history={this.props.history}/>
-        // })
-        // debugger;
+        debugger;
+        const items = Object.values(this.props.items).map(item => {
+            return <ItemShow item={item} history={this.props.history}/>
+        });
+        // types: 
         return (
             <div className='item-container'>
-
-            
                 <form onSubmit={this.handleSubmit}>
                         <input type="text"
                             value={this.state.name}
@@ -68,9 +66,9 @@ export class ItemIndex extends React.Component {
                         <br />
                         <input type="submit" value="Add Item"/>
                 </form>
-                {/* <ul>
+                <ul>
                     {items}
-                </ul> */}
+                </ul>
             </div>
         )
     }
