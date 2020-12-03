@@ -38,6 +38,7 @@ class MainPage extends React.Component {
                     <Link to='/login'><button className="login">Login</button></Link>
                     <Link to='/signup'><button className="signup">Signup</button></Link>
                     <Link to='#'><button className="demo" onClick={this.loginGuest}>Demo</button></Link>
+
                 </div>
             </div>
         );
