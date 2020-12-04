@@ -5,14 +5,23 @@ class ItemShow extends React.Component {
 
     render() {
         const { item } = this.props;
+        const quantities = item.quantity === 1 ? 
+            <div className='item-quantity'>You have {item.quantity} item</div>
+            :
+            <div className='item-quantity'>You have {item.quantity} items</div>
+
         const date = new Date(item.expirationDate);
         return (
-           <div>
-                <Link to={`item/${item._id}/edit`}>
-                    <h1>{item.name}</h1>
-                    <p>You have {item.quantity} of this item.</p>
+           <div className='item-box'>
+                <Link to={`item/${item._id}/edit`} className='item-box-link'>
+                    <div className='item-name'>{item.name}</div>
+                    {quantities}
                 </Link>
+<<<<<<< HEAD
                 <p>This item will expire on {date.toDateString()}.</p>
+=======
+                <div className='item-box-expiration'>This product will expire on {date.toDateString()}.</div>     
+>>>>>>> master
            </div>
         )
     }

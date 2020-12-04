@@ -1,15 +1,30 @@
-import {getRecipeByIngred} from '../util/recipe_api_util';
+import {
+    getRecipeByIngred,
+    getRecipeInfo 
+} from '../util/recipe_api_util';
 
 
-export const RECEIVE_RECIPE = "RECEIVE_RECIPE";
+export const RECEIVE_RECIPES = "RECEIVE_RECIPES";
+export const RECEIVE_RECIPE_INFO = "RECEIVE_RECIPE_INFO";
 
-const receiveRecipe = (recipe) => {
+const receiveRecipes = (recipes) => {
     return {
-        type: RECEIVE_RECIPE,
+        type: RECEIVE_RECIPES,
+        recipes
+    }
+};
+
+const receiveRecipeInfo = (recipe) => {
+    return {
+        type: RECEIVE_RECIPE_INFO,
         recipe
     }
 };
 
-export const fetchRecipe = (ingredients) => dispatch => {
-        return getRecipeByIngred(ingredients).then(recipe => dispatch(receiveRecipe(recipe)))
+export const fetchRecipe = (items) => dispatch => {
+        return getRecipeByIngred(items).then(recipes => dispatch(receiveRecipes(recipes)))
+};
+
+export const fetchRecipeInfo = (recipeId) => dispatch => {
+        return getRecipeInfo(recipeId).then(recipe => dispatch(receiveRecipeInfo(recipe)))
 };

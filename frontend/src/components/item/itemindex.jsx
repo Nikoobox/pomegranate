@@ -1,9 +1,13 @@
 import React from 'react'
 import ItemShow from './itemshow';
 import {Link} from 'react-router-dom';
+// import DayPickerInput from 'react-day-picker/DayPickerInput';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
 
 export class ItemIndex extends React.Component {
-    constructor(props) {
+    constructor(props
+        ) {
         super(props)
         this.state = {
             name: "",
@@ -15,7 +19,6 @@ export class ItemIndex extends React.Component {
     }
     componentDidMount() {
         this.props.getUserItems(this.props.userId);
-        this.props.fetchRecipe('broccoli');
     }
 
     // recipes() {
@@ -56,67 +59,85 @@ export class ItemIndex extends React.Component {
         };
 
         this.props.createItem(item)
-        // .then(() => {this.props.history.push("/browse")});
+     
     }
 
-    // itemRemider(item) {
-    //     window.alert(`you are almost out of ${item}`)
-    // }
 
     render() {
+        const searchItems = Object.values(this.props.items).map(item => {
+            return item.name
+        })
+
         const items = Object.values(this.props.items).map(item => {
             return <ItemShow key={item._id} item={item} history={this.props.history}/>
         });
-        const recipes = Object.values(this.props.recipes).map(ingredients => {
+        const recipes = Object.values(this.props.recipes).map(recipe => {
             return (
-                <div>
-                    <a>{ingredients.title}</a> 
-                    <img src={ingredients.image} alt={ingredients.tile}/>
+                <div key={recipe.id}>
+                    <Link to={`/${recipe.id}`}
+                        // onClick={() => this.props.history.push(``)}
+                    >{recipe.title}</Link>
+                    <img src={recipe.image} alt={recipe.title}/>
+                    {recipe.usedIngredients.map(item => {
+                        return <p>From kitchen: {item.name}</p>
+                    })}
+                    {recipe.missedIngredients.map(item => {
+                        return <p>Missing Item: {item.name}</p>
+                    })}
                 </div>
             )
         })
         return (
             <div className='item-container'>
 
+
+
+                <button onClick={() => this.props.fetchRecipe(`${searchItems}`)}>Discover Recipes</button>
                 <div>
                     <ul>
                         {recipes}
                     </ul>
                 </div>
-                <form onSubmit={this.handleSubmit}>
-                        <input
-                            type="text"
-                            value={this.state.name}
-                            onChange={this.update('name')}
-                            placeholder="Item name"
-                        />
-                        <br />
-                        <input
-                            type="number"
-                            value={this.state.quantity}
-                            onChange={this.update('quantity')}
-                            placeholder="Item quantity"
-                        />
-                        <br />
-                        <input
-                            type="date"
-                            value={this.state.expirationDate}
-                            onChange={this.update('expirationDate')}
-                            placeholder="Enter an Expiration Date"
-                        />
-                        <br />
-                        <input
-                            type="text"
-                            value={this.state.type}
-                            onChange={this.update('type')}
-                            placeholder="Enter an item type"
-                        />
-                        <br />
-                        <input type="submit" value="Add Item"/>
+                
+                <form onSubmit={this.handleSubmit} className='form'>
+                    <div className='welcome-message'>Add Item Form</div>   
+                    <input
+                        type="text"
+                        value={this.state.name}
+                        onChange={this.update('name')}
+                        placeholder="Item name"
+                    />
+                    <input
+                        type="number"
+                        value={this.state.quantity}
+                        onChange={this.update('quantity')}
+                        placeholder="Item quantity"
+                    />
+                    <input
+                        type="date"
+                        value={this.state.expirationDate}
+                        onChange={this.update('expirationDate')}
+                        placeholder="Enter an Expiration Date"
+                    />
+                    <input
+                        type="text"
+                        value={this.state.type}
+                        onChange={this.update('type')}
+                        placeholder="Enter an item type"
+                    />
+                    <div className='submit-item-btn-container'>
+                    <button>Add Item</button>
+
+                    </div>
                 </form>
-                <ul>
-                    {items}
-                </ul>
+                <div className='items'>
+                    <div className='message'>Your Kitchen has the following products:</div>
+                    <div className='items-container'>
+                        {items}
+
+                    </div>
+                    
+                </div>
             </div>
         )
     }

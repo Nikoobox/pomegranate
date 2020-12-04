@@ -30,8 +30,13 @@ class MainPage extends React.Component {
                         Pomegranate
                     </div> 
                     <div className='sub-name'>
+<<<<<<< HEAD
                         Start by selecting ingredients you already have in your kitchen from several categories.
                         As you add available ingredients, we will suggest you recipes.
+=======
+                        Tell us know what ingredients you already have in your kitchen and let Pomegranate find you
+                        exiting new recipes to try.
+>>>>>>> master
                     </div> 
                 </div> 
                 <div className="login-logout-container">
