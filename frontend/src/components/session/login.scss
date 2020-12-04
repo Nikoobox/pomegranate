@@ -32,12 +32,12 @@
         font-weight:300;
     }
 
-    .form{
+    .log-form{
         width:300px;;
         background:$Greenish;
         padding:20px;
         border-radius: 5px;
-        height
+        // height
         input{
             width:100%;
             border:0;
@@ -89,6 +89,24 @@
                 padding-bottom: 2px;
                 text-decoration: underline;
                 cursor: pointer;
+            }
+        }
+        .demo-form-container{
+                dislpay:flex;
+                 text-align:center;
+            margin-top:10px;
+            font-size: 14px;
+            color:white;
+            .demo-form-button{
+                font-weight: bold;
+                color:white;
+                transition: ease-out all 0.2s;
+                padding-bottom: 2px;
+                &:hover{
+                     padding-bottom: 2px;
+                text-decoration: underline;
+                cursor: pointer;
+                }
             }
         }
     }

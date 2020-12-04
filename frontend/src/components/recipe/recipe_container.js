@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
 // import { getUserItems, createItem } from '../../actions/item_actions';
-import { fetchRecipeInfo } from '../../actions/recipe_actions';
+import { clearRecipeState, fetchRecipeInfo } from '../../actions/recipe_actions';
 import Recipe from './recipe';
 
 const mapStateToProps = (state, {match}) => {
-    debugger;
+    // debugger;
     const id = match.params.recipeId
+    // console.log(state.recipes)
     return {
         id,
         recipe: state.recipes
@@ -14,7 +15,8 @@ const mapStateToProps = (state, {match}) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchRecipeInfo: (recipeId) => dispatch(fetchRecipeInfo(recipeId))
+        fetchRecipeInfo: (recipeId) => dispatch(fetchRecipeInfo(recipeId)),
+        clearRecipeState: () => dispatch(clearRecipeState())
     }
 }
 

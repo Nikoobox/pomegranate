@@ -4,17 +4,17 @@ const validText = require('./valid-text');
 module.exports = function validateRegisterInput(data) {
     let errors = {};
 
-    data.username = validText(data.username) ? data.username : '';
+    data.kitchenName = validText(data.kitchenName) ? data.kitchenName : '';
     data.email = validText(data.email) ? data.email : '';
     data.password = validText(data.password) ? data.password : '';
     data.password2 = validText(data.password2) ? data.password2 : '';
 
-    if (!Validator.isLength(data.username, { min: 2, max: 30 })) {
-        errors.username = 'kitche name must be between 2 and 30 characters';
+    if (!Validator.isLength(data.kitchenName, { min: 2, max: 30 })) {
+        errors.kitchenName = 'kitche name must be between 2 and 30 characters';
     }
 
-    if (Validator.isEmpty(data.username)) {
-        errors.username = 'kitchen name field is required';
+    if (Validator.isEmpty(data.kitchenName)) {
+        errors.kitchenName = 'kitchen name field is required';
     }
 
     if (Validator.isEmpty(data.email)) {

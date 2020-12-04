@@ -7,11 +7,12 @@ class SignupForm extends React.Component {
         super(props);
         this.state = {
             email: '',
-            username: '',
+            kitchenName: '',
             password: '',
             password2: ''
         };
 
+        this.loginGuest = this.loginGuest.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.clearedErrors = false;
     }
@@ -26,13 +27,24 @@ class SignupForm extends React.Component {
         e.preventDefault();
         let user = {
             email: this.state.email,
-            username: this.state.username,
+            kitchenName: this.state.kitchenName,
             password: this.state.password,
             password2: this.state.password2
         };
 
         this.props.signup(user)
-            .then(user => this.props.login(JSON.parse(user.user.config.data)));
+            .then(user => {
+                return this.props.login(JSON.parse(user.user.config.data))
+            })
+            .catch(err => console.log(err));
+    }
+    loginGuest() {
+        let demo = {
+            email: 'demo@gmail.com',
+            password: 'room12'
+        }
+
+        this.props.login(demo)
     }
 
     renderErrors() {
@@ -50,34 +62,34 @@ class SignupForm extends React.Component {
     render() {
         return (
             <div className='login-signup-form-container'>
-                <form onSubmit={this.handleSubmit} className='form'>
+                <form onSubmit={this.handleSubmit} className='log-form'>
                     <div className='welcome-message'>Join Pomegranate</div>  
                     <div className="signup-form">
-                        {/* <br /> */}
+                       
                         <input type="text"
                             value={this.state.email}
                             onChange={this.update('email')}
                             placeholder="Email"
                         />
-                        {/* <br /> */}
+                        
                         <input type="text"
-                            value={this.state.username}
-                            onChange={this.update('username')}
+                            value={this.state.kitchenName}
+                            onChange={this.update('kitchenName')}
                             placeholder="Kitchen name"
                         />
-                        {/* <br /> */}
+                       
                         <input type="password"
                             value={this.state.password}
                             onChange={this.update('password')}
                             placeholder="Password"
                         />
-                        {/* <br /> */}
+                       
                         <input type="password"
                             value={this.state.password2}
                             onChange={this.update('password2')}
                             placeholder="Confirm Password"
                         />
-                        {/* <br /> */}
+                     
                         <div className='submit-btn-container'>
                             <button> Submit
                         </button>
@@ -87,7 +99,10 @@ class SignupForm extends React.Component {
                         </div>
                         <div className='form-sign-button'>
                             Already have an account? Please <Link to={'/login'} className='sign-button'>Login</Link>
-                            </div>
+                        </div>
+                    </div>
+                    <div className='demo-form-container'>
+                        Or login as a <span className="demo-form-button" onClick={this.loginGuest}>Demo User</span>
                     </div>
                 </form>
             </div>

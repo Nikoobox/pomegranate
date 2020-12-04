@@ -13,7 +13,7 @@ export const getItem = itemId => {
 };
 
 export const postItem = itemData => {
-    return axios.post('/api/items/', itemData);
+    return axios.post('/api/items/', itemData)
 };
 
 export const patchItem = (itemData) => {
