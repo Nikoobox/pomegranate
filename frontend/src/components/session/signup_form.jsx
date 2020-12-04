@@ -72,7 +72,7 @@ class SignupForm extends React.Component {
                         <input type="text"
                             value={this.state.username}
                             onChange={this.update('username')}
-                            placeholder="Kitchen name"
+                            placeholder="Username"
                         />
                        
                         <input type="password"
