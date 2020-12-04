@@ -16,7 +16,7 @@ class Recipe extends React.Component {
     }
 
     render() {
-        
+
         if(this.props.recipe)
             return (
             <div className='show-recipe-container'>
