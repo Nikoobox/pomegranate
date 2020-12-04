@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import pom_logo from '../../images/pom_logo_0.png';
 import { Dropdown } from 'react-bootstrap';
 import { FaHamburger } from 'react-icons/fa'
+import { clearItemState } from '../../actions/item_actions';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -15,6 +16,8 @@ class NavBar extends React.Component {
     logoutUser(e) {
         e.preventDefault();
         this.props.logout();
+        this.props.clearItemState();
+        this.props.clearRecipeState();
     }
 
     // Selectively render links dependent on whether the user is logged in
@@ -52,13 +55,10 @@ class NavBar extends React.Component {
         } else {
             return (
                 <div className='navbar'>
-                    <Link to='/' className='navbar-logo-cont'>
+                    <Link to='/' onClick={this.props.clearRecipeState()} className='navbar-logo-cont'>
                         <div className='logo-img'><img src={pom_logo} /></div>
                         <div className='logo-name'>Pomegranate</div>
                     </Link>
-
-                    
-                
                 </div>
             );
         }
