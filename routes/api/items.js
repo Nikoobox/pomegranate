@@ -50,13 +50,11 @@ router.post("/",
         expirationDate: req.body.expirationDate,
         type: req.body.type,
         user: req.user.id
-        // source: "user"
     });
   
-    newItem
-        .save()
-        .then(item => res.json(item),
-        errors => res.json(errors));
+    newItem.save()
+        .then(item => res.json(item))
+        .catch(err => res.json(err));
   }
 );
 
@@ -81,7 +79,11 @@ router.delete('/:itemId',
 
 router.patch('/:itemId', 
         passport.authenticate('jwt', {session:false}), 
-         (req,res)=>{
+        (req, res) => {
+            const { isValid, errors } = validateItemInput(req.body);
+            if (!isValid) {
+                return res.status(400).json(errors);
+            }
             Item.findById(req.params.itemId, function(err, item){
                 if (!item){
                     return res.status(400).json('We could not find that item');
@@ -89,7 +91,7 @@ router.patch('/:itemId',
                     Item.findOneAndUpdate({_id: req.params.itemId}, req.body, function(err, item){
                         if (err) {
                             return res.status(400).json(err);
-                        }else {
+                        } else {
                             newItem = req.body;
                             res.send(newItem);
                         }

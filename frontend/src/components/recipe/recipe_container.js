@@ -4,7 +4,7 @@ import { fetchRecipeInfo } from '../../actions/recipe_actions';
 import Recipe from './recipe';
 
 const mapStateToProps = (state, {match}) => {
-    debugger;
+    // debugger;
     const id = match.params.recipeId
     return {
         id,

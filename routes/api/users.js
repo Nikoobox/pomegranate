@@ -45,7 +45,6 @@ router.post('/register', (req, res) => {
                         if (err) throw err;
                         newUser.password = hash;
                         newUser.save()
-                        
                             .then(user => res.json(user))
                             .catch(err => console.log(err));
                     })
@@ -58,8 +57,6 @@ router.post('/register', (req, res) => {
 
 router.post('/login', (req, res) => {
     const { errors, isValid } = validateLoginInput(req.body);
-
-    console.log(errors);
 
     if (!isValid) {
         return res.status(400).json(errors);

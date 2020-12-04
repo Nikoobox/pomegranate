@@ -7,7 +7,7 @@ class Recipe extends React.Component {
     }
 
     componentDidMount() {
-        debugger;
+        // debugger;
         this.props.fetchRecipeInfo(this.props.id)
     }
     render() {

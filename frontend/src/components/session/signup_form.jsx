@@ -32,7 +32,10 @@ class SignupForm extends React.Component {
         };
 
         this.props.signup(user)
-            .then(user => this.props.login(JSON.parse(user.user.config.data)));
+            .then(user => {
+                return this.props.login(JSON.parse(user.user.config.data))
+            })
+            .catch(err => console.log(err));
     }
 
     renderErrors() {
@@ -87,7 +90,7 @@ class SignupForm extends React.Component {
                         </div>
                         <div className='form-sign-button'>
                             Already have an account? Please <Link to={'/login'} className='sign-button'>Login</Link>
-                            </div>
+                        </div>
                     </div>
                 </form>
             </div>
