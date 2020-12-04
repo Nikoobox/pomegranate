@@ -12,9 +12,12 @@ class LoginForm extends React.Component {
             errors: {}
         };
 
+        this.loginGuest = this.loginGuest.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
     }
+
+    
 
     // Once the user has been authenticated, redirect to the Tweets page
     componentWillReceiveProps(nextProps) {
@@ -23,6 +26,7 @@ class LoginForm extends React.Component {
         }
 
         // Set or clear errors
+        
         this.setState({ errors: nextProps.errors })
     }
 
@@ -43,6 +47,16 @@ class LoginForm extends React.Component {
         };
 
         this.props.login(user);
+       
+    }
+
+    loginGuest() {
+        let demo = {
+            email: 'demo@gmail.com',
+            password: 'room12'
+        }
+
+        this.props.login(demo)
     }
 
     // Render the session errors if there are any
@@ -61,7 +75,7 @@ class LoginForm extends React.Component {
     render() {
         return (
             <div className='login-signup-form-container'>
-                <form onSubmit={this.handleSubmit} className='form'>
+                <form onSubmit={this.handleSubmit} className='log-form'>
                     <div className='welcome-message'>Welcome Back</div>   
                     
                     <input type="text"
@@ -69,13 +83,11 @@ class LoginForm extends React.Component {
                         onChange={this.update('email')}
                         placeholder="Email"
                     />
-                    {/* <br /> */}
                     <input type="password"
                         value={this.state.password}
                         onChange={this.update('password')}
                         placeholder="Password"
                     />
-                    {/* <br /> */}
                     <div className='submit-btn-container'>
                         <button> Submit
                         </button>
@@ -86,8 +98,12 @@ class LoginForm extends React.Component {
                     
                     <div className='form-sign-button'>
                     Not a user? please <Link to={'/signup'} className='sign-button'>Signup</Link>
-
                     </div>
+
+                    <div className='demo-form-container'>
+                        Or login as a <span className="demo-form-button" onClick={this.loginGuest}>Demo User</span>
+                    </div>
+
                 </form>
             </div>
         );
