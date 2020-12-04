@@ -27,10 +27,10 @@ const removeItem = id => {
     }
 }
 
-const receiveItemErrors = (err) => {
+const receiveItemErrors = errors => {
     return {
         type: RECEIVE_ITEM_ERRORS,
-        err
+        errors
     }
 }
 
@@ -61,16 +61,18 @@ export const createItem = item => dispatch => {
     return ItemAPIUtil.postItem(item)
         .then(item => {
             return dispatch(receiveItem(item));
-        })
-        .catch(err => dispatch(receiveItemErrors(err)));
+        }, err => {
+            return dispatch(receiveItemErrors(err.response.data));
+        });
 };
 
 export const editItem = item => dispatch => {
     return ItemAPIUtil.patchItem(item)
-        .then((item) => {
+        .then(item => {
             return dispatch(receiveItem(item))
-        })
-        .catch(err => dispatch(receiveItemErrors(err)));
+        }, err => {
+            return dispatch(receiveItemErrors(err.response.data))
+        });
 };
 
 export const deleteItem = itemId => dispatch => {

@@ -7,7 +7,7 @@ class SignupForm extends React.Component {
         super(props);
         this.state = {
             email: '',
-            username: '',
+            kitchenName: '',
             password: '',
             password2: ''
         };
@@ -27,13 +27,16 @@ class SignupForm extends React.Component {
         e.preventDefault();
         let user = {
             email: this.state.email,
-            username: this.state.username,
+            kitchenName: this.state.kitchenName,
             password: this.state.password,
             password2: this.state.password2
         };
 
         this.props.signup(user)
-            .then(user => this.props.login(JSON.parse(user.user.config.data)));
+            .then(user => {
+                return this.props.login(JSON.parse(user.user.config.data))
+            })
+            .catch(err => console.log(err));
     }
     loginGuest() {
         let demo = {
@@ -70,9 +73,15 @@ class SignupForm extends React.Component {
                         />
                         
                         <input type="text"
+<<<<<<< HEAD
                             value={this.state.username}
                             onChange={this.update('username')}
                             placeholder="Username"
+=======
+                            value={this.state.kitchenName}
+                            onChange={this.update('kitchenName')}
+                            placeholder="Kitchen name"
+>>>>>>> Validations
                         />
                        
                         <input type="password"
@@ -97,9 +106,12 @@ class SignupForm extends React.Component {
                         <div className='form-sign-button'>
                             Already have an account? Please <Link to={'/login'} className='sign-button'>Login</Link>
                         </div>
+<<<<<<< HEAD
                     </div>
                     <div className='demo-form-container'>
                         Or login as a <span className="demo-form-button" onClick={this.loginGuest}>Demo User</span>
+=======
+>>>>>>> Validations
                     </div>
                 </form>
             </div>

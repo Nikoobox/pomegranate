@@ -7,7 +7,8 @@ const mapStateToProps = state => {
     return {
         items: state.items,
         userId: state.session.user.id,
-        recipes: state.recipes
+        recipes: state.recipes,
+        errors: state.errors.item
     };
 };
 

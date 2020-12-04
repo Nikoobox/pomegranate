@@ -47,9 +47,25 @@ export class ItemIndex extends React.Component {
         };
 
         this.props.createItem(item)
-     
+            .then(() => this.setState({
+                name: "",
+                quantity: "",
+                type: "",
+                expirationDate: ""
+            }));
     }
 
+    renderErrors() {
+        return (
+            <ul>
+                {Object.keys(this.props.errors).map((error, i) => (
+                    <li key={`error-${i}`} className='error'>
+                        {this.props.errors[error]}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
 
     render() {
         const searchItems = Object.values(this.props.items).map(item => {
@@ -89,32 +105,35 @@ export class ItemIndex extends React.Component {
                 
                 <form onSubmit={this.handleSubmit} className='item-form'>
                     <div className='welcome-message'>Add Item Form</div>   
-                    <input
-                        type="text"
-                        value={this.state.name}
-                        onChange={this.update('name')}
-                        placeholder="Item name"
-                    />
-                    <input
-                        type="number"
-                        value={this.state.quantity}
-                        onChange={this.update('quantity')}
-                        placeholder="Item quantity"
-                    />
-                    <input
-                        type="date"
-                        value={this.state.expirationDate}
-                        onChange={this.update('expirationDate')}
-                        placeholder="Enter an Expiration Date"
-                    />
-                    <input
-                        type="text"
-                        value={this.state.type}
-                        onChange={this.update('type')}
-                        placeholder="Enter an item type"
-                    />
-                    <div className='submit-item-btn-container'>
-                    <button>Add Item</button>
+                        <input
+                            type="text"
+                            value={this.state.name}
+                            onChange={this.update('name')}
+                            placeholder="Item name"
+                        />
+                        <input
+                            type="number"
+                            value={this.state.quantity}
+                            onChange={this.update('quantity')}
+                            placeholder="Item quantity"
+                        />
+                        <input
+                            type="date"
+                            value={this.state.expirationDate}
+                            onChange={this.update('expirationDate')}
+                            placeholder="Enter an Expiration Date"
+                        />
+                        <input
+                            type="text"
+                            value={this.state.type}
+                            onChange={this.update('type')}
+                            placeholder="Enter an item type"
+                        />
+                        <div className='submit-item-btn-container'>
+                        <button>Add Item</button>
+                        <div className='error-container'>
+                            {this.renderErrors()}
+                        </div>
 
                     </div>
                 </form>
