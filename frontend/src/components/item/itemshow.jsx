@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ItemEdit from './../item_edit/item_edit';
 
 class ItemShow extends React.Component {
 
@@ -12,7 +11,6 @@ class ItemShow extends React.Component {
             <div className='item-quantity'>You have {item.quantity} items</div>
 
         const date = new Date(item.expirationDate);
-        <ItemEdit item={item} />
         return (
            <div className='item-box'>
                 <Link to={`item/${item._id}/edit`} className='item-box-link'>
