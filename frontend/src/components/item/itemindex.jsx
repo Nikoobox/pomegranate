@@ -57,6 +57,9 @@ export class ItemIndex extends React.Component {
             return <ItemShow key={item._id} item={item} history={this.props.history}/>
         });
         const recipes = Object.values(this.props.recipes).map(recipe => {
+
+            
+
             return (
                 <div key={recipe.id} className='recipe-card'>
                     <Link to={`/${recipe.id}`} className='recipe-card-link'

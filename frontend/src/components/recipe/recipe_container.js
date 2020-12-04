@@ -5,6 +5,7 @@ import Recipe from './recipe';
 
 const mapStateToProps = (state, {match}) => {
     const id = match.params.recipeId
+    // console.log(state.recipes)
     return {
         id,
         recipe: state.recipes
