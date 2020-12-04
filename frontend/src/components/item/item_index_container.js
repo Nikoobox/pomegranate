@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 import { getUserItems, createItem, clearItemState } from '../../actions/item_actions';
 import { fetchRecipe, clearRecipeState } from '../../actions/recipe_actions';
 import ItemIndex from './itemindex';
+import { openModal } from '../../actions/modal_actions';
+// import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = state => {
     return {
@@ -17,7 +19,8 @@ const mapDispatchToProps = (dispatch) => {
         createItem: item => dispatch(createItem(item)),
         getUserItems: userId => dispatch(getUserItems(userId)),
         fetchRecipe: (ingredients) => dispatch(fetchRecipe(ingredients)),
-        clearRecipeState: () => dispatch(clearRecipeState())
+        openModal: modal => dispatch(openModal(modal))
+
     }
 }
 

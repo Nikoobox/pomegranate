@@ -16,16 +16,24 @@ class Recipe extends React.Component {
     }
 
     render() {
-        // const ingres = this.props.recipe.extendedIngredients.map(ingre => {
-        //     return <img src={ingre.image} alt="ingre"/>
-        // })
+        
         if(this.props.recipe)
             return (
-            <div>
-                <img src={this.props.recipe.image} alt="image"/>
-                <a href={this.props.recipe.sourceUrl}>For more information <GrNotes/></a> 
-                <p>Cooking Time:{this.props.recipe.readyInMinutes} minutes</p> 
-                <p>Instructions:{this.props.recipe.instructions}</p> 
+            <div className='show-recipe-container'>
+                <div className='show-recipe-card'>
+                    <div className='image-box'>
+                        <img src={this.props.recipe.image}/>
+                        <a href={this.props.recipe.sourceUrl} className='more-info'>For more information <GrNotes /></a> 
+                    </div>
+                    <div className='information-box'>
+                        {/* <a href={this.props.recipe.sourceUrl}>For more information <GrNotes/></a>  */}
+                            <div className='title'><span>Recipe Name: </span> {this.props.recipe.title} </div> 
+                        <div className='time'><span>Cooking Time: </span>{this.props.recipe.readyInMinutes} minutes</div> 
+                        <div className='instructions'><span>Instructions: </span> {this.props.recipe.instructions}</div> 
+
+                    </div>
+
+                </div>
             
             </div>
             )
@@ -33,3 +41,4 @@ class Recipe extends React.Component {
 }
 
 export default Recipe;
+
