@@ -87,7 +87,7 @@ export class ItemIndex extends React.Component {
                     </ul>
                 </div>
                 
-                <form onSubmit={this.handleSubmit} className='form'>
+                <form onSubmit={this.handleSubmit} className='item-form'>
                     <div className='welcome-message'>Add Item Form</div>   
                     <input
                         type="text"
