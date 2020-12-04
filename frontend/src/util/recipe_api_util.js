@@ -8,6 +8,6 @@ export const getRecipeByIngred = (items) => {
 }
 
 export const getRecipeInfo = (recipeId) => {
-       return axios.get( `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${APIKEY}`);
+   return axios.get( `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${APIKEY}`);
 }
 
