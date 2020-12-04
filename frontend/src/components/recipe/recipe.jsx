@@ -7,8 +7,14 @@ class Recipe extends React.Component {
     }
 
     componentDidMount() {
+        // debugger;
         this.props.fetchRecipeInfo(this.props.id)
     }
+
+    componentWillUnmount() {
+        this.props.clearRecipeState();
+    }
+
     render() {
         
         if(this.props.recipe)

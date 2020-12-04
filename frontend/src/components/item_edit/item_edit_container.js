@@ -8,7 +8,8 @@ const mapStateToProps = (state, ownProps) => {
     const item = state.items[itemId];
     return {
         itemId,
-        item
+        item,
+        errors: state.errors.item
     };
 }
 
