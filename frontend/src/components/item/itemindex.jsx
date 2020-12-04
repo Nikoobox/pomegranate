@@ -79,7 +79,6 @@ export class ItemIndex extends React.Component {
             return (
                 <div key={recipe.id}>
                     <Link to={`/${recipe.id}`}
-                        // onClick={() => this.props.history.push(``)}
                     >{recipe.title}</Link>
                     <img src={recipe.image} alt={recipe.title}/>
                     {recipe.usedIngredients.map(item => {

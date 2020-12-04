@@ -5,6 +5,7 @@ export const RECEIVE_ITEM = "RECEIVE_ITEM";
 export const RECEIVE_ITEMS = "RECEIVE_ITEMS";
 export const RECEIVE_ITEM_ERRORS = "RECEIVE_ITEM_ERRORS";
 export const REMOVE_ITEM = "REMOVE_ITEM";
+export const CLEAR_ITEMS = "CLEAR_ITEMS";
 
 const receiveItem = item => {
     return {
@@ -31,6 +32,12 @@ const receiveItemErrors = errors => {
     return {
         type: RECEIVE_ITEM_ERRORS,
         errors
+    }
+}
+
+const clearItems = () => {
+    return {
+        type: CLEAR_ITEMS
     }
 }
 
@@ -80,4 +87,8 @@ export const deleteItem = itemId => dispatch => {
         .then(item => {
             return dispatch(removeItem(item.data));
         });
+};
+
+export const clearItemState = () => dispatch => {
+    return dispatch(clearItems());
 };

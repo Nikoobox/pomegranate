@@ -1,4 +1,4 @@
-import { RECEIVE_ITEMS, RECEIVE_ITEM, REMOVE_ITEM } from "./../actions/item_actions";
+import { RECEIVE_ITEMS, RECEIVE_ITEM, REMOVE_ITEM, CLEAR_ITEMS } from "./../actions/item_actions";
 
 const ItemReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -14,7 +14,9 @@ const ItemReducer = (state = {}, action) => {
             return { ...state, [action.item.data._id]: action.item.data };
         case REMOVE_ITEM:
             delete newState[action.id]
-            return newState
+            return newState;
+        case CLEAR_ITEMS:
+            return {};
         default:
             return state;
     }
