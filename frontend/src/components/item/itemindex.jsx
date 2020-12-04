@@ -32,7 +32,7 @@ export class ItemIndex extends React.Component {
         this.setState({
             startDate: date
         })
-    }å
+    }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -139,6 +139,7 @@ export class ItemIndex extends React.Component {
 
                             </div>
                         </form>
+                      
 
                     </div>
                     <div className='items'>
@@ -156,9 +157,11 @@ export class ItemIndex extends React.Component {
                         <button onClick={() => this.props.fetchRecipe(`${searchItems}`)}>Discover Recipes
                         {/* <span><AiOutlineArrowDown /></span> */}
                         </button>
-
+                        <div className='recipes-box'>
+                            {recipes}
+                        </div>
                 
-                <form onSubmit={this.handleSubmit} className='item-form'>
+                {/* <form onSubmit={this.handleSubmit} className='item-form'>
                     <div className='welcome-message'>Add Item Form</div>   
                         <input
                             type="text"
@@ -192,10 +195,10 @@ export class ItemIndex extends React.Component {
 
 
                     </div>
-                    <div className='recipes-box'>
-                        {recipes}
-                    </div>
+                    
+                </form> */}
                 </div>
+            </div>
             </div>
         )
     }
