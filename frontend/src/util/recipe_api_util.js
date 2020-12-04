@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const APIKEY = "43c6aa93cab54e04a4a8b0aa9c3e08a7"; 
+const APIKEY = "227956752c904fc1b6561d11c56f95b1"; 
 
 
 export const getRecipeByIngred = (items) => {
