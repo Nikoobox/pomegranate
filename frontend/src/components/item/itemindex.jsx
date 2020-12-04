@@ -1,6 +1,7 @@
 import React from 'react'
 import ItemShow from './itemshow';
 import {Link} from 'react-router-dom';
+import { AiOutlineArrowDown } from "react-icons/ai";
 // import DayPickerInput from 'react-day-picker/DayPickerInput';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
@@ -20,10 +21,6 @@ export class ItemIndex extends React.Component {
     componentDidMount() {
         this.props.getUserItems(this.props.userId);
     }
-
-    // recipes() {
-    //     this.props.fetchRecipe(`${this.props.items.join(',+')}`)
-    // }
     
     update(field) {
         return e => this.setState({
@@ -61,16 +58,29 @@ export class ItemIndex extends React.Component {
         });
         const recipes = Object.values(this.props.recipes).map(recipe => {
             return (
-                <div key={recipe.id}>
-                    <Link to={`/${recipe.id}`}
-                    >{recipe.title}</Link>
-                    <img src={recipe.image} alt={recipe.title}/>
-                    {recipe.usedIngredients.map(item => {
-                        return <p>From kitchen: {item.name}</p>
-                    })}
-                    {recipe.missedIngredients.map(item => {
-                        return <p>Missing Item: {item.name}</p>
-                    })}
+                <div key={recipe.id} className='recipe-card'>
+                    <Link to={`/${recipe.id}`} className='recipe-card-link'
+                    >
+                    <div className='recipe-image-box'>
+                        <img src={recipe.image} alt={recipe.title} className='recipe-image'/>
+                    </div>
+                    <div className='card-info'>
+                        <div className='recipe-title-box'>
+                            {recipe.title}
+                        </div>
+                        <div className='from-kitchen-box'>
+                            {recipe.usedIngredients.map(item => {
+                            return <div className='kitchen-item-yes'>From kitchen: {item.name}</div>
+                        })}
+                        </div>
+                        <div className='missing-items-box'>
+                            {recipe.missedIngredients.map(item => {
+                                return <div className='kitchen-item-no'>Missing Item: {item.name}</div>
+                        })}
+                        </div>
+
+                    </div>
+                    </Link>
                 </div>
             )
         })
@@ -122,7 +132,9 @@ export class ItemIndex extends React.Component {
                 </div>
                 <div className='recipes-container'>
                     <div className='fetch-rec-button-box'>
-                        <button onClick={() => this.props.fetchRecipe(`${searchItems}`)}>Discover Recipes</button>
+                        <button onClick={() => this.props.fetchRecipe(`${searchItems}`)}>Discover Recipes
+                        {/* <span><AiOutlineArrowDown /></span> */}
+                        </button>
 
                     </div>
                     <div className='recipes-box'>

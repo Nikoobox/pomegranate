@@ -2,8 +2,6 @@
     width: 100vw;
     display:flex;
     margin-bottom:50px;
-    // align-items: center;
-    // justify-content: center;
     .form-container{
         width:30%;
         display: flex;
@@ -67,12 +65,13 @@
         display:flex;
         width:70%;
         flex-direction: column;
+        // align-items: start;
         .message{
             text-align:center;
         }
         .items-container{
             // margin-bottom:200px;
-            margin-left:20px;
+            // margin-left:20px;
             margin-right:20px;
             display:flex;
             justify-content: space-around;
@@ -123,6 +122,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        margin-bottom:40px;
         button{
             padding:10px;
             border-radius:30px;
@@ -131,11 +131,64 @@
             transition: ease-out all 0.2s;
             color:$mainRed;
             font-size:18px;
+            // span{
+            //     display:none;
+            //     transition: ease-out all 0.8s;
+            //     // align-items: center;
+            // }
             &:hover{
                 background: $mainRed;
                 color:white;
                 border: 2px solid $mainRed;
+                // transition: ease-out all 0.2s;
                 cursor:pointer;
+                // span{
+                //     display:inline;
+                // }
+            }
+        }
+    }
+    .recipes-box{
+        margin: 0 100px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: start;
+        justify-content: space-between;
+        .recipe-card{
+            // background:$mainYellowLignt;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            width:20%;
+            margin:20px;
+            .recipe-image-box{
+                width:100%;
+                img{
+                    width:100%;
+                    position:top;
+                    object-fit: cover;
+                }
+
+            }
+            .card-info{
+                padding:10px;
+                .recipe-title-box{
+                    font-size: 20px;
+                    margin-bottom: 10px;
+                }
+                .from-kitchen-box{
+                    margin-bottom:5px;
+                    .kitchen-item-yes{
+                        color:$mainGreen;
+                        font-size:16px;
+                    }
+                }
+                .missing-items-box{
+                    .kitchen-item-no{
+                        color:$mainRed;
+                        font-size:16px;
+                        // font-weight: 300;
+                    }
+                }
             }
         }
     }
