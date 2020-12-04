@@ -63,7 +63,6 @@ export class ItemIndex extends React.Component {
             return (
                 <div key={recipe.id}>
                     <Link to={`/${recipe.id}`}
-                        // onClick={() => this.props.history.push(``)}
                     >{recipe.title}</Link>
                     <img src={recipe.image} alt={recipe.title}/>
                     {recipe.usedIngredients.map(item => {
@@ -76,55 +75,59 @@ export class ItemIndex extends React.Component {
             )
         })
         return (
-            <div className='item-container'>
+            <div>
+                <div className='item-container'>
+                    <div className='form-container'>
+                        <form onSubmit={this.handleSubmit} className='item-form'>
+                            <div className='welcome-message'>Add Item Form</div>   
+                            <input
+                                type="text"
+                                value={this.state.name}
+                                onChange={this.update('name')}
+                                placeholder="Item name"
+                            />
+                            <input
+                                type="number"
+                                value={this.state.quantity}
+                                onChange={this.update('quantity')}
+                                placeholder="Item quantity"
+                            />
+                            <input
+                                type="date"
+                                value={this.state.expirationDate}
+                                onChange={this.update('expirationDate')}
+                                placeholder="Enter an Expiration Date"
+                            />
+                            <input
+                                type="text"
+                                value={this.state.type}
+                                onChange={this.update('type')}
+                                placeholder="Enter an item type"
+                            />
+                            <div className='submit-item-btn-container'>
+                            <button>Add Item</button>
 
+                            </div>
+                        </form>
 
+                    </div>
+                    <div className='items'>
+                        <div className='message'>Your Kitchen has the following products:</div>
+                        <div className='items-container'>
+                            {items}
 
-                <button onClick={() => this.props.fetchRecipe(`${searchItems}`)}>Discover Recipes</button>
-                <div>
-                    <ul>
-                        {recipes}
-                    </ul>
+                        </div>
+                        
+                    </div>
                 </div>
-                
-                <form onSubmit={this.handleSubmit} className='item-form'>
-                    <div className='welcome-message'>Add Item Form</div>   
-                    <input
-                        type="text"
-                        value={this.state.name}
-                        onChange={this.update('name')}
-                        placeholder="Item name"
-                    />
-                    <input
-                        type="number"
-                        value={this.state.quantity}
-                        onChange={this.update('quantity')}
-                        placeholder="Item quantity"
-                    />
-                    <input
-                        type="date"
-                        value={this.state.expirationDate}
-                        onChange={this.update('expirationDate')}
-                        placeholder="Enter an Expiration Date"
-                    />
-                    <input
-                        type="text"
-                        value={this.state.type}
-                        onChange={this.update('type')}
-                        placeholder="Enter an item type"
-                    />
-                    <div className='submit-item-btn-container'>
-                    <button>Add Item</button>
+                <div className='recipes-container'>
+                    <div className='fetch-rec-button-box'>
+                        <button onClick={() => this.props.fetchRecipe(`${searchItems}`)}>Discover Recipes</button>
 
                     </div>
-                </form>
-                <div className='items'>
-                    <div className='message'>Your Kitchen has the following products:</div>
-                    <div className='items-container'>
-                        {items}
-
+                    <div className='recipes-box'>
+                        {recipes}
                     </div>
-                    
                 </div>
             </div>
         )

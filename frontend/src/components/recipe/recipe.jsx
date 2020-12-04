@@ -10,9 +10,7 @@ class Recipe extends React.Component {
         this.props.fetchRecipeInfo(this.props.id)
     }
     render() {
-        // const ingres = this.props.recipe.extendedIngredients.map(ingre => {
-        //     return <img src={ingre.image} alt="ingre"/>
-        // })
+        
         if(this.props.recipe)
             return (
             <div>
@@ -27,3 +25,4 @@ class Recipe extends React.Component {
 }
 
 export default Recipe;
+
