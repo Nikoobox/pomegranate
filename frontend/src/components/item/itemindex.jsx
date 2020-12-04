@@ -18,7 +18,7 @@ export class ItemIndex extends React.Component {
     }
     componentDidMount() {
         this.props.getUserItems(this.props.userId);
-        this.props.fetchRecipe('broccoli');
+        // this.props.fetchRecipe('broccoli');
     }
 
     // recipes() {
@@ -66,53 +66,47 @@ export class ItemIndex extends React.Component {
         return (
             <div className='item-container'>
 
-                <div>
-                    <ul>
-                        {recipes}
-                    </ul>
-                </div>
-                <form onSubmit={this.handleSubmit} className='item-form'>
-                        <input
-                            type="text"
-                            value={this.state.name}
-                            onChange={this.update('name')}
-                            placeholder="Item name"
-                        />
-                        <br />
-                        <input
-                            type="number"
-                            value={this.state.quantity}
-                            onChange={this.update('quantity')}
-                            placeholder="Item quantity"
-                        />
-                        <br />
-                        <input
-                            type="date"
-                            value={this.state.expirationDate}
-                            onChange={this.update('expirationDate')}
-                            placeholder="Enter an Expiration Date"
-                        />
-                        <br />
-                        {/* <DatePicker 
-                            placeholder="Enter an Expiration Date 2"
-                            onChange={this.update('expirationDate')}
-                            value={this.state.expirationDate}
-                            name="expirationDate"
-                            dateFormat="MM/dd/yyyy"
-                        /> */}
-                        <br />
-                        <input
-                            type="text"
-                            value={this.state.type}
-                            onChange={this.update('type')}
-                            placeholder="Enter an item type"
-                        />
-                        <br />
-                        <input type="submit" value="Add Item"/>
-                <ul>
-                    {items}
-                </ul>
+                {/* {recipes} */}
+                
+                <form onSubmit={this.handleSubmit} className='form'>
+                    <div className='welcome-message'>Add Item Form</div>   
+                    <input
+                        type="text"
+                        value={this.state.name}
+                        onChange={this.update('name')}
+                        placeholder="Item name"
+                    />
+                    <input
+                        type="number"
+                        value={this.state.quantity}
+                        onChange={this.update('quantity')}
+                        placeholder="Item quantity"
+                    />
+                    <input
+                        type="date"
+                        value={this.state.expirationDate}
+                        onChange={this.update('expirationDate')}
+                        placeholder="Enter an Expiration Date"
+                    />
+                    <input
+                        type="text"
+                        value={this.state.type}
+                        onChange={this.update('type')}
+                        placeholder="Enter an item type"
+                    />
+                    <div className='submit-item-btn-container'>
+                    <button>Add Item</button>
+
+                    </div>
                 </form>
+                <div className='items'>
+                    <div className='message'>Your Kitchen has the following products:</div>
+                    <div className='items-container'>
+                        {items}
+
+                    </div>
+                    
+                </div>
             </div>
         )
     }
