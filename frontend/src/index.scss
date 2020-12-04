@@ -1,22 +1,19 @@
-
 @import 'styles/config';
-// @import 'styles/buttons';
 @import 'components/nav/navbar';
 @import 'components/main/main';
 @import 'components/footer/footer';
 @import 'components/session/login';
 @import 'components/item/item';
 @import 'components/item_edit/item_edit';
+@import 'components/item_edit/modal';
+@import 'components/recipe/recipe';
 
-// item-container.scss
 *{
-  // border:0;
     margin:0;
     padding:0;
     box-sizing: border-box;
     
 }
-
 
 body {
   margin: 0;
