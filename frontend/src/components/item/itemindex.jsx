@@ -70,7 +70,7 @@ export class ItemIndex extends React.Component {
     render() {
         const searchItems = Object.values(this.props.items).map(item => {
             return item.name
-        })
+        });
 
         const items = Object.values(this.props.items).map(item => {
             return <ItemShow key={item._id} item={item} history={this.props.history}/>
@@ -89,7 +89,8 @@ export class ItemIndex extends React.Component {
                     })}
                 </div>
             )
-        })
+        });
+
         return (
             <div className='item-container'>
 
