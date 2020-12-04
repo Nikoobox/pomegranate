@@ -89,7 +89,7 @@ router.patch('/:itemId',
                     Item.findOneAndUpdate({_id: req.params.itemId}, req.body, function(err, item){
                         if (err) {
                             return res.status(400).json(err);
-                        }else {
+                        } else {
                             newItem = req.body;
                             res.send(newItem);
                         }
