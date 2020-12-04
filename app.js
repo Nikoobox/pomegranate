@@ -29,16 +29,6 @@ mongoose
     .then(() => console.log("Connected to MongoDB successfully"))
     .catch(err => console.log(err));
 
-app.get('/', (req, res) => {
-    const user = new User({
-        username: 'nick',
-        email: 'nick@nick.com',
-        password: '1234567890'
-    })
-    user.save();
-    res.send('Hello Programmers!');
-})
-
 app.use(passport.initialize());
 require("./config/passport")(passport);
 

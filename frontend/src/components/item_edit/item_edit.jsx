@@ -16,7 +16,6 @@ class ItemEdit extends React.Component {
 
     componentDidMount() {
         this.props.getItem(this.props.itemId);
-
     }
 
     checkEmptyState() {
@@ -40,8 +39,13 @@ class ItemEdit extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.editItem(Object.assign( this.state, { _id: this.props.itemId }))
-            .then(() => this.props.history.push("/browse"));
+        this.props.editItem(Object.assign( this.state, { quantity: String(this.state.quantity), _id: this.props.itemId }))
+            .then(res => {
+                if (res.type === "RECEIVE_ITEM") {
+                    this.props.history.push("/browse")
+                }
+            });
+        
     }
 
     handleDelete() {
@@ -49,18 +53,45 @@ class ItemEdit extends React.Component {
             .then(() => this.props.history.push("/browse"));;
     }
 
+    renderErrors() {
+        return (
+            <ul>
+                {Object.keys(this.props.errors).map((error, i) => (
+                    <li key={`error-${i}`} className='error'>
+                        {this.props.errors[error]}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
+
+    formatDate(date) {
+        const rawDate = new Date(date);
+        const numSeconds = 8640000;
+        const newDate = new Date(rawDate.getTime() + numSeconds);
+        let year = newDate.getFullYear();
+        let day = newDate.getDate();
+        let month = newDate.getMonth() + 1;
+        if (month < 10) {
+            month = '0' + month;
+        }
+        if (day < 10) {
+            day = '0' + day;
+        }
+        return [year, month, day].join('-');
+    }
+
     render() {
         if (this.props.item && this.checkEmptyState()) {
             this.setState({
                 name: this.props.item.name,
                 quantity: this.props.item.quantity,
-                expirationDate: new Date(this.props.item.expirationDate),
+                expirationDate: this.formatDate(this.props.item.expirationDate),
                 type: this.props.item.type,
             })
         }
         return (
             <div className="item-edit-page">
-                <p>Hi</p>
                 <form onSubmit={this.handleSubmit}>
                     <input type="text"
                         value={this.state.name}
@@ -88,6 +119,9 @@ class ItemEdit extends React.Component {
                     />
                     <br />
                     <input type="submit" value="Edit Item" />
+                    <div className='error-container'>
+                        {this.renderErrors()}
+                    </div>
                 </form>
 
                 <button onClick={this.handleDelete}>Delete Item</button>

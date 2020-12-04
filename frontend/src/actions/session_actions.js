@@ -29,9 +29,9 @@ export const signup = user => dispatch => {
     return APIUtil.signup(user)
         .then(user => {
             return dispatch(receiveUserSignIn(user))
-            //  dispatch(receiveCurrentUser())
-        })
-        .catch(err =>  dispatch(receiveErrors(err.response.data)));
+        }, err => {
+            return dispatch(receiveErrors(err.response.data))
+        });
 };
 
 // export const signup = user => dispatch => (

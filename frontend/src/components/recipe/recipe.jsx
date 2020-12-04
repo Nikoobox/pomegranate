@@ -7,8 +7,14 @@ class Recipe extends React.Component {
     }
 
     componentDidMount() {
+        // debugger;
         this.props.fetchRecipeInfo(this.props.id)
     }
+
+    componentWillUnmount() {
+        this.props.clearRecipeState();
+    }
+
     render() {
         // const ingres = this.props.recipe.extendedIngredients.map(ingre => {
         //     return <img src={ingre.image} alt="ingre"/>
