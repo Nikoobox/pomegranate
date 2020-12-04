@@ -7,10 +7,7 @@ class Recipe extends React.Component {
     }
 
     componentDidMount() {
-<<<<<<< HEAD
-=======
         // debugger;
->>>>>>> Validations
         this.props.fetchRecipeInfo(this.props.id)
     }
     render() {
