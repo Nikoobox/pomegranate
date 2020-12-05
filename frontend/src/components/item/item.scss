@@ -109,6 +109,10 @@
                 .item-box-expiration{
                     font-weight:300;
                 }
+                .expired {
+                    color: red;
+                    text-shadow: 1px 1px 5px rgba(255, 0, 0, 1);
+                }
             }   
         }
     }

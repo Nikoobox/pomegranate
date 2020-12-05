@@ -13,9 +13,13 @@ class ItemShow extends React.Component {
         const date = new Date(item.expirationDate);
         let dateDiv;
         if (date.toDateString() === "Wed Dec 31 1969") {
-            dateDiv = "No expiration date.";
+            dateDiv = <div className='item-box-expiration'>No expiration date.</div>
         } else {
-            dateDiv = `This product will expire on ${date.toDateString()}.`;
+            if (date < new Date()) {
+                dateDiv = <div className='item-box-expiration expired'>This product expired on {date.toDateString()}.</div>
+            } else {
+                dateDiv = <div className='item-box-expiration'>This product will expire on {date.toDateString()}.</div>
+            }
         }
         return (
            <div className='item-box'>
@@ -23,7 +27,7 @@ class ItemShow extends React.Component {
                     <div className='item-name'>{item.name}</div>
                     {quantities}
                 </Link>
-                <div className='item-box-expiration'>{dateDiv}</div>
+                {dateDiv}
            </div>
         )
     }
