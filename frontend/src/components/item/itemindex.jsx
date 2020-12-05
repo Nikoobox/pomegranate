@@ -1,12 +1,14 @@
+
 import React from 'react'
 import ItemShow from './itemshow';
 import {Link} from 'react-router-dom';
 import { AiOutlineArrowDown } from "react-icons/ai";
 // import DayPickerInput from 'react-day-picker/DayPickerInput';
-import DatePicker from 'react-datepicker';
+import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 export class ItemIndex extends React.Component {
+
     constructor(props
         ) {
         super(props)
@@ -34,22 +36,21 @@ export class ItemIndex extends React.Component {
         })
     }
 
-    handleSubmit(e) {
-        e.preventDefault();
-        let item = {
-            name: this.state.name,
-            quantity: this.state.quantity,
-            type: this.state.type,
-            expirationDate: this.state.expirationDate
-        };
-
-        this.props.createItem(item)
-            .then(() => this.setState({
-                name: "",
-                quantity: "",
-                type: "",
-                expirationDate: ""
-            }));
+  handleSubmit(e) {
+    e.preventDefault();
+    let item = {
+      name: this.state.name,
+      quantity: this.state.quantity,
+      type: this.state.type,
+      expirationDate: this.state.expirationDate,
+    };
+    this.props.createItem(item)
+        .then(() => this.setState({
+            name: "",
+            quantity: "",
+            type: "",
+            expirationDate: ""
+        }));
     }
 
     renderErrors() {
@@ -72,13 +73,13 @@ export class ItemIndex extends React.Component {
         const items = Object.values(this.props.items).map(item => {
             return <ItemShow key={item._id} item={item} history={this.props.history}/>
         });
+        
         const recipes = Object.values(this.props.recipes).map(recipe => {
             return (
                 <div key={recipe.id} className='recipe-card'>
-                    <Link to={`/${recipe.id}`} className='recipe-card-link'>
-                        <div className='recipe-image-box'>
-                            <img src={recipe.image} alt={recipe.title} className='recipe-image'/>
-                        </div>
+                    <div className='recipe-card-link'>
+                    <Link to={`/${recipe.id}`} className='recipe-image-box'>
+                        <img src={recipe.image} alt={recipe.title} className='recipe-image'/>
                     </Link>
                     <div className='card-info'>
                         <div className='recipe-title-box'>
@@ -96,6 +97,7 @@ export class ItemIndex extends React.Component {
                         </div>
                     </div>
                 </div>
+                // </div>
             )
         });
 
