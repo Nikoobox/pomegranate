@@ -89,12 +89,12 @@ export class ItemIndex extends React.Component {
                                 </div>
                                 <div className='from-kitchen-box'>
                                     {recipe.usedIngredients.map(item => {
-                                        return <div className='kitchen-item-yes'>From kitchen: {item.name}</div>
+                                        return <div key={item.originalString} className='kitchen-item-yes'>From kitchen: {item.name}</div>
                                     })}
                                 </div>
                                 <div className='missing-items-box'>
                                     {recipe.missedIngredients.map(item => {
-                                        return <div className='kitchen-item-no'><Link to="/googlemap"> Missing Item: {item.name}</Link></div>
+                                        return <div key={item.originalString} className='kitchen-item-no'><Link to="/googlemap"> Missing Item: {item.name}</Link></div>
                                     })}
                                 </div>
                             </div>
