@@ -73,17 +73,13 @@ export class ItemIndex extends React.Component {
             return <ItemShow key={item._id} item={item} history={this.props.history}/>
         });
         const recipes = Object.values(this.props.recipes).map(recipe => {
-
-            
-
             return (
-
                 <div key={recipe.id} className='recipe-card'>
-                    <Link to={`/${recipe.id}`} className='recipe-card-link'
-                    >
-                    <div className='recipe-image-box'>
-                        <img src={recipe.image} alt={recipe.title} className='recipe-image'/>
-                    </div>
+                    <Link to={`/${recipe.id}`} className='recipe-card-link'>
+                        <div className='recipe-image-box'>
+                            <img src={recipe.image} alt={recipe.title} className='recipe-image'/>
+                        </div>
+                    </Link>
                     <div className='card-info'>
                         <div className='recipe-title-box'>
                             {recipe.title}
@@ -95,12 +91,10 @@ export class ItemIndex extends React.Component {
                         </div>
                         <div className='missing-items-box'>
                             {recipe.missedIngredients.map(item => {
-                                return <div className='kitchen-item-no'>Missing Item: {item.name}</div>
+                                return <div className='kitchen-item-no'><Link to="/googlemap"> Missing Item: {item.name}</Link></div>
                         })}
                         </div>
-
                     </div>
-                    </Link>
                 </div>
             )
         });
@@ -136,70 +130,28 @@ export class ItemIndex extends React.Component {
                                 placeholder="Enter an item type"
                             />
                             <div className='submit-item-btn-container'>
-                            <button>Add Item</button>
-
+                                <button>Add Item</button>
                             </div>
                         </form>
-                      
-
                     </div>
                     <div className='items'>
                         <div className='message'>Your Kitchen has the following products:</div>
                         <div className='items-container'>
                             {items}
-
                         </div>
-                        
                     </div>
                 </div>
 
                 <div className='recipes-container'>
                     <div className='fetch-rec-button-box'>
                         <button onClick={() => this.props.fetchRecipe(`${searchItems}`)}>Discover Recipes
-                        {/* <span><AiOutlineArrowDown /></span> */}
+                            {/* <span><AiOutlineArrowDown /></span> */}
                         </button>
                         <div className='recipes-box'>
                             {recipes}
                         </div>
-                
-                {/* <form onSubmit={this.handleSubmit} className='item-form'>
-                    <div className='welcome-message'>Add Item Form</div>   
-                        <input
-                            type="text"
-                            value={this.state.name}
-                            onChange={this.update('name')}
-                            placeholder="Item name"
-                        />
-                        <input
-                            type="number"
-                            value={this.state.quantity}
-                            onChange={this.update('quantity')}
-                            placeholder="Item quantity"
-                        />
-                        <input
-                            type="date"
-                            value={this.state.expirationDate}
-                            onChange={this.update('expirationDate')}
-                            placeholder="Enter an Expiration Date"
-                        />
-                        <input
-                            type="text"
-                            value={this.state.type}
-                            onChange={this.update('type')}
-                            placeholder="Enter an item type"
-                        />
-                        <div className='submit-item-btn-container'>
-                        <button>Add Item</button>
-                        <div className='error-container'>
-                            {this.renderErrors()}
-                        </div>
-
-
                     </div>
-                    
-                </form> */}
                 </div>
-            </div>
             </div>
         )
     }
