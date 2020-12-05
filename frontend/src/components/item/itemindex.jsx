@@ -75,40 +75,30 @@ export class ItemIndex extends React.Component {
         <ItemShow key={item._id} item={item} history={this.props.history} />
       );
     });
-    // const recipes = Object.values(this.props.recipes).map((recipe) => {
-    //   return (
-    //     <div key={recipe.id}>
-    //       <Link to={`/${recipe.id}`}>{recipe.title}</Link>
-        
-        {/* const items = Object.values(this.props.items).map(item => {
-            return <ItemShow key={item._id} item={item} history={this.props.history}/>
-        }); */}
         const recipes = Object.values(this.props.recipes).map(recipe => {
             return (
                 <div key={recipe.id} className='recipe-card'>
                     <div className='recipe-card-link'>
-                    <Link to={`/${recipe.id}`} className='recipe-image-box'>
-                        <img src={recipe.image} alt={recipe.title} className='recipe-image'/>
-                    </Link>
-                    <div className='card-info'>
-                        <div className='recipe-title-box'>
-                            {recipe.title}
+                        <Link to={`/${recipe.id}`} className='recipe-image-box'>
+                            <img src={recipe.image} alt={recipe.title} className='recipe-image'/>
+                        </Link>
+                        <div className='card-info'>
+                            <div className='recipe-title-box'>
+                                {recipe.title}
+                            </div>
+                            <div className='from-kitchen-box'>
+                                {recipe.usedIngredients.map(item => {
+                                return <div className='kitchen-item-yes'>From kitchen: {item.name}</div>
+                            })}
+                            </div>
+                            <div className='missing-items-box'>
+                                {recipe.missedIngredients.map(item => {
+                                    return <Link to="/googlemap"> Missing Item: {item.name}</Link>;
+                            })}
+                            </div>
                         </div>
-                        <div className='from-kitchen-box'>
-                            {recipe.usedIngredients.map(item => {
-                            return <div className='kitchen-item-yes'>From kitchen: {item.name}</div>
-                        })}
-                        </div>
-                        <div className='missing-items-box'>
-                            {recipe.missedIngredients.map(item => {
-                                 return <Link to="/googlemap"> Missing Item: {item.name}</Link>;
-                        })}
-                        </div>
-
-                    </div>
                     </div>
                 </div>
-                // </div>
             )
         })
         return (
@@ -146,17 +136,15 @@ export class ItemIndex extends React.Component {
 
                             </div>
                         </form>
-                      
-
                     </div>
+
                     <div className='items'>
                         <div className='message'>Your Kitchen has the following products:</div>
                         <div className='items-container'>
                             {items}
-
                         </div>
-                        
                     </div>
+
                 </div>
 
                 <div className='recipes-container'>
@@ -167,9 +155,8 @@ export class ItemIndex extends React.Component {
                         <div className='recipes-box'>
                             {recipes}
                         </div>
-               
+                    </div>
                 </div>
-            </div>
             </div>
         )
     }
