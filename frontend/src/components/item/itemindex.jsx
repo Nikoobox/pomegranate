@@ -134,6 +134,9 @@ export class ItemIndex extends React.Component {
                             <div className='submit-item-btn-container'>
                                 <button>Add Item</button>
                             </div>
+                            <div className='error-container'>
+                                {this.renderErrors()}
+                            </div>
                         </form>
                     </div>
                     <div className='items'>
