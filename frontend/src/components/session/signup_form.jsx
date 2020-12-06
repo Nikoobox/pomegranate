@@ -8,6 +8,7 @@ class SignupForm extends React.Component {
         this.state = {
             email: '',
             kitchenName: '',
+            address: "",
             password: '',
             password2: ''
         };
@@ -28,6 +29,7 @@ class SignupForm extends React.Component {
         let user = {
             email: this.state.email,
             kitchenName: this.state.kitchenName,
+            address: this.state.address,
             password: this.state.password,
             password2: this.state.password2
         };
@@ -76,6 +78,12 @@ class SignupForm extends React.Component {
                             value={this.state.kitchenName}
                             onChange={this.update('kitchenName')}
                             placeholder="Kitchen name"
+                        />
+
+                        <input type="text"
+                            value={this.state.address}
+                            onChange={this.update('address')}
+                            placeholder="Home address"
                         />
                        
                         <input type="password"
