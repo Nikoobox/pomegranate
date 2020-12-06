@@ -1,16 +1,16 @@
-
 import React from 'react'
 import ItemShow from './itemshow';
 import {Link} from 'react-router-dom';
 import { AiOutlineArrowDown } from "react-icons/ai";
+import { Dropdown, DropdownButton } from 'react-bootstrap';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 // import DayPickerInput from 'react-day-picker/DayPickerInput';
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+// import DatePicker from "react-datepicker";
+// import "react-datepicker/dist/react-datepicker.css";
 
 export class ItemIndex extends React.Component {
 
-    constructor(props
-        ) {
+    constructor(props) {
         super(props)
         this.state = {
             name: "",
@@ -66,49 +66,39 @@ export class ItemIndex extends React.Component {
     }
   
  render() {
+    console.log(this.state);
     const searchItems = Object.values(this.props.items).map((item) => {
       return item.name;
     });
-
     const items = Object.values(this.props.items).map((item) => {
       return (
-        <ItemShow key={item._id} item={item} history={this.props.history} />
+        <ItemShow key={item._id} item={item} openModal={this.props.openModal}/>
       );
     });
-    // const recipes = Object.values(this.props.recipes).map((recipe) => {
-    //   return (
-    //     <div key={recipe.id}>
-    //       <Link to={`/${recipe.id}`}>{recipe.title}</Link>
-        
-        {/* const items = Object.values(this.props.items).map(item => {
-            return <ItemShow key={item._id} item={item} history={this.props.history}/>
-        }); */}
         const recipes = Object.values(this.props.recipes).map(recipe => {
             return (
                 <div key={recipe.id} className='recipe-card'>
                     <div className='recipe-card-link'>
-                    <Link to={`/${recipe.id}`} className='recipe-image-box'>
-                        <img src={recipe.image} alt={recipe.title} className='recipe-image'/>
-                    </Link>
-                    <div className='card-info'>
-                        <div className='recipe-title-box'>
-                            {recipe.title}
+                        <Link to={`/${recipe.id}`} className='recipe-image-box'>
+                            <img src={recipe.image} alt={recipe.title} className='recipe-image'/>
+                        </Link>
+                        <div className='card-info'>
+                            <div className='recipe-title-box'>
+                                {recipe.title}
+                            </div>
+                            <div className='from-kitchen-box'>
+                                {recipe.usedIngredients.map(item => {
+                                return <div className='kitchen-item-yes'>From kitchen: {item.name}</div>
+                            })}
+                            </div>
+                            <div className='missing-items-box'>
+                                {recipe.missedIngredients.map(item => {
+                                    return <Link to="/googlemap"> Missing Item: {item.name}</Link>;
+                            })}
+                            </div>
                         </div>
-                        <div className='from-kitchen-box'>
-                            {recipe.usedIngredients.map(item => {
-                            return <div className='kitchen-item-yes'>From kitchen: {item.name}</div>
-                        })}
-                        </div>
-                        <div className='missing-items-box'>
-                            {recipe.missedIngredients.map(item => {
-                                 return <Link to="/googlemap"> Missing Item: {item.name}</Link>;
-                        })}
-                        </div>
-
-                    </div>
                     </div>
                 </div>
-                // </div>
             )
         })
         return (
@@ -135,28 +125,43 @@ export class ItemIndex extends React.Component {
                                 onChange={this.update('expirationDate')}
                                 placeholder="Enter an Expiration Date"
                             />
-                            <input
+                            {/* <input
                                 type="text"
                                 value={this.state.type}
                                 onChange={this.update('type')}
                                 placeholder="Enter an item type"
-                            />
+                            /> */}
+
+
+                            <div className="form-control-input">
+                                <select className="form-control" onChange={this.update('type')} required>
+                                    {/* <optgroup className='options'> */}
+                                        <option selected>Select an item type</option>
+                                        <option value="Fruits and vegitables">Fruits and vegitables</option>
+                                        <option value="Meat">Meat</option>
+                                        <option value="Dairy">Dairy</option>
+                                        <option value="Grains">Grains</option>
+                                        <option value="Beverages">Beverages</option>
+                                        <option value="Condiments">Condiments</option>
+                                        <option value="Misc">Misc</option>
+
+                                    {/* </optgroup> */}
+                                </select>
+                            </div>
+
                             <div className='submit-item-btn-container'>
                             <button>Add Item</button>
-
                             </div>
                         </form>
-                      
-
                     </div>
+
                     <div className='items'>
                         <div className='message'>Your Kitchen has the following products:</div>
                         <div className='items-container'>
                             {items}
-
                         </div>
-                        
                     </div>
+
                 </div>
 
                 <div className='recipes-container'>
@@ -167,9 +172,8 @@ export class ItemIndex extends React.Component {
                         <div className='recipes-box'>
                             {recipes}
                         </div>
-               
+                    </div>
                 </div>
-            </div>
             </div>
         )
     }

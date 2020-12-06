@@ -5,7 +5,6 @@ import modal from './modal_reducer';
 import info from './map_reducer';
 
 export default combineReducers({
-    // filters,
     modal,
     info
 });

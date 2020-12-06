@@ -10,9 +10,13 @@ import ItemIndexContainer from "./item/item_index_container";
 import ItemEditContainer from "./item_edit/item_edit_container";
 import RecipeContainer from "./recipe/recipe_container";
 import MapContainer from "./googlemaps/map_container";
+import Map from "./googlemaps/map";
+import Modal from './item_edit/modal';
+
 
 const App = () => (
   <div>
+    <Modal/>
     <NavBarContainer />
     <Switch>
       <AuthRoute exact path="/" component={MainPageContainer} />
