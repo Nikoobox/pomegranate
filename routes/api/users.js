@@ -19,6 +19,15 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
     });
 })
 
+router.get('/userInfo', passport.authenticate('jwt', { session: false }), (req, res) => {
+    res.json({
+        id: req.user.id,
+        kitchenName: req.user.kitchenName,
+        address: req.user.address
+    })
+})
+
+
 router.post('/register', (req, res) => {
     const { errors, isValid } = validateRegisterInput(req.body);
 
@@ -37,6 +46,7 @@ router.post('/register', (req, res) => {
                 const newUser = new User({
                     kitchenName: req.body.kitchenName,
                     email: req.body.email,
+                    address: req.body.address,
                     password: req.body.password,
                 })
 

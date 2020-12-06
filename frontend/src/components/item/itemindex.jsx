@@ -1,16 +1,16 @@
-
 import React from 'react'
 import ItemShow from './itemshow';
 import {Link} from 'react-router-dom';
 import { AiOutlineArrowDown } from "react-icons/ai";
+import { Dropdown, DropdownButton } from 'react-bootstrap';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 // import DayPickerInput from 'react-day-picker/DayPickerInput';
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+// import DatePicker from "react-datepicker";
+// import "react-datepicker/dist/react-datepicker.css";
 
 export class ItemIndex extends React.Component {
 
-    constructor(props
-        ) {
+    constructor(props) {
         super(props)
         this.state = {
             name: "",
@@ -133,12 +133,30 @@ export class ItemIndex extends React.Component {
                                 onChange={this.update('expirationDate')}
                                 placeholder="Enter an Expiration Date"
                             />
-                            <input
+                            {/* <input
                                 type="text"
                                 value={this.state.type}
                                 onChange={this.update('type')}
                                 placeholder="Enter an item type"
-                            />
+                            /> */}
+
+
+                            <div className="form-control-input">
+                                <select className="form-control" onChange={this.update('type')} required>
+                                    {/* <optgroup className='options'> */}
+                                        <option selected>Select an item type</option>
+                                        <option value="Fruits and vegitables">Fruits and vegitables</option>
+                                        <option value="Meat">Meat</option>
+                                        <option value="Dairy">Dairy</option>
+                                        <option value="Grains">Grains</option>
+                                        <option value="Beverages">Beverages</option>
+                                        <option value="Condiments">Condiments</option>
+                                        <option value="Misc">Misc</option>
+
+                                    {/* </optgroup> */}
+                                </select>
+                            </div>
+
                             <div className='submit-item-btn-container'>
                                 <button>Add Item</button>
                             </div>
