@@ -45,13 +45,18 @@ export class ItemIndex extends React.Component {
       expirationDate: this.state.expirationDate,
     };
     this.props.createItem(item)
-        .then(() => this.setState({
-            name: "",
-            quantity: "",
-            type: "",
-            expirationDate: ""
-        }));
-    }
+        .then(
+        err => {
+            console.log(err)
+        },
+            this.setState({
+                name: "",
+                quantity: "",
+                type: "",
+                expirationDate: ""
+            })
+        );
+}
 
     renderErrors() {
         return (
