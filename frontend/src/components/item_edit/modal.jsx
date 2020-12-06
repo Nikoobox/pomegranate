@@ -1,9 +1,10 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
+// import { withRouter } from 'react-router-dom';
 // import { receiveErrors } from '../../actions/session_actions';
-// import LoginFormContainer from '../session/login_form_container';
-import EditFormContainer from './item_edit_container';
+import TestContainer from '../nav/test_container';
+import ItemEditContainer from './item_edit_container';
 
 
 function Modal({ modal, closeModal }) {
@@ -11,13 +12,14 @@ function Modal({ modal, closeModal }) {
         return null;
     }
     let component;
+    
     switch (modal) {
         case 'edit':
-            component = <EditFormContainer />;
+            component = <ItemEditContainer />;
             break;
-        // case 'signup':
-        //     component = <SignupFormContainer />;
-        //     break;
+        case 'test':
+            component = <TestContainer />;
+            break;
         default:
             return null;
     }
@@ -39,7 +41,6 @@ const mapDispatchToProps = dispatch => {
     return {
         closeModal: () => {
             dispatch(closeModal());
-            // dispatch(receiveErrors([]))
         },
     };
 };
