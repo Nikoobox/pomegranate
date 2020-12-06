@@ -56,7 +56,7 @@ export class ItemIndex extends React.Component {
                 expirationDate: ""
             })
         );
-}
+    }
 
     renderErrors() {
         return (
