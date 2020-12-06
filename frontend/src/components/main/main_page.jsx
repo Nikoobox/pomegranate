@@ -21,7 +21,6 @@ class MainPage extends React.Component {
     render() {
         return (
             <div className="splash-container">
-                <div className='title'>Splash page</div>
                 <div className='logo-box'>
                     <div className='img-box'>
                         <img src={pom_logo} />

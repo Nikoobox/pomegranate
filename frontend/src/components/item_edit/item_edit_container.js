@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { getItem, editItem, deleteItem } from './../../actions/item_actions';
 import ItemEdit from './item_edit';
-import { closeModal } from '../../actions/modal_actions';
+import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
     const itemId = ownProps.match.params.itemId;
@@ -9,6 +9,7 @@ const mapStateToProps = (state, ownProps) => {
     return {
         itemId,
         item,
+        // items: state.items,
         errors: state.errors.item
     };
 }
@@ -18,7 +19,7 @@ const mapDispatchToProps = dispatch => {
         getItem: itemId => dispatch(getItem(itemId)),
         editItem: item => dispatch(editItem(item)),
         deleteItem: itemId => dispatch(deleteItem(itemId)),
-        closeModal: () => dispatch(closeModal()),
+        openModal: (type, info) => dispatch(openModal(type, info)),
     };
 }
 

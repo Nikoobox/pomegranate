@@ -34,27 +34,23 @@ class NavBar extends React.Component {
                     <div className='dropdown-container'>
                     <Dropdown>
                         <Dropdown.Toggle variant="success" id="dropdown-basic">
-                            <FaHamburger className='hamburger-icon'/>
+                                <FaHamburger />
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
                             <Dropdown.Item >My account</Dropdown.Item>
                             <Dropdown.Item >Something else</Dropdown.Item>
-                            <Dropdown.Item >Something else</Dropdown.Item>
+                            <Dropdown.Item onClick={() => this.props.openModal('test')}> modal test
+                                </Dropdown.Item>
                             <Dropdown.Item onClick={this.logoutUser} className='dropdown-logout'>Logout</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                     </div> 
-
                 </div>
-
-           
-
-            
             );
         } else {
             return (
-                <div className='navbar'>
+                <div className='navbar transparent'>
                     <Link to='/' onClick={this.props.clearRecipeState()} className='navbar-logo-cont'>
                         <div className='logo-img'><img src={pom_logo} /></div>
                         <div className='logo-name'>Pomegranate</div>
