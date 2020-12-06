@@ -11,8 +11,16 @@ class ItemShow extends React.Component {
             <div className='item-quantity'>You have {item.quantity} items</div>
 
         const date = new Date(item.expirationDate);
-        // console.log(this.props);
-        
+        let dateDiv;
+        if (date.toDateString() === "Wed Dec 31 1969") {
+            dateDiv = <div className='item-box-expiration'>No expiration date.</div>
+        } else {
+            if (date < new Date()) {
+                dateDiv = <div className='item-box-expiration expired'>This product expired on {date.toDateString()}.</div>
+            } else {
+                dateDiv = <div className='item-box-expiration'>This product will expire on {date.toDateString()}.</div>
+            }
+        }
         return (
            <div className='item-box'>
                 <Link to={`item/${item._id}/edit`} className='item-box-link' onClick={() => this.props.openModal('edit')} >
@@ -25,8 +33,7 @@ class ItemShow extends React.Component {
                     {quantities}
                 {/* </button> */}
                 </Link>
-                <div className='item-box-expiration'>This product will expire on {date.toDateString()}.</div>
-                {item.type}     
+                {dateDiv}
            </div>
         )
     }

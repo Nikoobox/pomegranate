@@ -10,6 +10,10 @@ module.exports = function validateItemInput(data) {
         errors.name = "Please enter name for the item";
     }
 
+    if (parseInt(data.quantity) < 0) {
+        errors.quantity = "Please enter positive quantity into the field";
+    }
+
     if (Validator.isEmpty(data.quantity)) {
         errors.quantity = "Please enter quantity field, such as 2 apples";
     }

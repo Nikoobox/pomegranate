@@ -24,13 +24,11 @@ class NavBar extends React.Component {
     getLinks() {
         if (this.props.loggedIn) {
             return (
-                
                 <div className='navbar'>
-                        <Link to='/' className='navbar-logo-cont'>
-                            <div className='logo-img'><img src={pom_logo }/></div>
-                            <div className='logo-name'>Pomegranate</div>
-                        </Link>
-
+                    <Link to='/' className='navbar-logo-cont'>
+                        <div className='logo-img'><img src={pom_logo}/></div>
+                        <div className='logo-name'>Pomegranate</div>
+                    </Link>
                     <div className='dropdown-container'>
                     <Dropdown>
                         <Dropdown.Toggle variant="success" id="dropdown-basic">
@@ -50,8 +48,8 @@ class NavBar extends React.Component {
             );
         } else {
             return (
-                <div className='navbar transparent'>
-                    <Link to='/' onClick={this.props.clearRecipeState()} className='navbar-logo-cont'>
+                <div className='navbar'>
+                    <Link to='/' className='navbar-logo-cont'>
                         <div className='logo-img'><img src={pom_logo} /></div>
                         <div className='logo-name'>Pomegranate</div>
                     </Link>
@@ -63,7 +61,7 @@ class NavBar extends React.Component {
     render() {
         return (
             <div>
-                { this.getLinks()}
+                {this.getLinks()}
             </div>
         );
     }

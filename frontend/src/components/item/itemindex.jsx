@@ -45,12 +45,17 @@ export class ItemIndex extends React.Component {
       expirationDate: this.state.expirationDate,
     };
     this.props.createItem(item)
-        .then(() => this.setState({
-            name: "",
-            quantity: "",
-            type: "",
-            expirationDate: ""
-        }));
+        .then(
+        err => {
+            console.log(err)
+        },
+            this.setState({
+                name: "",
+                quantity: "",
+                type: "",
+                expirationDate: ""
+            })
+        );
     }
 
     renderErrors() {
@@ -64,43 +69,46 @@ export class ItemIndex extends React.Component {
             </ul>
         );
     }
-  
- render() {
-    console.log(this.state);
-    const searchItems = Object.values(this.props.items).map((item) => {
-      return item.name;
-    });
-    const items = Object.values(this.props.items).map((item) => {
-      return (
-        <ItemShow key={item._id} item={item} openModal={this.props.openModal}/>
-      );
-    });
-        const recipes = Object.values(this.props.recipes).map(recipe => {
-            return (
-                <div key={recipe.id} className='recipe-card'>
-                    <div className='recipe-card-link'>
-                        <Link to={`/${recipe.id}`} className='recipe-image-box'>
-                            <img src={recipe.image} alt={recipe.title} className='recipe-image'/>
-                        </Link>
-                        <div className='card-info'>
-                            <div className='recipe-title-box'>
-                                {recipe.title}
-                            </div>
-                            <div className='from-kitchen-box'>
-                                {recipe.usedIngredients.map(item => {
-                                return <div className='kitchen-item-yes'>From kitchen: {item.name}</div>
-                            })}
-                            </div>
-                            <div className='missing-items-box'>
-                                {recipe.missedIngredients.map(item => {
-                                    return <Link to="/googlemap"> Missing Item: {item.name}</Link>;
-                            })}
+
+    render() {
+        const searchItems = Object.values(this.props.items).map(item => {
+            return item.name
+        });
+
+        const items = Object.values(this.props.items).map(item => {
+            return <ItemShow key={item._id} item={item} history={this.props.history}/>
+        });
+        
+        let recipes;
+        if (Array.isArray(this.props.recipes)) {
+            recipes = Object.values(this.props.recipes).map(recipe => {
+                return (
+                    <div key={recipe.id} className='recipe-card'>
+                        <div className='recipe-card-link'>
+                            <Link to={`/${recipe.id}`} className='recipe-image-box'>
+                                <img src={recipe.image} alt={recipe.title} className='recipe-image'/>
+                            </Link>
+                            <div className='card-info'>
+                                <div className='recipe-title-box'>
+                                    {recipe.title}
+                                </div>
+                                <div className='from-kitchen-box'>
+                                    {recipe.usedIngredients.map(item => {
+                                        return <div key={item.originalString} className='kitchen-item-yes'>From kitchen: {item.name}</div>
+                                    })}
+                                </div>
+                                <div className='missing-items-box'>
+                                    {recipe.missedIngredients.map(item => {
+                                        return <div key={item.originalString} className='kitchen-item-no'><Link to="/googlemap"> Missing Item: {item.name}</Link></div>
+                                    })}
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            )
-        })
+                )
+            });
+        }
+
         return (
             <div>
                 <div className='item-container'>
@@ -150,7 +158,10 @@ export class ItemIndex extends React.Component {
                             </div>
 
                             <div className='submit-item-btn-container'>
-                            <button>Add Item</button>
+                                <button>Add Item</button>
+                            </div>
+                            <div className='error-container'>
+                                {this.renderErrors()}
                             </div>
                         </form>
                     </div>
@@ -167,7 +178,7 @@ export class ItemIndex extends React.Component {
                 <div className='recipes-container'>
                     <div className='fetch-rec-button-box'>
                         <button onClick={() => this.props.fetchRecipe(`${searchItems}`)}>Discover Recipes
-                        {/* <span><AiOutlineArrowDown /></span> */}
+                            {/* <span><AiOutlineArrowDown /></span> */}
                         </button>
                         <div className='recipes-box'>
                             {recipes}

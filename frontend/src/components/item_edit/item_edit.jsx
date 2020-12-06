@@ -124,7 +124,6 @@ class ItemEdit extends React.Component {
                         {this.renderErrors()}
                     </div>
                 </form>
-
                 <button onClick={this.handleDelete}>Delete Item</button>
             </div>
         );
