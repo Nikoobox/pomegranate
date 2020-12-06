@@ -1,8 +1,9 @@
 import React from 'react'
 import ItemShow from './itemshow';
 import {Link} from 'react-router-dom';
-import { AiOutlineArrowDown } from "react-icons/ai";
-import { Dropdown, DropdownButton } from 'react-bootstrap';
+// import { AiOutlineArrowDown } from "react-icons/ai";
+// import { Dropdown, DropdownButton } from 'react-bootstrap';
+import Select from 'react-select'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import DayPickerInput from 'react-day-picker/DayPickerInput';
 // import DatePicker from "react-datepicker";
@@ -19,6 +20,7 @@ export class ItemIndex extends React.Component {
             expirationDate: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.updateType = this.updateType.bind(this);
     }
     componentDidMount() {
         this.props.getUserItems(this.props.userId);
@@ -29,6 +31,14 @@ export class ItemIndex extends React.Component {
             [field]: e.currentTarget.value
         });
     }
+
+    updateType(e){
+        this.setState({
+            type: e.value
+        })
+    }
+    
+    
 
     handleChange(date) {
         this.setState({
@@ -71,6 +81,14 @@ export class ItemIndex extends React.Component {
     }
 
     render() {
+        const customStyles = {
+            control: base => ({
+                ...base,
+                border: 0,
+                boxShadow: 'none',
+            })
+        };
+        
         const searchItems = Object.values(this.props.items).map(item => {
             return item.name
         });
@@ -78,7 +96,15 @@ export class ItemIndex extends React.Component {
         const items = Object.values(this.props.items).map(item => {
             return <ItemShow key={item._id} item={item} history={this.props.history}/>
         });
-        
+
+        const options = [
+            { label: "Fruits and vegitables", value: "Fruits and vegitables"},
+            { label: "Dairy", value: "Dairy", className: 'custom-class'},
+            {label: "Meat", value: "Meat"},
+            {label: "Grains", value: "Grains"},
+            {label: "Beverages",value: "Beverages"},
+            {label: "Misc", value: "Misc"}]
+           
         let recipes;
         if (Array.isArray(this.props.recipes)) {
             recipes = Object.values(this.props.recipes).map(recipe => {
@@ -133,30 +159,26 @@ export class ItemIndex extends React.Component {
                                 onChange={this.update('expirationDate')}
                                 placeholder="Enter an Expiration Date"
                             />
-                            {/* <input
-                                type="text"
-                                value={this.state.type}
-                                onChange={this.update('type')}
-                                placeholder="Enter an item type"
-                            /> */}
 
-
-                            <div className="form-control-input">
+                            {/* <div className="form-control-input">
                                 <select className="form-control" onChange={this.update('type')} required>
-                                    {/* <optgroup className='options'> */}
-                                        <option selected>Select an item type</option>
-                                        <option value="Fruits and vegitables">Fruits and vegitables</option>
-                                        <option value="Meat">Meat</option>
-                                        <option value="Dairy">Dairy</option>
-                                        <option value="Grains">Grains</option>
-                                        <option value="Beverages">Beverages</option>
-                                        <option value="Condiments">Condiments</option>
-                                        <option value="Misc">Misc</option>
-
-                                    {/* </optgroup> */}
+                                    <option selected>Select an item type</option>
+                                    <option value="Fruits and vegitables">Fruits and vegitables</option>
+                                    <option value="Meat">Meat</option>
+                                    <option value="Dairy">Dairy</option>
+                                    <option value="Grains">Grains</option>
+                                    <option value="Beverages">Beverages</option>
+                                    <option value="Condiments">Condiments</option>
+                                    <option value="Misc">Misc</option>
                                 </select>
-                            </div>
-
+                            </div> */}
+                            <Select 
+                                styles={customStyles}
+                                options={options} 
+                                placeholder = {this.state.type === ''? 'Select an item type': this.state.type }
+                                value={this.state.type}
+                                onChange={this.updateType}
+                                />
                             <div className='submit-item-btn-container'>
                                 <button>Add Item</button>
                             </div>
@@ -178,7 +200,6 @@ export class ItemIndex extends React.Component {
                 <div className='recipes-container'>
                     <div className='fetch-rec-button-box'>
                         <button onClick={() => this.props.fetchRecipe(`${searchItems}`)}>Discover Recipes
-                            {/* <span><AiOutlineArrowDown /></span> */}
                         </button>
                         <div className='recipes-box'>
                             {recipes}
