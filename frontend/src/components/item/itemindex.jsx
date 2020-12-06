@@ -147,12 +147,14 @@ export class ItemIndex extends React.Component {
                             </div>
                         </form>
                     </div>
+
                     <div className='items'>
                         <div className='message'>Your Kitchen has the following products:</div>
                         <div className='items-container'>
                             {items}
                         </div>
                     </div>
+
                 </div>
 
                 <div className='recipes-container'>
