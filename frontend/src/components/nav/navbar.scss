@@ -43,7 +43,6 @@
             flex-direction:column;
             .dropdown-item{
                 padding:10px 5px;
-                // margin-bottom:5px;
                 transition: ease-out all 0.2s;
                 &:hover{
                     background:$mainYellowLignt;
@@ -86,7 +85,6 @@
         justify-content: space-between;
     }
 }
-
 .transparent {
     background:transparent;
 }

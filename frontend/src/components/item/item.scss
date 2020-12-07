@@ -6,7 +6,6 @@
     .form-container{
         width:30%;
         display: flex;
-        // align-items: center;
         justify-content: center;
     }
      .item-form{
@@ -32,8 +31,6 @@
             margin-bottom:8px;
             font-size: 16px;
         }
-        
-     
         .form-control{
             width:100%;
             border:0;
@@ -42,7 +39,6 @@
             font-size:16px;
             margin-bottom:10px;
             background:white;
-
             &:focus{
                 outline:none;
                 box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
@@ -76,19 +72,15 @@
     }
     .items{
         margin-top:100px;
-        // margin-bottom:100px;
         margin-left:auto;
         margin-right:auto;
         display:flex;
         width:70%;
         flex-direction: column;
-        // align-items: start;
         .message{
             text-align:center;
         }
         .items-container{
-            // margin-bottom:200px;
-            // margin-left:20px;
             border-bottom: 1px solid #d7d7d7;
             margin-right:30px;
             display:flex;
@@ -153,20 +145,11 @@
             transition: ease-out all 0.2s;
             color:$mainRed;
             font-size:18px;
-            // span{
-            //     display:none;
-            //     transition: ease-out all 0.8s;
-            //     // align-items: center;
-            // }
             &:hover{
                 background: $mainRed;
                 color:white;
                 border: 2px solid $mainRed;
-                // transition: ease-out all 0.2s;
                 cursor:pointer;
-                // span{
-                //     display:inline;
-                // }
             }
         }
     }
@@ -177,7 +160,6 @@
         align-items: start;
         justify-content: space-between;
         .recipe-card{
-            // background:$mainYellowLignt;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             border-radius: 5px;
             width:20%;
@@ -208,7 +190,6 @@
                     .kitchen-item-no{
                         color:$mainRed;
                         font-size:16px;
-                        // font-weight: 300;
                     }
                 }
             }
