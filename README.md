@@ -41,7 +41,7 @@ We created smooth, clean modals to input user and ingredient data. We also used 
 ## Styling
 
 Pomegranate top priority is to make an app elegant looking and functional. Home page utilized CSS positioning strategy to add beautiful background image.
-
+### Home Page
 ```
 .splash-container{
     height:100vh;
@@ -59,4 +59,94 @@ Pomegranate top priority is to make an app elegant looking and functional. Home 
     width : 100%;
     height: 100%
 }
+```
+We used SCSS throught the project for better CSS structuring and readability. Smooth transitions were used for every hover effect and modal.
+
+### Recipes Section
+```
+.recipes-container{
+    width:100%;
+    margin:50px 0;
+    .fetch-rec-button-box{
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom:70px;
+        button{
+            padding:10px;
+            border-radius:30px;
+            border:2px solid $mainRed;
+            background:white;
+            transition: ease-out all 0.2s;
+            color:$mainRed;
+            font-size:18px;
+            &:hover{
+                background: $mainRed;
+                color:white;
+                border: 2px solid $mainRed;
+                cursor:pointer;
+            }
+        }
+    }
+    .recipes-box{
+        margin: 0 100px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: start;
+        justify-content: space-between;
+        .recipe-card{
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            width:20%;
+            margin:20px;
+            .recipe-image-box{
+                width:100%;
+                img{
+                    width:100%;
+                    position:top;
+                    object-fit: cover;
+                }
+
+            }
+            .card-info{
+                padding:10px;
+                .recipe-title-box{
+                    font-size: 20px;
+                    margin-bottom: 10px;
+                }
+                .from-kitchen-box{
+                    margin-bottom:5px;
+                    .kitchen-item-yes{
+                        color:$mainGreen;
+                        font-size:16px;
+                    }
+                }
+                .missing-items-box{
+                    .kitchen-item-no{
+                        color:$mainRed;
+                        font-size:16px;
+                    }
+                }
+            }
+        }
+    }
+}
+```
+### Colors Variables
+We used colors variables to experiment with overall website look. 
+
+```
+$mainGrey: #333333;
+$lightGreyPlaceholder: #9a9a9a;
+$mainRed: #a1272e;
+$mainLightRed: #eed9d0;
+$mainGreen:#446c49;
+$Greenish:#498586;
+$lightGreenCards: #89bbc0;
+$darkGreenCards: #437a80;
+$GreenishDark:#091617;
+$mainYellow:#f7dca5;
+$mainYellowLignt:#f7f6f3;
 ```
