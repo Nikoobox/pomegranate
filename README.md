@@ -36,9 +36,11 @@ Here, we stored all user login information, their kitchen info, and all ingredie
 
 We created smooth, clean modals to input user and ingredient data. We also used it to create get requests to our Spoonacular and Google APIs and then display that information in meaningful, user-friendly ways. We can suggest recipes the user can use based on the ingredients in their kitchen, show each recipe in greater detail, and even locate nearby grocery stores with Google Maps if a user is missing any ingredients for a suggested recipe. We even keep track of each ingredient's expiration date and show it in red if it has expired.
 
+![Pomegranate Banner](extra_media/add_ingredients_gif.gif)
+
 ## Styling
 
 Pomegranate top priority is to make an app elegant looking and functional. Home page utilized CSS positioning strategy to add beautiful background image.
 
 
-![Pomegranate Banner](extra_media/add_ingredients_gif.gif)
+
