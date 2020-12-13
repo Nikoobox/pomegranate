@@ -1,4 +1,7 @@
 ![Pomegranate Banner](extra_media/welcome_page.png)
+<div align="center">
+  <a href="https://aapomegranate.herokuapp.com/">Live Site</a>
+</div>
 
 Let Pomegranate help you discover exciting new meals you can create with the ingredients you already have. Give us an idea of what you've got to work with and let Pomegranate do the rest! Convenient, green, accessable. Pomegranate.
 
