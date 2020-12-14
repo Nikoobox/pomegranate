@@ -16,9 +16,9 @@ class ItemShow extends React.Component {
             dateDiv = <div className='item-box-expiration'>No expiration date.</div>
         } else {
             if (date < new Date()) {
-                dateDiv = <div className='item-box-expiration expired'>This product expired on {date.toDateString()}.</div>
+                dateDiv = <div className='item-box-expiration expired'>This product expired on<br />{date.toDateString()}.</div>
             } else {
-                dateDiv = <div className='item-box-expiration'>This product will expire on {date.toDateString()}.</div>
+                dateDiv = <div className='item-box-expiration'>This product will expire on<br />{date.toDateString()}.</div>
             }
         }
         return (

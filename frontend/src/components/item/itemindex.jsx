@@ -56,9 +56,9 @@ export class ItemIndex extends React.Component {
     };
     this.props.createItem(item)
         .then(
-        err => {
-            console.log(err)
-        },
+            err => {
+                console.log(err);
+            },
             this.setState({
                 name: "",
                 quantity: "",
@@ -159,19 +159,6 @@ export class ItemIndex extends React.Component {
                                 onChange={this.update('expirationDate')}
                                 placeholder="Enter an Expiration Date"
                             />
-
-                            {/* <div className="form-control-input">
-                                <select className="form-control" onChange={this.update('type')} required>
-                                    <option selected>Select an item type</option>
-                                    <option value="Fruits and vegitables">Fruits and vegitables</option>
-                                    <option value="Meat">Meat</option>
-                                    <option value="Dairy">Dairy</option>
-                                    <option value="Grains">Grains</option>
-                                    <option value="Beverages">Beverages</option>
-                                    <option value="Condiments">Condiments</option>
-                                    <option value="Misc">Misc</option>
-                                </select>
-                            </div> */}
                             <Select 
                                 styles={customStyles}
                                 options={options} 
