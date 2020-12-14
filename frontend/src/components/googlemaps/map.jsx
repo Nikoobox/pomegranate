@@ -30,9 +30,7 @@ class MapShow extends React.Component {
 
     // this method sets the default location to users home address 
     componentDidMount(){
-        debugger;
-        this.props.fetchInfo().then( () => {
-            // debugger;
+        this.props.fetchInfo().then(() => {
             Geocode.fromAddress("98087").then(
             response => {
                 const { lat, lng } = response.results[0].geometry.location;
@@ -52,6 +50,7 @@ class MapShow extends React.Component {
             }
             );
         })
+        this.props.getUser(this.props.userId);
     }
 
     // this funstion changes the marker to che search result 
@@ -73,7 +72,6 @@ class MapShow extends React.Component {
     }
 
     render() {
-        debugger;
         const Map = withScriptjs(withGoogleMap(props => (
             <GoogleMap
                 defaultZoom={16}

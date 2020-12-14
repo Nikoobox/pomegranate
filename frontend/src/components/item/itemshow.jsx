@@ -23,7 +23,7 @@ class ItemShow extends React.Component {
         }
         return (
            <div className='item-box'>
-                <Link to={`item/${item._id}/edit`} className='item-box-link' onClick={() => this.props.openModal('edit')} >
+                <Link to={`/item/${item._id}/edit`} className='item-box-link' onClick={() => this.props.openModal('edit')} >
                 {/* <button className='item-box-link' onClick={() => {
                 debugger
                    return this.props.openModal('edit', item._id)
