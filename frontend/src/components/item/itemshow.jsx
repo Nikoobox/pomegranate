@@ -24,11 +24,10 @@ class ItemShow extends React.Component {
         }
         return (
            <div className='item-box'>
-<<<<<<< HEAD
-                <Link to={`/item/${item._id}/edit`} className='item-box-link' onClick={() => this.props.openModal('edit')} >
-=======
-                <div className='item-box-link' onClick={() => this.props.openModal('edit')} >
->>>>>>> e23dafaa9d0e64c90a26db5662ea818a8bf2c7f2
+                <Link to={`/item/${item._id}/edit`} className='item-box-link' onClick={() => this.props.openModal('edit')} />
+
+                {/* <div className='item-box-link' onClick={() => this.props.openModal('edit')} > */}
+
                 {/* <button className='item-box-link' onClick={() => {
                 debugger
                    return this.props.openModal('edit', item._id)
@@ -37,7 +36,7 @@ class ItemShow extends React.Component {
                     <div className='item-name'>{item.name}</div>
                     {quantities}
                 {/* </button> */}
-                </div>
+                {/* </div> */}
                 {dateDiv}
            </div>
         )
