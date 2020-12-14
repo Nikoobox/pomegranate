@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 const mapDispatchToProps = (dispatch) => {
     return {
-        getItem: itemId => dispatch(getItem(itemId)),
+        getItem: itemId => dispatch(getItem(itemId))
     }
 }
 export default connect(

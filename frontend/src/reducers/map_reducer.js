@@ -5,7 +5,6 @@ const MapReducer = (state = {}, action) => {
    
     switch (action.type) {
         case RECEIVE_INFO:
-            debugger;
             return action.info;
         default:
             return state;

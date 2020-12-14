@@ -21,7 +21,9 @@ class ItemShow extends React.Component {
         }
         return (
            <div className='item-box'>
-                <div className='item-box-link' onClick={() => this.props.openModal('edit')} >
+                <div className='item-box-link' onClick={() => {
+                    this.props.openModal('edit', item._id);
+                }}>
                     <div className='item-name'>{item.name}</div>
                     {quantities}
                 </div>
