@@ -7,7 +7,6 @@ class Recipe extends React.Component {
     }
 
     componentDidMount() {
-        // debugger;
         this.props.fetchRecipeInfo(this.props.id)
     }
 
@@ -23,7 +22,7 @@ class Recipe extends React.Component {
                 <div className='show-recipe-card'>
                     <div className='image-box'>
                         <img src={this.props.recipe.image}/>
-                        <a href={this.props.recipe.sourceUrl} className='more-info' target="_blank">For more information <GrNotes /></a> 
+                            <a href={this.props.recipe.sourceUrl} className='more-info' rel='noopener noreferrer' target="_blank">For more information <GrNotes /></a> 
                     </div>
                     <div className='information-box'>
                         {/* <a href={this.props.recipe.sourceUrl}>For more information <GrNotes/></a>  */}

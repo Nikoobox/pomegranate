@@ -3,7 +3,6 @@ import { getUserItems, createItem, clearItemState } from '../../actions/item_act
 import { fetchRecipe, clearRecipeState } from '../../actions/recipe_actions';
 import ItemIndex from './itemindex';
 import { openModal } from '../../actions/modal_actions';
-// import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = state => {
     return {
@@ -20,7 +19,6 @@ const mapDispatchToProps = (dispatch) => {
         getUserItems: userId => dispatch(getUserItems(userId)),
         fetchRecipe: (ingredients) => dispatch(fetchRecipe(ingredients)),
         openModal: modal => dispatch(openModal(modal))
-
     }
 }
 
