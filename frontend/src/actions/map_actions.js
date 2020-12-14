@@ -13,7 +13,6 @@ const receiveInfo = (info) => {
 export const fetchInfo = () => dispatch => {
     return getInfo()
         .then(info => {
-            debugger
             return dispatch(receiveInfo(info));
         })
         .catch(err => console.log(err));
