@@ -81,6 +81,7 @@ export class ItemIndex extends React.Component {
     }
 
     render() {
+        console.log(this.props)
         const customStyles = {
             control: base => ({
                 ...base,
@@ -94,7 +95,7 @@ export class ItemIndex extends React.Component {
         });
 
         const items = Object.values(this.props.items).map(item => {
-            return <ItemShow key={item._id} item={item} history={this.props.history}/>
+            return <ItemShow key={item._id} item={item} history={this.props.history} openModal={this.props.openModal}/>
         });
 
         const options = [
