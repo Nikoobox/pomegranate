@@ -1,18 +1,19 @@
 import { connect } from 'react-redux';
 import {fetchInfo} from '../../actions/map_actions';
+import { getUser } from './../../actions/session_actions';
 import MapShow from './map';
 
 const mapStateToProps = state => {
-    debugger;
     return {
-        user: state.session.user.id,
+        userId: state.session.user.id,
         info: state.ui.info
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchInfo: () => dispatch(fetchInfo())
+        fetchInfo: () => dispatch(fetchInfo()),
+        getUser: userId => dispatch(getUser(userId))
     }
 }
 
