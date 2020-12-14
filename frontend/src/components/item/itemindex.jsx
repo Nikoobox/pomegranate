@@ -46,9 +46,9 @@ export class ItemIndex extends React.Component {
     };
     this.props.createItem(item)
         .then(
-        err => {
-            console.log(err)
-        },
+            err => {
+                console.log(err);
+            },
             this.setState({
                 name: "",
                 quantity: "",
@@ -133,27 +133,23 @@ export class ItemIndex extends React.Component {
                                 onChange={this.update('expirationDate')}
                                 placeholder="Enter an Expiration Date"
                             />
-                            {/* <input
-                                type="text"
-                                value={this.state.type}
-                                onChange={this.update('type')}
-                                placeholder="Enter an item type"
-                            /> */}
-
-
                             <div className="form-control-input">
                                 <select className="form-control" onChange={this.update('type')} required>
-                                    {/* <optgroup className='options'> */}
-                                        <option selected>Select an item type</option>
-                                        <option value="Fruits and vegitables">Fruits and vegitables</option>
-                                        <option value="Meat">Meat</option>
-                                        <option value="Dairy">Dairy</option>
-                                        <option value="Grains">Grains</option>
-                                        <option value="Beverages">Beverages</option>
-                                        <option value="Condiments">Condiments</option>
-                                        <option value="Misc">Misc</option>
-
-                                    {/* </optgroup> */}
+                                    <option defaultValue disabled>Select an item type</option>
+                                    <option defaultValue={this.state.type === "Fruits and vegitables" ? true : false} value="Fruits and vegitables">Fruits and vegitables</option>
+                                    <option defaultValue={this.state.type === "Meat" ? true : false} value="Meat">Meat</option>
+                                    <option defaultValue={this.state.type === "Dairy" ? true : false} value="Dairy">Dairy</option>
+                                    <option defaultValue={this.state.type === "Grains" ? true : false} value="Grains">Grains</option>
+                                    <option defaultValue={this.state.type === "Beverages" ? true : false} value="Beverages">Beverages</option>
+                                    <option defaultValue={this.state.type === "Condiments" ? true : false} value="Condiments">Condiments</option>
+                                    <option defaultValue={this.state.type === "Misc" ? true : false} value="Misc">Misc</option>
+                                    {/* <option value="Fruits and vegitables">Fruits and vegitables</option>
+                                    <option value="Meat">Meat</option>
+                                    <option value="Dairy">Dairy</option>
+                                    <option value="Grains">Grains</option>
+                                    <option value="Beverages">Beverages</option>
+                                    <option value="Condiments">Condiments</option>
+                                    <option value="Misc">Misc</option> */}
                                 </select>
                             </div>
 
