@@ -17,7 +17,10 @@ class LoginForm extends React.Component {
         this.renderErrors = this.renderErrors.bind(this);
     }
 
-    
+
+    componentWillUnmount() {
+        this.props.clearSessionErrors();
+    }
 
     // Once the user has been authenticated, redirect to the Tweets page
     componentWillReceiveProps(nextProps) {
