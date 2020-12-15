@@ -13,15 +13,15 @@ class Footer extends React.Component {
             <div className='footer-container'>
 
                 <div className="footer-left">
-                    Completed by Room-12 team
+                    Completed by Room12 Team
                 </div>
 
                 <div className="footer-message">
-                    This is Pomegranate MERN project
+                    Pomegranate MERN project
                 </div>
 
                 <div className="social">
-                    
+                    Github
                     <a href='https://github.com/Nikoobox/pomegranate'>
                         <FaGithubSquare />
                     </a>

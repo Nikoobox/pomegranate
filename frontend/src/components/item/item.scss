@@ -17,7 +17,6 @@
         padding:20px;
         border-radius: 5px;
         display:block;
-        // height:330px;
         .welcome-message{
             text-align:center;
             margin-bottom:15px;
@@ -135,8 +134,8 @@
                     font-weight:300;
                 }
                 .expired {
-                    color: red;
-                    text-shadow: 1px 1px 5px rgba(255, 0, 0, 1);
+                    color: $mainRed;
+                    // text-shadow: 1px 1px 5px rgba(255, 0, 0, 1);
                 }
             }   
         }
@@ -169,7 +168,7 @@
         }
     }
     .recipes-box{
-        margin: 0 100px;
+        margin: 30px 100px 0;
         display: flex;
         flex-wrap: wrap;
         align-items: start;
@@ -202,9 +201,39 @@
                     }
                 }
                 .missing-items-box{
+                    margin-top:15px;
+                    padding-bottom:10px;
                     .kitchen-item-no{
-                        color:$mainRed;
-                        font-size:16px;
+                        a {
+                            color:$mainRed;
+                            font-size:16px;
+                        }
+                    }
+                    .message{
+                        margin-top:5px;
+                    } 
+                }
+                .map-icon-container{
+                    display:flex;
+                    align-items: center;
+                    // justify-content: center;
+                    margin:10px 0;
+                    color:$mainGrey;
+                    transition: 0.3s ease all;
+                    .map-icon{
+                        font-size:28px;
+                        color:$lightGreyPlaceholder;
+                    }
+                    .message{
+                        font-size:18px;
+                        margin-left:5px
+                    }
+                    &:hover{
+                        color:black;
+                        cursor:pointer;
+                        .map-icon{
+                            color:black;
+                        }
                     }
                 }
             }
