@@ -82,7 +82,7 @@ class ItemEdit extends React.Component {
     }
 
     render() {
-        // console.log(this.props);
+        console.log(this.props);
         if (this.props.item && this.checkEmptyState()) {
             this.setState({
                 name: this.props.item.name,
