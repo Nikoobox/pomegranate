@@ -128,10 +128,11 @@ export class ItemIndex extends React.Component {
                                     })}
                                     
                                 </div>
-                                <div className='map-icon-container'>
+                                <Link to="/googlemap"><div className='map-icon-container'>
                                     <FaMapMarkerAlt className='map-icon'/>
                                     <div className='message'>See nearby stores </div>
                                 </div>
+                                </Link>
                             </div>
                         </div>
                     </div>
