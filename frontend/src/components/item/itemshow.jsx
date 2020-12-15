@@ -1,13 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BsGearFill  } from "react-icons/bs";
+import { BsGearFill, BsExclamationTriangle  } from "react-icons/bs";
 
 class ItemShow extends React.Component {
     render() {
         // console.log(this.props);
         const { item } = this.props;
         const quantities = item.quantity === 1 ?
-            <div className='item-quantity'>You have {item.quantity} item</div>
+            <div className='low-quantity-box'>
+                <div className='item-quantity'>You have {item.quantity} item</div>
+                <div className='message-box'>
+                    <BsExclamationTriangle className='icon'/> 
+                    <div className='text'>Low inventory warning</div>
+                </div>
+            </div>
             :
             <div className='item-quantity'>You have {item.quantity} items</div>
         const date = new Date(item.expirationDate);

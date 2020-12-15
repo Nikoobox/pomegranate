@@ -129,6 +129,26 @@
                         font-size: 16px;
                         margin-bottom: 15px;
                     }
+                    .low-quantity-box{
+                        // display:flex;
+                        margin-bottom: 15px;
+                        .message-box{
+                            color: $mainRed;
+                            display:flex;
+                            align-items: center;
+                            .icon{
+                                // height: 28px;
+                                margin-right:5px;
+                            }
+                            .text{
+
+                            }
+                        }
+                    }
+                    .item-quantity{
+                        font-size: 16px;
+                        margin-bottom: 15px;
+                    }
                 }
                 .item-box-expiration{
                     font-weight:300;

@@ -126,7 +126,7 @@ export class ItemIndex extends React.Component {
                                     {recipe.missedIngredients.map(item => {
                                         return <div key={item.originalString} className='kitchen-item-no'><Link to="/googlemap"> Missing Item: {item.name}</Link></div>
                                     })}
-                                    {/* <div className='message'><FaArrowDown/></div> */}
+                                    
                                 </div>
                                 <div className='map-icon-container'>
                                     <FaMapMarkerAlt className='map-icon'/>
