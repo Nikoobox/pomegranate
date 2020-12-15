@@ -30,8 +30,8 @@ class MapShow extends React.Component {
 
     // this method sets the default location to users home address 
     componentDidMount(){
-        this.props.fetchInfo().then(() => {
-            Geocode.fromAddress("98087").then(
+        this.props.getUser(this.props.userId).then(res => {
+            Geocode.fromAddress(res.user.data.address).then(
             response => {
                 const { lat, lng } = response.results[0].geometry.location;
                 this.setState({

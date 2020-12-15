@@ -17,15 +17,6 @@ router.get('/:userId', passport.authenticate('jwt', { session: false }), (req, r
         .then(user => res.json(user));
 })
 
-router.get('/userInfo', passport.authenticate('jwt', { session: false }), (req, res) => {
-    res.json({
-        id: req.user.id,
-        kitchenName: req.user.kitchenName,
-        address: req.user.address
-    })
-})
-
-
 router.post('/register', (req, res) => {
     const { errors, isValid } = validateRegisterInput(req.body);
 
