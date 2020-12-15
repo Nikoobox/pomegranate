@@ -5,6 +5,7 @@ import pom_logo from '../../images/pom_logo_0.png';
 import { Dropdown } from 'react-bootstrap';
 import { FaHamburger } from 'react-icons/fa'
 import { clearItemState } from '../../actions/item_actions';
+// import pom_logo from '../../images/pom_logo_0.png';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -37,9 +38,9 @@ class NavBar extends React.Component {
 
                         <Dropdown.Menu>
                             <Dropdown.Item >My account</Dropdown.Item>
-                            <Dropdown.Item >Something else</Dropdown.Item>
-                            <Dropdown.Item onClick={() => this.props.openModal('test')}> modal test
-                                </Dropdown.Item>
+                            <Dropdown.Item >Enjoy Pomegranate</Dropdown.Item>
+                            {/* <Dropdown.Item onClick={() => this.props.openModal('test')}> modal test
+                                </Dropdown.Item> */}
                             <Dropdown.Item onClick={this.logoutUser} className='dropdown-logout'>Logout</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>

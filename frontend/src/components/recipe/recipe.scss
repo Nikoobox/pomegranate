@@ -1,8 +1,6 @@
 .show-recipe-container{
     margin: 100px 50px;
-    // background:yellow;
     .show-recipe-card{
-        // background:green;
         display:flex;
         flex-direction:row;
         align-items: start;
@@ -31,16 +29,13 @@
                 }
                 font-size:18px;
                 margin-bottom: 20px;
-
             }
             .time{
                 span{
 
                     font-weight:bold;
                 }
-                // font-size:18px;
                 margin-bottom: 10px;
-
             }
             .instructions{
                 span{

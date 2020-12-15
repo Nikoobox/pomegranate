@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import pom_logo from '../../images/pom_logo_0.png';
-import back_img from '../../images/back1.jpg';
+// import back_img from '../../images/back1.jpg';
 
 class MainPage extends React.Component {
     constructor(props) {
