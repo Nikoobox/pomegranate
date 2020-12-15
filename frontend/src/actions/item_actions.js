@@ -56,7 +56,6 @@ export const getUserItems = userId => dispatch => {
         .catch(err => console.log(err));
 }
 
-
 export const getItem = itemId => dispatch => {
     return ItemAPIUtil.getItem(itemId)
         .then(item => {

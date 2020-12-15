@@ -12,8 +12,8 @@ function Modal({ modal, closeModal }) {
         return null;
     }
     let component;
-    
-    switch (modal) {
+//*********** YOU HAVE ACCESS TO THE USER ID USING modal.userId ****************//
+    switch (modal.modal) {
         case 'edit':
             component = <ItemEditContainer />;
             break;

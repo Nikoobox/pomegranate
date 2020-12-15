@@ -18,7 +18,7 @@ const mapDispatchToProps = (dispatch) => {
         createItem: item => dispatch(createItem(item)),
         getUserItems: userId => dispatch(getUserItems(userId)),
         fetchRecipe: (ingredients) => dispatch(fetchRecipe(ingredients)),
-        openModal: modal => dispatch(openModal(modal))
+        openModal: (modal, itemId) => dispatch(openModal(modal, itemId))
     }
 }
 
