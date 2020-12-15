@@ -12,10 +12,10 @@ class PageNotFound extends React.Component {
             <div className='page_not_found_container'>
                 <div className='container'>
                     <div className='image_container'>
-                        <img src={error_pic} className='error_pic'/>
+                        <img src={error_pic}/>
                     </div>
-                        <div className='message'>Whoops! Let's try that again...</div>
-                        <Link to='/'><button className="home_redirect">Home</button></Link>
+                    <div className='message'>Whoops! Let's try that again...</div>
+                    <Link to='/'><button className="home_redirect">Home</button></Link>
                 </div>
             </div>
         )
