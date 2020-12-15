@@ -7,15 +7,17 @@
         width:30%;
         display: flex;
         justify-content: center;
+        align-items: center;
     }
-     .item-form{
+    .item-form{
         margin-top: 140px;
         margin-left:30px;
         width:250px;
         background:#b86f53;
         padding:20px;
         border-radius: 5px;
-        height:330px;
+        display:block;
+        // height:330px;
         .welcome-message{
             text-align:center;
             margin-bottom:15px;
@@ -102,6 +104,19 @@
                     display:flex;
                     align-items: center;
                     flex-direction:column;
+                    position: relative;
+                    &:hover{
+                        cursor:pointer;
+                    }
+                    .gear{
+                        color:$mainGrey;
+                        position: absolute;
+                        right:0;
+                        font-size:24px;
+                        &:hover{
+                            color: black;
+                        }
+                    }
                     .item-name{
                         width:100%;
                         text-align:center;

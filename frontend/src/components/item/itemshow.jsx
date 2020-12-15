@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { BsGearFill  } from "react-icons/bs";
+
 class ItemShow extends React.Component {
     render() {
-        console.log(this.props);
+        // console.log(this.props);
         const { item } = this.props;
         const quantities = item.quantity === 1 ?
             <div className='item-quantity'>You have {item.quantity} item</div>
@@ -24,6 +26,7 @@ class ItemShow extends React.Component {
                 <div className='item-box-link' onClick={() => {
                     this.props.openModal('edit', item._id);
                 }}>
+                <BsGearFill className='gear'/>
                     <div className='item-name'>{item.name}</div>
                     {quantities}
                 </div>
