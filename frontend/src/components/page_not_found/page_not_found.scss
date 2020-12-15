@@ -1,0 +1,27 @@
+.page_not_found_container {
+    background-color: #f7e2a4;
+
+    .error_pic{
+        width: 50%;
+    }
+
+
+
+    button {
+        padding: 8px 16px;
+        font-size: 18px;
+        border-radius: 30px;
+        background-color: rgba(255, 255, 255, 0);
+    }
+
+    .home_redirect {
+        transition: ease-out all 0.2s;
+
+        &:hover {
+            border: $mainGreen solid 1px;
+            background: $mainGreen;
+            color: white;
+            cursor: pointer;
+        }
+    }
+}
