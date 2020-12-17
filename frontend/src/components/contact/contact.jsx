@@ -26,7 +26,7 @@ class Contact extends React.Component {
                                 </div>
                                 <div className='info-box'>
                                     <div className='one'>Favorite Food : </div>
-                                    <div className='two'>...</div>
+                                    <div className='two'>Carbonara</div>
                                 </div>
                                 <div className='portfolio social'>
                                     <a href="https://amgaa9193.github.io/amgaakhosbayar.github.io/" rel='noopener noreferrer' target="_blank">Portfolio</a></div>
@@ -49,7 +49,7 @@ class Contact extends React.Component {
                                 </div>
                                 <div className='info-box'>
                                     <div className='one'>Favorite Food : </div>
-                                    <div className='two'>Vegetarian</div>
+                                    <div className='two'>Soba noodles</div>
                                 </div>
                                 <div className='portfolio social'>
                                     <a href="https://christophercfleming.github.io/" rel='noopener noreferrer' target="_blank">Portfolio</a></div>
@@ -97,12 +97,12 @@ class Contact extends React.Component {
                                 </div>
                                 <div className='info-box'>
                                     <div className='one'>Favorite Food : </div>
-                                    <div className='two'>...</div>
+                                    <div className='two'>Lasagna</div>
                                 </div>
                                 <div className='portfolio social'>
-                                    <a href="#" rel='noopener noreferrer' target="_blank">Portfolio</a></div>
-                                <div className='github social'><a href="#" rel='noopener noreferrer' target="_blank">Github</a></div>
-                                <div className='linkedin social'><a href="#" rel='noopener noreferrer' target="_blank">LinkedIn</a></div>
+                                    <a href="https://italolujanpedreschi.github.io/" rel='noopener noreferrer' target="_blank">Portfolio</a></div>
+                                <div className='github social'><a href="https://github.com/ItaloLujanPedreschi" rel='noopener noreferrer' target="_blank">Github</a></div>
+                                <div className='linkedin social'><a href="https://www.linkedin.com/in/italo-lujan-98169373/" rel='noopener noreferrer' target="_blank">LinkedIn</a></div>
                                 <div className='angellist social'><a href="#" >AngelList</a></div>
                             </div>
                         </div>
