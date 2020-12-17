@@ -97,7 +97,7 @@ export class ItemIndex extends React.Component {
         });
 
         const options = [
-            { label: "Fruits and vegitables", value: "Fruits and vegitables"},
+            { label: "Fruits and vegetables", value: "Fruits and vegetables"},
             { label: "Dairy", value: "Dairy", className: 'custom-class'},
             {label: "Meat", value: "Meat"},
             {label: "Grains", value: "Grains"},
@@ -126,6 +126,7 @@ export class ItemIndex extends React.Component {
                                     {recipe.missedIngredients.map(item => {
                                         return <div key={item.originalString} className='kitchen-item-no'><Link to="/googlemap"> Missing Item: {item.name}</Link></div>
                                     })}
+                                   
                                     
                                 </div>
                                 <Link to="/googlemap"><div className='map-icon-container'>
@@ -133,6 +134,7 @@ export class ItemIndex extends React.Component {
                                     <div className='message'>See nearby stores </div>
                                 </div>
                                 </Link>
+                                
                             </div>
                         </div>
                     </div>

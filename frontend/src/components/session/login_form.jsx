@@ -103,7 +103,7 @@ class LoginForm extends React.Component {
                     </div>
 
                     <div className='demo-form-container'>
-                        Or login as a <span className="demo-form-button" onClick={this.loginGuest}>Demo User</span>
+                        Or login as a <span className="demo-form-button" onClick={this.loginGuest}> Demo User</span>
                     </div>
 
                 </form>

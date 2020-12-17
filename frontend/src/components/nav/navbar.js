@@ -54,6 +54,10 @@ class NavBar extends React.Component {
                         <div className='logo-img'><img src={pom_logo} /></div>
                         <div className='logo-name'>Pomegranate</div>
                     </Link>
+                    <Link to='/about' className='navbar-about-cont'>
+                        <div className='about'>About</div>
+                        
+                    </Link>
                 </div>
             );
         }
@@ -68,4 +72,4 @@ class NavBar extends React.Component {
     }
 }
 
-export default NavBar;
+export default withRouter(NavBar);

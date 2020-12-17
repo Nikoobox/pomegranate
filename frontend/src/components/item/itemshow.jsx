@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { BsGearFill, BsExclamationTriangle  } from "react-icons/bs";
+// import { withRouter } from 'react-router-dom';
 
 class ItemShow extends React.Component {
     render() {
@@ -37,6 +38,7 @@ class ItemShow extends React.Component {
                     {quantities}
                 </div>
                 {dateDiv}
+                
            </div>
         )
     }

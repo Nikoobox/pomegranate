@@ -7,12 +7,12 @@ import MainPageContainer from "./main/main_page_container";
 import LoginFormContainer from "./session/login_form_container";
 import SignupFormContainer from "./session/signup_form_container";
 import ItemIndexContainer from "./item/item_index_container";
-// import ItemEditContainer from "./item_edit/item_edit_container";
 import RecipeContainer from "./recipe/recipe_container";
 import MapContainer from "./googlemaps/map_container";
 import PageNotFound from "./page_not_found/page_not_found";
 import Map from "./googlemaps/map";
 import Modal from './item_edit/modal';
+import Contact from "./contact/contact";
 
 
 const App = () => (
@@ -28,6 +28,7 @@ const App = () => (
       <ProtectedRoute exact path="/browse" component={ItemIndexContainer} />
       {/* <ProtectedRoute exact path="/item/:itemId/edit" component={ItemEditContainer}/> */}
       <ProtectedRoute exact path="/:recipeId" component={RecipeContainer} />
+      <AuthRoute exact path="/about" component={ Contact } />
     </Switch>
     <Footer />
   </div>

@@ -64,8 +64,8 @@
             
             .error{
                 font-size:14px;
-                padding:5px;
-                margin:px 0;
+                padding:0 1px;
+                margin:1px 0;
                 color:$mainRed;
                 background-color: $mainLightRed;
             }
@@ -88,11 +88,12 @@
             }
         }
         .demo-form-container{
-                display:flex;
+                // display:flex;
                 text-align:center;
             margin-top:10px;
             font-size: 14px;
             color:white;
+            text-align: center;
             .demo-form-button{
                 font-weight: bold;
                 color:white;
@@ -100,8 +101,8 @@
                 padding-bottom: 2px;
                 &:hover{
                      padding-bottom: 2px;
-                text-decoration: underline;
-                cursor: pointer;
+                    text-decoration: underline;
+                    cursor: pointer;
                 }
             }
         }
