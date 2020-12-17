@@ -23,12 +23,13 @@ const App = () => (
       <AuthRoute exact path="/" component={MainPageContainer} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <AuthRoute exact path="/testing" component={PageNotFound} />
+      <AuthRoute exact path="/browse/testing" component={PageNotFound} />
       <ProtectedRoute exact path="/googlemap" component={MapContainer} />
       <ProtectedRoute exact path="/browse" component={ItemIndexContainer} />
       {/* <ProtectedRoute exact path="/item/:itemId/edit" component={ItemEditContainer}/> */}
       <ProtectedRoute exact path="/:recipeId" component={RecipeContainer} />
-      <AuthRoute exact path="/about" component={ Contact } />
+      {/* <ProtectedRoute exact path="/browse/contacts" component={ Contact } /> */}
+      <AuthRoute exact path="/browse/contacts" component={Contact} />
     </Switch>
     <Footer />
   </div>

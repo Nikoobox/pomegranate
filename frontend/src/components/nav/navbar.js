@@ -38,7 +38,7 @@ class NavBar extends React.Component {
 
                         <Dropdown.Menu>
                             <Dropdown.Item >My account</Dropdown.Item>
-                            <Dropdown.Item >Enjoy Pomegranate</Dropdown.Item>
+                                <Dropdown.Item ><Link to='/browse/contacts'>Contacts</Link></Dropdown.Item>
                             {/* <Dropdown.Item onClick={() => this.props.openModal('test')}> modal test
                                 </Dropdown.Item> */}
                             <Dropdown.Item onClick={this.logoutUser} className='dropdown-logout'>Logout</Dropdown.Item>
@@ -54,7 +54,7 @@ class NavBar extends React.Component {
                         <div className='logo-img'><img src={pom_logo} /></div>
                         <div className='logo-name'>Pomegranate</div>
                     </Link>
-                    <Link to='/about' className='navbar-about-cont'>
+                    <Link to='/browse/contacts' className='navbar-about-cont'>
                         <div className='about'>About</div>
                         
                     </Link>
