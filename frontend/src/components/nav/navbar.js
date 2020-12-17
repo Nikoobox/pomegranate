@@ -55,7 +55,7 @@ class NavBar extends React.Component {
                         <div className='logo-name'>Pomegranate</div>
                     </Link>
                     <Link to='/browse/contacts' className='navbar-about-cont'>
-                        <div className='about'>About</div>
+                        <div className='about'>Contacts</div>
                         
                     </Link>
                 </div>
