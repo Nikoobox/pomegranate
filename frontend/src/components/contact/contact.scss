@@ -1,0 +1,175 @@
+.about-container{
+    height:100vh;
+    width:100%;
+    position:relative;
+} 
+.about-container::before{
+    content:'';
+    position:absolute;
+    background-image: url(../../images/back3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;;
+    opacity:0.4;
+    width : 100%;
+    height: 100%
+}
+
+.about-box{
+    padding-top:8%;
+    height:100%;
+    .card-cont-1{
+        display:flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        margin-right:8%;
+        margin-bottom:4%;
+        .card{
+            width:470px;
+            display:flex;
+            // margin-right:2%;
+            .name-box{
+                padding-right: 10px;
+                display:flex;
+                flex-direction:column;
+                align-items: flex-end;
+                .name1{
+                    font-size:38px;
+                    font-weight:bold;
+                    margin-bottom:5px;
+                }
+                .name2{
+                    font-size:24px;
+                }
+            }
+            .social-box{
+                .info-box{
+                    display:flex;
+                    align-items: baseline;
+                    margin: 15px 0;
+                    .one{
+
+                    }
+                    .two{
+                        margin-left:5px;
+                        font-size:18px;
+                        font-weight:bold;
+                    }
+                }
+            }
+        }
+    }
+    .social-box{
+        margin-left:10px;
+    }
+}
+
+.card1{
+    .box1{
+    border-right: 4px solid $mainGreen;
+    }
+    .social{
+        margin:15px 0;
+        transition: 0.2s all ease-out;
+        font-weight: bold;
+        a{
+            &:hover{
+                color: $mainGreen;
+            }
+        }
+    }
+}
+.card2{
+    .box2{
+        border-right: 4px solid $mainDarkRed;
+    }
+    .social{
+        margin:15px 0;
+        transition: 0.2s all ease-out;
+        font-weight: bold;
+        a{
+            &:hover{
+                color: $mainDarkRed;
+            }
+        }
+    }
+}
+.card3{
+    margin-right:50px;
+    .box3{
+        border-right: 4px solid $lightGreenCards;
+    }
+    .social{
+        margin:15px 0;
+        transition: 0.2s all ease-out;
+        font-weight: bold;
+        a{
+            &:hover{ 
+                color: $lightGreenCards;
+            }
+        }
+    }
+}
+.card4{
+    .box4{
+        border-right: 4px solid $mainDarkYellow;
+    }
+    .social{
+        margin:15px 0;
+        transition: 0.2s all ease-out;
+        font-weight: bold;
+        a{
+            &:hover{ 
+                color: $mainDarkYellow;
+            }
+        }
+    }
+}
+
+.card-cont-2{
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-left:10%;
+    margin-bottom:5%;
+    .card{
+        margin-left:2%;
+        width:470px;
+        display:flex;
+        .name-box{
+            padding-right: 10px;
+            display:flex;
+            flex-direction:column;
+            align-items: flex-end;
+            .name1{
+                font-size:38px;
+                font-weight:bold;
+                margin-bottom:5px;
+            }
+            .name2{
+                font-size:24px;
+            }
+        }
+        .social-box{
+            .info-box{
+                display:flex;
+                align-items: baseline;
+                margin: 15px 0;
+                .one{
+
+                }
+                .two{
+                    margin-left:5px;
+                    font-size:18px;
+                    font-weight:bold;
+                }
+            }
+        }
+    }
+    .social-box{
+        margin-left:10px;
+    }
+
+}

@@ -6,6 +6,7 @@ export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 export const RECEIVE_USER_LOGOUT = "RECEIVE_USER_LOGOUT";
 export const RECEIVE_USER_SIGN_IN = "RECEIVE_USER_SIGN_IN";
 export const RECEIVE_USER = "RECEIVE_USER";
+export const CLEAR_SESSION_ERRORS = "CLEAR_SESSION_ERRORS";
 
 export const receiveUser = user => ({
     type: RECEIVE_USER,
@@ -30,6 +31,10 @@ export const receiveErrors = errors => ({
 export const logoutUser = () => ({
     type: RECEIVE_USER_LOGOUT
 });
+
+export const clearSessionErrors = () => ({
+    type: CLEAR_SESSION_ERRORS
+})
 
 export const signup = user => dispatch => {
     return APIUtil.signup(user)

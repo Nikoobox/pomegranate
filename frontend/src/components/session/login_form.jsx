@@ -17,7 +17,10 @@ class LoginForm extends React.Component {
         this.renderErrors = this.renderErrors.bind(this);
     }
 
-    
+
+    componentWillUnmount() {
+        this.props.clearSessionErrors();
+    }
 
     // Once the user has been authenticated, redirect to the Tweets page
     componentWillReceiveProps(nextProps) {
@@ -47,7 +50,6 @@ class LoginForm extends React.Component {
         };
 
         this.props.login(user);
-       
     }
 
     loginGuest() {
@@ -101,7 +103,7 @@ class LoginForm extends React.Component {
                     </div>
 
                     <div className='demo-form-container'>
-                        Or login as a <span className="demo-form-button" onClick={this.loginGuest}>Demo User</span>
+                        Or login as a <span className="demo-form-button" onClick={this.loginGuest}> Demo User</span>
                     </div>
 
                 </form>

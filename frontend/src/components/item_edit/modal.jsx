@@ -1,9 +1,6 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-// import { withRouter } from 'react-router-dom';
-// import { receiveErrors } from '../../actions/session_actions';
-import TestContainer from '../nav/test_container';
 import ItemEditContainer from './item_edit_container';
 
 
@@ -17,9 +14,9 @@ function Modal({ modal, closeModal }) {
         case 'edit':
             component = <ItemEditContainer />;
             break;
-        case 'test':
-            component = <TestContainer />;
-            break;
+        // case 'test':
+        //     component = <TestContainer />;
+        //     break;
         default:
             return null;
     }
@@ -33,6 +30,7 @@ function Modal({ modal, closeModal }) {
 }
 
 const mapStateToProps = state => {
+    // debugger
     return {
         modal: state.ui.modal
     };

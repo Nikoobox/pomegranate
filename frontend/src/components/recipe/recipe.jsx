@@ -25,8 +25,7 @@ class Recipe extends React.Component {
                             <a href={this.props.recipe.sourceUrl} className='more-info' rel='noopener noreferrer' target="_blank">For more information <GrNotes /></a> 
                     </div>
                     <div className='information-box'>
-                        {/* <a href={this.props.recipe.sourceUrl}>For more information <GrNotes/></a>  */}
-                            <div className='title'><span>Recipe Name: </span> {this.props.recipe.title} </div> 
+                        <div className='title'><span>Recipe Name: </span> {this.props.recipe.title} </div> 
                         <div className='time'><span>Cooking Time: </span>{this.props.recipe.readyInMinutes} minutes</div> 
                         <div className='instructions'><span>Instructions: </span> {this.props.recipe.instructions}</div> 
 

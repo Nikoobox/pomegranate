@@ -7,15 +7,16 @@
         width:30%;
         display: flex;
         justify-content: center;
+        align-items: flex-start;
     }
-     .item-form{
+    .item-form{
         margin-top: 140px;
         margin-left:30px;
         width:250px;
         background:#b86f53;
         padding:20px;
         border-radius: 5px;
-        height:330px;
+        display:block;
         .welcome-message{
             text-align:center;
             margin-bottom:15px;
@@ -90,7 +91,7 @@
                 display:flex;
                 flex-direction: column;
                 align-items: center;
-                justify-content: center;;
+                justify-content: start;
                 width:240px;
                 background-color: white;
                 margin: 20px;
@@ -102,14 +103,47 @@
                     display:flex;
                     align-items: center;
                     flex-direction:column;
+                    position: relative;
+                    &:hover{
+                        cursor:pointer;
+                    }
+                    .gear{
+                        color:$mainGrey;
+                        position: absolute;
+                        right:0;
+                        font-size:24px;
+                        &:hover{
+                            color: black;
+                        }
+                    }
                     .item-name{
                         width:100%;
                         text-align:center;
                         font-size: 20px;
                         font-weight:bold;
+                        top:0;
                         margin-bottom: 5px;
                         padding-bottom:5px;
                         border-bottom: 2px solid $darkGreenCards;
+                    }
+                    .item-quantity{
+                        font-size: 16px;
+                        margin-bottom: 15px;
+                        text-align: center;
+                    }
+                    .low-quantity-box{
+                        // display:flex;
+                        margin-bottom: 15px;
+                        .message-box{
+                            color: $mainRed;
+                            display:flex;
+                            align-items: center;
+                            .icon{
+                                // height: 28px;
+                                margin-right:5px;
+                            }
+                            
+                        }
                     }
                     .item-quantity{
                         font-size: 16px;
@@ -120,8 +154,8 @@
                     font-weight:300;
                 }
                 .expired {
-                    color: red;
-                    text-shadow: 1px 1px 5px rgba(255, 0, 0, 1);
+                    color: $mainRed;
+                    // text-shadow: 1px 1px 5px rgba(255, 0, 0, 1);
                 }
             }   
         }
@@ -154,7 +188,7 @@
         }
     }
     .recipes-box{
-        margin: 0 100px;
+        margin: 30px 100px 0;
         display: flex;
         flex-wrap: wrap;
         align-items: start;
@@ -187,9 +221,39 @@
                     }
                 }
                 .missing-items-box{
+                    margin-top:15px;
+                    padding-bottom:10px;
                     .kitchen-item-no{
-                        color:$mainRed;
-                        font-size:16px;
+                        a {
+                            color:$mainRed;
+                            font-size:16px;
+                        }
+                    }
+                    .message{
+                        margin-top:5px;
+                    } 
+                }
+                .map-icon-container{
+                    display:flex;
+                    align-items: center;
+                    // justify-content: center;
+                    margin:10px 0;
+                    color:$mainGrey;
+                    transition: 0.3s ease all;
+                    .map-icon{
+                        font-size:28px;
+                        color:$lightGreyPlaceholder;
+                    }
+                    .message{
+                        font-size:18px;
+                        margin-left:5px
+                    }
+                    &:hover{
+                        color:black;
+                        cursor:pointer;
+                        .map-icon{
+                            color:black;
+                        }
                     }
                 }
             }

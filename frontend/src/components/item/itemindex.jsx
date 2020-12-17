@@ -1,13 +1,10 @@
 import React from 'react'
 import ItemShow from './itemshow';
 import {Link} from 'react-router-dom';
-// import { AiOutlineArrowDown } from "react-icons/ai";
-// import { Dropdown, DropdownButton } from 'react-bootstrap';
+import { FaMapMarkerAlt, FaArrowDown } from "react-icons/fa";
+
 import Select from 'react-select'
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import DayPickerInput from 'react-day-picker/DayPickerInput';
-// import DatePicker from "react-datepicker";
-// import "react-datepicker/dist/react-datepicker.css";
+
 
 export class ItemIndex extends React.Component {
 
@@ -24,6 +21,7 @@ export class ItemIndex extends React.Component {
     }
     componentDidMount() {
         this.props.getUserItems(this.props.userId);
+        // this.props.recieveCurrentUser(this.props.userId);
     }
     
     update(field) {
@@ -99,7 +97,7 @@ export class ItemIndex extends React.Component {
         });
 
         const options = [
-            { label: "Fruits and vegitables", value: "Fruits and vegitables"},
+            { label: "Fruits and vegetables", value: "Fruits and vegetables"},
             { label: "Dairy", value: "Dairy", className: 'custom-class'},
             {label: "Meat", value: "Meat"},
             {label: "Grains", value: "Grains"},
@@ -128,7 +126,15 @@ export class ItemIndex extends React.Component {
                                     {recipe.missedIngredients.map(item => {
                                         return <div key={item.originalString} className='kitchen-item-no'><Link to="/googlemap"> Missing Item: {item.name}</Link></div>
                                     })}
+                                   
+                                    
                                 </div>
+                                <Link to="/googlemap"><div className='map-icon-container'>
+                                    <FaMapMarkerAlt className='map-icon'/>
+                                    <div className='message'>See nearby stores </div>
+                                </div>
+                                </Link>
+                                
                             </div>
                         </div>
                     </div>
