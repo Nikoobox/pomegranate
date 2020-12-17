@@ -110,7 +110,7 @@ export class ItemIndex extends React.Component {
                 return (
                     <div key={recipe.id} className='recipe-card'>
                         <div className='recipe-card-link'>
-                            <Link to={`/${recipe.id}`} className='recipe-image-box'>
+                            <Link to={`/browse/${recipe.id}`} className='recipe-image-box'>
                                 <img src={recipe.image} alt={recipe.title} className='recipe-image'/>
                             </Link>
                             <div className='card-info'>

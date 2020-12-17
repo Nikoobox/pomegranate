@@ -13,7 +13,8 @@ class Footer extends React.Component {
             <div className='footer-container'>
 
                 <div className="footer-left">
-                    Completed by Room12 Team
+                    Completed by 
+                    <Link to='/browse/contacts'>Room12 Team</Link>
                 </div>
 
                 <div className="footer-message">
