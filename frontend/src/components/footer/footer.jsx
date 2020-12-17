@@ -22,7 +22,7 @@ class Footer extends React.Component {
 
                 <div className="social">
                     Github
-                    <a href='https://github.com/Nikoobox/pomegranate'>
+                    <a href='https://github.com/Nikoobox/pomegranate' rel='noopener noreferrer' target="_blank">
                         <FaGithubSquare />
                     </a>
                 </div>

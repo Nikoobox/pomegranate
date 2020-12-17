@@ -60,8 +60,6 @@ class ItemEdit extends React.Component {
             .then(res => {
                 if (res.type === "RECEIVE_ITEM") {
                     this.props.closeModal();
-                    // this.props.history.push("/browse")
-                    // console.log(this.props)
                 }
             });
         
@@ -69,9 +67,7 @@ class ItemEdit extends React.Component {
 
     handleDelete() {
         this.props.deleteItem(this.props.itemId)
-            // .then(() => this.props.history.push("/browse"));
-            .then(this.props.closeModal());
-        
+            .then(this.props.closeModal()); 
     }
 
     renderErrors() {
@@ -114,7 +110,7 @@ class ItemEdit extends React.Component {
         };
 
         const options = [
-            { label: "Fruits and vegitables", value: "Fruits and vegitables" },
+            { label: "Fruits and vegetables", value: "Fruits and vegetables" },
             { label: "Dairy", value: "Dairy", className: 'custom-class' },
             { label: "Meat", value: "Meat" },
             { label: "Grains", value: "Grains" },
