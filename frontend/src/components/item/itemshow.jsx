@@ -7,12 +7,12 @@ class ItemShow extends React.Component {
     render() {
         // console.log(this.props);
         const { item } = this.props;
-        const quantities = item.quantity === 1 ?
+        const quantities = item.quantity <= 1 ?
             <div className='low-quantity-box'>
                 <div className='item-quantity'>You have {item.quantity} item</div>
                 <div className='message-box'>
                     <BsExclamationTriangle className='icon'/> 
-                    <div className='text'>Low inventory warning</div>
+                    <div className='text'>Low inventory reminder</div>
                 </div>
             </div>
             :
