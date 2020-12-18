@@ -44,26 +44,28 @@ export class ItemIndex extends React.Component {
     }
 
     handleSubmit(e) {
-        e.preventDefault();
-        let item = {
-            name: this.state.name,
-            quantity: this.state.quantity,
-            type: this.state.type,
-            expirationDate: this.state.expirationDate,
-        };
-        this.props.createItem(item)
-            .then(
-                err => {
-                    console.log(err);
-                },
+    e.preventDefault();
+    let item = {
+        name: this.state.name,
+        quantity: this.state.quantity,
+        type: this.state.type,
+        expirationDate: this.state.expirationDate,
+    };
+    this.props.createItem(item)
+        .then(
+            () => {
                 this.setState({
                     name: "",
                     quantity: "",
                     type: "",
                     expirationDate: ""
-                })
-            );
+            })},
+                err => {
+                    console.log(err);
+            },
+        );
     }
+
 
     renderErrors() {
         return (
