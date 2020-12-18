@@ -12,12 +12,15 @@
     z-index: -1;;
     opacity:0.4;
     width : 100%;
-    height: 100%
+    height: 100vh
 }
 
 
 .recipe-box{
+    // height:100%;
     padding: 150px 200px;
+    // padding-bottom: auto;
+    // margin-bottom: 150px;
     display:flex;
     .show-recipe-card{
         display:flex;
