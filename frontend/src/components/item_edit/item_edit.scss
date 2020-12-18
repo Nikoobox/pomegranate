@@ -5,7 +5,6 @@
 
 .item-edit-form{
     margin-top: 140px;
-    // margin-left:30px;
     width:320px;
     background:#b86f53;
     padding:20px 30px 30px;
@@ -66,7 +65,6 @@
             color:white;
             background-color: #76402b;
             cursor: pointer;
-        
         }
     }
     .delete-item-btn-container{
@@ -75,13 +73,11 @@
             background-color: $mainRed;
             width:100%;
             font-size: 16px;
-            // border: $mainRed 2px solid;
             color:white;
             transition: ease-out all 0.2s;
             border:0;
             &:hover{
                 color:white;
-                // border: $mainDarkRed 2px solid;
                 background-color: $mainDarkRed;
                 cursor: pointer;
             }

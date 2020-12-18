@@ -21,7 +21,6 @@ export class ItemIndex extends React.Component {
     }
     componentDidMount() {
         this.props.getUserItems(this.props.userId);
-        // this.props.recieveCurrentUser(this.props.userId);
     }
     
     update(field) {
