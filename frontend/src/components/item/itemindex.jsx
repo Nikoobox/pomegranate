@@ -79,7 +79,6 @@ export class ItemIndex extends React.Component {
     }
 
     render() {
-        console.log(this.props)
         const customStyles = {
             control: base => ({
                 ...base,

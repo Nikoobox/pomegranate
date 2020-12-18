@@ -26,11 +26,13 @@ class Recipe extends React.Component {
                 Object.values(this.props.items).map( item =>{
                     // debugger;
                     if(ingre.name.includes(item.name) && item.quantity >= ingre.amount) {
+                        const cooked = document.querySelector('.cooked')
+                        cooked.innerText = `You used ${ingre.amount} ${ingre.name} from your kitchen`
                         // console.log('how much item was used for this recipe:', ingre.name, ingre.amount, 'amount we had in kitechn:', item.name, item.quantity)
                         item.quantity = `${item.quantity - ingre.amount}`
                         // console.log('how much left after cooking this recipe:', item.quantity)
                         
-                    } else {
+                    } else if(ingre.name.includes(item.name) && item.quantity < ingre.amount) {
                         const error = document.querySelector('.not-enough')
                         error.innerText = 'Sorry, you do not have enoug inventory'
                     }
@@ -59,7 +61,8 @@ class Recipe extends React.Component {
                     <div className='information-box'>
                         <div className='title'><span>Recipe Name: </span> {this.props.recipe.title} </div> 
                         <div className='time'><span>Cooking Time: </span>{this.props.recipe.readyInMinutes} minutes</div> 
-                        <div className='instructions'><span>Instructions: </span> {this.props.recipe.instructions}</div> 
+                        <div className='instructions'><span>Instructions: </span> {this.props.recipe.instructions}</div>
+                        <h6 className="cooked"></h6>
                         <h6 className="not-enough"></h6>
                         <button onClick={this.handleClick}>Cook this Recipe</button>
                         <button onClick={() => { this.props.history.push('/browse')}}>Jump back to recipes</button>
