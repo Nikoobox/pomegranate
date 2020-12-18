@@ -10,6 +10,7 @@ class Recipe extends React.Component {
 
     componentDidMount() {
         this.props.fetchRecipeInfo(this.props.id)
+        // debugger;
         this.props.getUserItems(this.props.userId)
     }
 
@@ -19,16 +20,31 @@ class Recipe extends React.Component {
 
     handleClick() {
         if(this.props.items) {
+
+
+
+
             this.props.recipe.extendedIngredients.map(ingre => {
+
                 Object.values(this.props.items).map( item =>{
+
                     if(ingre.name.includes(item.name) && item.quantity >= ingre.amount) {
                         const cooked = document.querySelector('.cooked')
-                        cooked.innerText = `You used ${ingre.amount} ${ingre.name} from your kitchen`
+                        let word;
+                        if(ingre.amount >= 2) {
+                            word = 'portions'
+                        } else {
+                            word = 'portion'
+                        }
+                        cooked.innerText = `You used ${ingre.amount} ${word} of ${ingre.name} from your kitchen`
                         item.quantity = `${item.quantity - ingre.amount}`
                         
                     } else if(ingre.name.includes(item.name) && item.quantity < ingre.amount) {
                         const error = document.querySelector('.not-enough')
-                        error.innerText = 'Sorry, you do not have enough inventory'
+                        error.innerText = `Sorry, you do not have enough ${item.name}, you need at least ${ingre.amount}`
+                    } else {
+                        const warning = document.querySelector('.warning')
+                        warning.innerText = `${ingre.name} is missing from kitchen`
                     }
                     this.props.editItem(item)
                 })
@@ -54,6 +70,7 @@ class Recipe extends React.Component {
 
                             <div className="cooked"></div>
                             <div className="not-enough"></div>
+                            <div className="warning"></div>
                             <div className='btn-container'>
                                 <button onClick={this.handleClick} className='cook'>Cook this recipe</button>
 
