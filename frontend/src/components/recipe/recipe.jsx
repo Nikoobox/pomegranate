@@ -11,7 +11,8 @@ class Recipe extends React.Component {
     componentDidMount() {
         this.props.fetchRecipeInfo(this.props.id)
         // debugger;
-        this.props.getUserItems(this.props.userId)
+        this.props.getUserItems(this.props.userId);
+        window.scrollTo(0, 0);
     }
 
     componentWillUnmount() {
