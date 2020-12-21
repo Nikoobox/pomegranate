@@ -66,6 +66,11 @@
             background-color: #76402b;
             cursor: pointer;
         }
+        &[disabled]:hover {
+            color:#76402b;
+            background-color: rgba(239, 239, 239, 0.3);
+            cursor: default;
+        }
     }
     .delete-item-btn-container{
         button{
