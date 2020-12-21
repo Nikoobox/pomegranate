@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const getAllItems = () => {
     return axios.get('/api/items/');
-}
+};
 
 export const getUserItems = userId => {
     return axios.get(`/api/items/user/${userId}`);
@@ -13,7 +13,7 @@ export const getItem = itemId => {
 };
 
 export const postItem = itemData => {
-    return axios.post('/api/items/', itemData)
+    return axios.post('/api/items/', itemData);
 };
 
 export const patchItem = (itemData) => {

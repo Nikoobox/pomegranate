@@ -53,19 +53,16 @@ export class ItemIndex extends React.Component {
     };
     this.props.createItem(item)
         .then(
-            () => {
-                console.log("test");
-                this.setState({
-                    name: "",
-                    quantity: "",
-                    type: "",
-                    expirationDate: ""
-                })
-            },
-                err => {
-                    console.log(err);
+            res => {
+                if (res.type === "RECEIVE_ITEM") {
+                    this.setState({
+                        name: "",
+                        quantity: "",
+                        type: "",
+                        expirationDate: ""
+                    });
                 }
-            );
+            });
     }
 
 
