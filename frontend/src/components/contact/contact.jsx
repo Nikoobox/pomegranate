@@ -33,7 +33,7 @@ class Contact extends React.Component {
                                     <a href="https://amgaa9193.github.io/amgaakhosbayar.github.io/" rel='noopener noreferrer' target="_blank">Portfolio</a></div>
                                 <div className='github social'><a href="https://github.com/Amgaa9193" rel='noopener noreferrer' target="_blank">Github</a></div>
                                 <div className='linkedin social'><a href="https://github.com/Amgaa9193" rel='noopener noreferrer' target="_blank">LinkedIn</a></div>
-                                <div className='angellist social'><a href="#" >AngelList</a></div>
+                                <div className='angellist social'><a href="https://angel.co/u/amgaa-khosbayar" rel='noopener noreferrer' target="_blank">AngelList</a></div>
                                 
                             </div>
                         </div>
@@ -56,7 +56,7 @@ class Contact extends React.Component {
                                     <a href="https://christophercfleming.github.io/" rel='noopener noreferrer' target="_blank">Portfolio</a></div>
                                 <div className='github social'><a href="https://github.com/ChristopherCFleming" rel='noopener noreferrer' target="_blank">Github</a></div>
                                 <div className='linkedin social'><a href="https://www.linkedin.com/in/christophercfleming/" rel='noopener noreferrer' target="_blank">LinkedIn</a></div>
-                                <div className='angellist social'><a href="#" >AngelList</a></div>
+                                <div className='angellist social'><a href="https://angel.co/u/christopher-c-fleming" rel='noopener noreferrer' target="_blank">AngelList</a></div>
 
                             </div>
                         </div>
@@ -80,7 +80,7 @@ class Contact extends React.Component {
                                     <a href="https://nikolayshatalov.com/" rel='noopener noreferrer' target="_blank">Portfolio</a></div>
                                 <div className='github social'><a href="https://github.com/Nikoobox" rel='noopener noreferrer' target="_blank">Github</a></div>
                                 <div className='linkedin social'><a href="https://www.linkedin.com/in/nikolay-shatalov-0963b28b/" rel='noopener noreferrer' target="_blank">LinkedIn</a></div>
-                                <div className='angellist social'><a href="#" >AngelList</a></div>
+                                <div className='angellist social' rel='noopener noreferrer' target="_blank"><a href="https://angel.co/u/nikolay-shatalov" >AngelList</a></div>
 
                             </div>
                         </div>
