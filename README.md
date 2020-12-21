@@ -9,7 +9,7 @@ Let Pomegranate help you discover exciting new meals you can create with the ing
 
 # Background and Overview
 
-If given a choice between a healthy, convenient, delicious home-cooked meal and eating out, most American's would choose the former. COVID has dramatically accelereated this movement. Even people who didn't have an interest in cooking find themselves subscribing to meal kits and learning how to cook a meal. It's become a necessity. However most people find themselves wasting almost 40% of everything they buy because they don't know what to do with it. Why bother finding a recipe to cook that leftover tomoato from yesterday's stew and the asperagas you only bought because it was on sale at Trader Joe's. This app takes the hard work out of the equation by suggesting exciting ways to prepare those leftovers you might otherwise throw out.
+If given a choice between a healthy, convenient, delicious home-cooked meal and eating out, most American's would choose the former. COVID has dramatically accelerated this movement. Even people who didn't have an interest in cooking find themselves subscribing to meal kits and learning how to cook a meal. It's become a necessity. However most people find themselves wasting almost 40% of everything they buy because they don't know what to do with it. Why bother finding a recipe to cook that leftover tomoato from yesterday's stew and the asperagas you only bought because it was on sale at Trader Joe's. This app takes the hard work out of the equation by suggesting exciting ways to prepare those leftovers you might otherwise throw out.
 
 # Technologies Stack
 
