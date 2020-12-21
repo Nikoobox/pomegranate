@@ -21,7 +21,6 @@ export class ItemIndex extends React.Component {
     }
     componentDidMount() {
         this.props.getUserItems(this.props.userId);
-        // this.props.recieveCurrentUser(this.props.userId);
     }
     
     update(field) {
@@ -45,26 +44,28 @@ export class ItemIndex extends React.Component {
     }
 
     handleSubmit(e) {
-        e.preventDefault();
-        let item = {
-            name: this.state.name,
-            quantity: this.state.quantity,
-            type: this.state.type,
-            expirationDate: this.state.expirationDate,
-        };
-        this.props.createItem(item)
-            .then(
-                err => {
-                    console.log(err);
-                },
+    e.preventDefault();
+    let item = {
+        name: this.state.name,
+        quantity: this.state.quantity,
+        type: this.state.type,
+        expirationDate: this.state.expirationDate,
+    };
+    this.props.createItem(item)
+        .then(
+            () => {
                 this.setState({
                     name: "",
                     quantity: "",
                     type: "",
                     expirationDate: ""
-                })
-            );
+            })},
+                err => {
+                    console.log(err);
+            },
+        );
     }
+
 
     renderErrors() {
         return (
@@ -109,7 +110,7 @@ export class ItemIndex extends React.Component {
                 return (
                     <div key={recipe.id} className='recipe-card'>
                         <div className='recipe-card-link'>
-                            <Link to={`/${recipe.id}`} className='recipe-image-box'>
+                            <Link to={`/browse/${recipe.id}`} className='recipe-image-box'>
                                 <img src={recipe.image} alt={recipe.title} className='recipe-image'/>
                             </Link>
                             <div className='card-info'>

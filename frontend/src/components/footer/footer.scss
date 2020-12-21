@@ -12,9 +12,18 @@
     font-weight: 300;
     letter-spacing: 0.5px;
     position: fixed;
-    color: #8a703c;
+    color: #614d25;
     .footer-left{
         font-size:14px;
+        a{
+            margin-left:5px;
+            color: #614d25;
+            transition:0.2s ease-out all;
+            &:hover{
+                color:black;
+                font-weight:bold;
+            }
+        }
     }
     
     .footer-message{
@@ -27,7 +36,11 @@
         a{
             margin-left:5px;
             font-size: 26px;
-            color: #8a703c;
+            color: #614d25;
+            transition:0.2s ease all;
+            &:hover{
+                color:black;
+            }
 
         }
     }
