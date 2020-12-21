@@ -99,8 +99,6 @@ class ItemEdit extends React.Component {
     }
 
     render() {
-        console.log(this.props);
-
         const customStyles = {
             control: base => ({
                 ...base,
@@ -116,6 +114,14 @@ class ItemEdit extends React.Component {
             { label: "Grains", value: "Grains" },
             { label: "Beverages", value: "Beverages" },
             { label: "Misc", value: "Misc" }]
+
+        let disabled;
+
+        if (this.state.name === "" || this.state.quantity === "" || this.state.type === "") {
+            disabled = true;
+        } else {
+            disabled = false;
+        }
         
         return (
             <div className="item-edit-page">
@@ -156,10 +162,19 @@ class ItemEdit extends React.Component {
                         value={this.state.type}
                         onChange={this.updateType}
                     />
-                    <input type="submit" value="Edit Item" className='edit-item-btn-container'/>
+                    <input
+                        type="submit"
+                        value="Edit Item"
+                        className='edit-item-btn-container'
+                        disabled={disabled} />
                     
                     <div className='delete-item-btn-container'>
-                        <button onClick={this.handleDelete}>Delete Item</button>
+                        <button
+                            onClick={this.handleDelete}
+                            type="button"
+                        >
+                            Delete Item
+                        </button>
                     </div>
                     {/* <div className='error-container'>
                         {this.renderErrors()}
