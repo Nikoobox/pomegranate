@@ -106,13 +106,8 @@ export class ItemIndex extends React.Component {
            
         let recipes;
 
-
         if (Array.isArray(this.props.recipes)) {
-            recipes = Object.values(this.props.recipes).map(recipe => {
-                
-                
-
-                console.log(recipe.missedIngredients.length)
+            recipes = this.props.recipes.map(recipe => {
                 return (
                     <div key={recipe.id} className='recipe-card'>
                          
@@ -186,6 +181,7 @@ export class ItemIndex extends React.Component {
                                 onChange={this.update('quantity')}
                                 placeholder="Item quantity"
                             />
+                            <div className='date-label'>Expiration Date:</div>
                             <input
                                 type="date"
                                 value={this.state.expirationDate}
