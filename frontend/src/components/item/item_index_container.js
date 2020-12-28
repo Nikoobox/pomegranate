@@ -6,6 +6,7 @@ import ItemIndex from './itemindex';
 import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = state => {
+    // console.log(state)
     return {
         items: state.items,
         userId: state.session.user.id,

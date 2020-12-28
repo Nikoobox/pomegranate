@@ -3,7 +3,6 @@ import ItemShow from './itemshow';
 import {Link} from 'react-router-dom';
 import { FaMapMarkerAlt, FaArrowDown } from "react-icons/fa";
 import {AiFillCheckCircle, AiFillCloseCircle} from 'react-icons/ai';
-
 import Select from 'react-select'
 
 
@@ -36,8 +35,6 @@ export class ItemIndex extends React.Component {
         })
     }
     
-    
-
     handleChange(date) {
         this.setState({
             startDate: date
@@ -66,7 +63,6 @@ export class ItemIndex extends React.Component {
             });
     }
 
-
     renderErrors() {
         return (
             <ul>
@@ -80,6 +76,7 @@ export class ItemIndex extends React.Component {
     }
 
     render() {
+        // console.log(this.props)
         const customStyles = {
             control: base => ({
                 ...base,
@@ -113,8 +110,6 @@ export class ItemIndex extends React.Component {
                          
                         <div className='recipe-card-link'>
 
-
-
                             {recipe.missedIngredients.length === 0 ? 
                                 <div>
                                     <Link to={`/browse/${recipe.id}`} className='recipe-image-box'>
@@ -125,9 +120,7 @@ export class ItemIndex extends React.Component {
                                  <div>
                                      <img 
                                         src={recipe.image} alt={recipe.title} 
-                                      
                                         className='recipe-image recipe-image-box' 
-                                
                                     />
                                  </div>
                             }
@@ -146,20 +139,16 @@ export class ItemIndex extends React.Component {
                                     {recipe.missedIngredients.map(item => {
                                         return <div key={item.originalString} className='kitchen-item-no'><Link to="/googlemap"> Missing Item: {item.name}</Link></div>
                                     })}
-                                  
-                                    
                                 </div>
                                     {recipe.missedIngredients.length !== 0 ? <Link to="/googlemap"><div className='map-icon-container'>
                                     <FaMapMarkerAlt className='map-icon'/>
                                         <div className='message'>See nearby stores </div>
                                         </div>
                                     </Link> : "" }
-                                
                             </div>
                         </div>
                     </div>
                 )
-
             });
         }
 

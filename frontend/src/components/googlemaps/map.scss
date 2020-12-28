@@ -1,6 +1,6 @@
 #map{
     width:100%;
-    margin-top:8%;
+    margin-top:10%;
     @media (max-width: 1300px){
         margin-top:6%;
     }
@@ -16,7 +16,7 @@
             font-weight:bold;
         }
         .map-instructions{
-            margin: 20px 0 0;
+            margin: 20px 0 10px;
         }
         .input-box{
             display:flex;
