@@ -204,10 +204,26 @@
             margin:20px;
             .recipe-image-box{
                 width:100%;
+                height:100%;
+                position:relative;
                 img{
                     width:100%;
                     position:top;
                     object-fit: cover;
+                }
+                .ok{
+                    color:green;
+                    position:absolute;
+                    right:10px;
+                    top:10px;
+                    font-size:30px;
+                }
+                .not-ok{
+                    color:$mainRed;
+                    position:absolute;
+                    right:10px;
+                    top:10px;
+                    font-size:30px;
                 }
 
             }

@@ -111,24 +111,25 @@ export class ItemIndex extends React.Component {
                         <div className='recipe-card-link'>
 
                             {recipe.missedIngredients.length === 0 ? 
-                                <div>
-                                    <Link to={`/browse/${recipe.id}`} className='recipe-image-box'>
+                                <div className='recipe-image-box'>
+                                    <Link to={`/browse/${recipe.id}`} >
                                         <img src={recipe.image} alt={recipe.title} className='recipe-image'/>
+                                        <AiFillCheckCircle className='ok' />
                                     </Link> 
-
                                 </div> :
-                                 <div>
+                                <div className='recipe-image-box' >
                                      <img 
                                         src={recipe.image} alt={recipe.title} 
-                                        className='recipe-image recipe-image-box' 
+                                        className='recipe-image' 
                                     />
+                                    <AiFillCloseCircle className='not-ok' />
                                  </div>
                             }
 
                             <div className='card-info'>
                                 <div className='recipe-title-box'>
                                     {recipe.title} 
-                                    {recipe.missedIngredients.length === 0 ? <AiFillCheckCircle/> : <AiFillCloseCircle/>}
+                                    {/* {recipe.missedIngredients.length === 0 ? <AiFillCheckCircle className='testing'/> : <AiFillCloseCircle/>} */}
                                 </div>
                                 <div className='from-kitchen-box'>
                                     {recipe.usedIngredients.map(item => {

@@ -20,7 +20,6 @@ const mapStateToProps = state => {
             kitchenName: ''
         }
     }
-    
 };
 
 const mapDispatchToProps = dispatch => ({
