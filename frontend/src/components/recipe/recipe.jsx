@@ -40,7 +40,7 @@ class Recipe extends React.Component {
                         error.innerText = `Sorry, you do not have enough ${item.name}, you need at least ${ingre.amount}`;
                     } else {
                         const warning = document.querySelector('.warning');
-                        warning.innerText = `you need more ${ingre.amount, ingre.name}`;
+                        warning.innerText = ``;
                     }
                     item.quantity = `${item.quantity}`;
                     this.props.editItem(item);
@@ -58,7 +58,7 @@ class Recipe extends React.Component {
                     <div className='recipe-box'>
                         <div className='show-recipe-card'>
                             <div className='image-box'>
-                                <img src={this.props.recipe.image}/>
+                                <img src={this.props.recipe.image} alt="recipe"/>
                                     <a href={this.props.recipe.sourceUrl} className='more-info' rel='noopener noreferrer' target="_blank">For more information <GrNotes /></a> 
                             </div>
                             <div className='information-box'>
