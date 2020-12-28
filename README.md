@@ -42,99 +42,142 @@ We created smooth, clean modals to input user and ingredient data. We also used 
 
 ![Pomegranate Banner](extra_media/add_ingredients_gif.gif)
 
-## Styling
+## Models For a Smooth UI/UX
 
-Out top priority was to make Pomegranate elegant and functional. Our home page utilizes CSS positioning strategies to add a beautiful background image.
-### Home Page
+Out top priority was to make Pomegranate elegant and functional. Our edit item model and navigation drop-down menu utilize CSS positioning strategies to allow a user to easily interact with Pomegranate. Below, you can see how we allow a user to easily edit items in their kitchen and logout. To adjust items, we (short code walkthrough). As for the logout button, we (short code walkthrough).
+
+![Models](extra_media/add_ingredients_gif.gif)
+
+### Edit Item Model
 ```javascript
-.splash-container{
-    height:100vh;
-    width:100%;
-    position:relative;
-} 
-.splash-container::before{
-    content:'';
-    position:absolute;
-    background-image: url(../../images/back3.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -1;;
-    opacity:0.4;
-    width : 100%;
-    height: 100%
-}
+    render() {
+        const customStyles = {
+            control: base => ({
+                ...base,
+                border: 0,
+                boxShadow: 'none',
+            })
+        };
+
+        const options = [
+            { label: "Fruits and vegetables", value: "Fruits and vegetables" },
+            { label: "Dairy", value: "Dairy", className: 'custom-class' },
+            { label: "Meat", value: "Meat" },
+            { label: "Grains", value: "Grains" },
+            { label: "Beverages", value: "Beverages" },
+            { label: "Misc", value: "Misc" }]
+
+        let disabled;
+
+        if (this.state.name === "" || this.state.quantity === "" || this.state.type === "") {
+            disabled = true;
+        } else {
+            disabled = false;
+        }
+        
+        return (
+            <div className="item-edit-page">
+                <form onSubmit={this.handleSubmit} className='item-edit-form'>
+                    <div className='close' onClick={() => this.props.closeModal()}><AiOutlineClose/></div>
+                    <div className='welcome-message'>Edit Item Form</div>
+                    <div className='label'>
+                        Item name
+                    </div> 
+                    <input type="text"
+                        value={this.state.name}
+                        onChange={this.update('name')}
+                        placeholder="Enter name"
+                    />
+                    <div className='label'>
+                        Quantity
+                    </div>
+                    <input type="number"
+                        value={this.state.quantity}
+                        onChange={this.update('quantity')}
+                        placeholder="Enter quantity"
+                    />
+                    <div className='label'>
+                        Expiration date
+                    </div>
+                    <input type="date"
+                        value={this.state.expirationDate}
+                        onChange={this.update('expirationDate')}
+                        placeholder="Enter date"
+                    />                  
+                    <div className='label'>
+                        Type
+                    </div>    
+                    <Select
+                        styles={customStyles}
+                        options={options}
+                        placeholder={this.state.type === '' ? 'Select an item type' : this.state.type}
+                        value={this.state.type}
+                        onChange={this.updateType}
+                    />
+                    <input
+                        type="submit"
+                        value="Edit Item"
+                        className='edit-item-btn-container'
+                        disabled={disabled} />
+                    
+                    <div className='delete-item-btn-container'>
+                        <button
+                            onClick={this.handleDelete}
+                            type="button"
+                        >
+                            Delete Item
+                        </button>
+                    </div>
+                    {/* <div className='error-container'>
+                        {this.renderErrors()}
+                    </div> */}
+                </form>
+            </div>
+        );
+    }
 ```
-We used SCSS throught the project for better CSS structuring and readability. Smooth transitions were used for every hover effect and modal.
 
-### Recipes Section
+### Logout Drop-Down
 ```javascript
-.recipes-container{
-    width:100%;
-    margin:50px 0;
-    .fetch-rec-button-box{
-        width:100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin-bottom:70px;
-        button{
-            padding:10px;
-            border-radius:30px;
-            border:2px solid $mainRed;
-            background:white;
-            transition: ease-out all 0.2s;
-            color:$mainRed;
-            font-size:18px;
-            &:hover{
-                background: $mainRed;
-                color:white;
-                border: 2px solid $mainRed;
-                cursor:pointer;
-            }
-        }
-    }
-    .recipes-box{
-        margin: 0 100px;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: start;
-        justify-content: space-between;
-        .recipe-card{
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            border-radius: 5px;
-            width:20%;
-            margin:20px;
-            .recipe-image-box{
-                width:100%;
-                img{
-                    width:100%;
-                    position:top;
-                    object-fit: cover;
-                }
+    // Selectively render links dependent on whether the user is logged in
+    getLinks() {
+        if (this.props.loggedIn) {
+            return (
+                <div className='navbar'>
+                    <Link to='/' className='navbar-logo-cont'>
+                        <div className='logo-img'><img src={pom_logo}/></div>
+                        <div className='logo-name'>Pomegranate</div>
+                    </Link>
+                    <div className='dropdown-container'>
+                    <Dropdown>
+                        <Dropdown.Toggle variant="success" id="dropdown-basic">
+                                <FaHamburger />
+                        </Dropdown.Toggle>
 
-            }
-            .card-info{
-                padding:10px;
-                .recipe-title-box{
-                    font-size: 20px;
-                    margin-bottom: 10px;
-                }
-                .from-kitchen-box{
-                    margin-bottom:5px;
-                    .kitchen-item-yes{
-                        color:$mainGreen;
-                        font-size:16px;
-                    }
-                }
-                .missing-items-box{
-                    .kitchen-item-no{
-                        color:$mainRed;
-                        font-size:16px;
-                    }
-                }
-            }
+                        <Dropdown.Menu>
+                            <Dropdown.Item >My account</Dropdown.Item>
+                            <LinkContainer to='/browse/contacts'>
+                                <Dropdown.Item >Contacts</Dropdown.Item>
+                            </LinkContainer>
+                            <Dropdown.Item onClick={this.logoutUser} className='dropdown-logout'>Logout</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                    </div> 
+                </div>
+            );
+        } else {
+            return (
+                <div className='navbar'>
+                    <Link to='/' className='navbar-logo-cont'>
+                        <div className='logo-img'><img src={pom_logo} /></div>
+                        <div className='logo-name'>Pomegranate</div>
+                    </Link>
+                    <Link to='/browse/contacts' className='navbar-about-cont'>
+                        <div className='about'>Contacts</div>
+                        
+                    </Link>
+                </div>
+            );
         }
     }
-}
 ```
