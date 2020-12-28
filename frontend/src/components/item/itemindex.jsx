@@ -2,6 +2,7 @@ import React from 'react'
 import ItemShow from './itemshow';
 import {Link} from 'react-router-dom';
 import { FaMapMarkerAlt, FaArrowDown } from "react-icons/fa";
+import {AiFillCheckCircle, AiFillCloseCircle} from 'react-icons/ai';
 
 import Select from 'react-select'
 
@@ -104,17 +105,42 @@ export class ItemIndex extends React.Component {
             {label: "Misc", value: "Misc"}]
            
         let recipes;
+
+
         if (Array.isArray(this.props.recipes)) {
             recipes = Object.values(this.props.recipes).map(recipe => {
+                
+                
+
+                console.log(recipe.missedIngredients.length)
                 return (
                     <div key={recipe.id} className='recipe-card'>
+                         
                         <div className='recipe-card-link'>
-                            <Link to={`/browse/${recipe.id}`} className='recipe-image-box'>
-                                <img src={recipe.image} alt={recipe.title} className='recipe-image'/>
-                            </Link>
+
+
+
+                            {recipe.missedIngredients.length === 0 ? 
+                                <div>
+                                    <Link to={`/browse/${recipe.id}`} className='recipe-image-box'>
+                                        <img src={recipe.image} alt={recipe.title} className='recipe-image'/>
+                                    </Link> 
+
+                                </div> :
+                                 <div>
+                                     <img 
+                                        src={recipe.image} alt={recipe.title} 
+                                      
+                                        className='recipe-image recipe-image-box' 
+                                
+                                    />
+                                 </div>
+                            }
+
                             <div className='card-info'>
                                 <div className='recipe-title-box'>
-                                    {recipe.title}
+                                    {recipe.title} 
+                                    {recipe.missedIngredients.length === 0 ? <AiFillCheckCircle/> : <AiFillCloseCircle/>}
                                 </div>
                                 <div className='from-kitchen-box'>
                                     {recipe.usedIngredients.map(item => {
@@ -125,19 +151,20 @@ export class ItemIndex extends React.Component {
                                     {recipe.missedIngredients.map(item => {
                                         return <div key={item.originalString} className='kitchen-item-no'><Link to="/googlemap"> Missing Item: {item.name}</Link></div>
                                     })}
-                                   
+                                  
                                     
                                 </div>
-                                <Link to="/googlemap"><div className='map-icon-container'>
+                                    {recipe.missedIngredients.length !== 0 ? <Link to="/googlemap"><div className='map-icon-container'>
                                     <FaMapMarkerAlt className='map-icon'/>
-                                    <div className='message'>See nearby stores </div>
-                                </div>
-                                </Link>
+                                        <div className='message'>See nearby stores </div>
+                                        </div>
+                                    </Link> : "" }
                                 
                             </div>
                         </div>
                     </div>
                 )
+
             });
         }
 

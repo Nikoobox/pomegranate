@@ -21,10 +21,6 @@ class Recipe extends React.Component {
 
     handleClick() {
         if(this.props.items) {
-
-
-
-
             this.props.recipe.extendedIngredients.map(ingre => {
 
                 Object.values(this.props.items).map( item =>{
@@ -45,7 +41,7 @@ class Recipe extends React.Component {
                         error.innerText = `Sorry, you do not have enough ${item.name}, you need at least ${ingre.amount}`
                     } else {
                         const warning = document.querySelector('.warning')
-                        warning.innerText = `${ingre.name} is missing from kitchen`
+                        warning.innerText = `you need more ${ingre.amount, ingre.name}`
                     }
                     this.props.editItem(item)
                 })
@@ -54,7 +50,7 @@ class Recipe extends React.Component {
     }
 
     render() {
-
+        // debugger;
         if(this.props.recipe)
             return (
             <div className='show-recipe-container'>
