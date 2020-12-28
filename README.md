@@ -40,7 +40,7 @@ Here, we stored all user login information, their kitchen info, and all ingredie
 
 Pomegranate pulls infromation from the Spoonacular and Google APIs and then displays that information in meaningful, user-friendly ways. We suggest recipes the user can make based on the ingredients in their kitchen, show each recipe in greater detail, and even locate nearby grocery stores with Google Maps if a user is missing any ingredients for a suggested recipe. We even keep track of each ingredient's expiration date and display it in red if it has expired.
 
-![Pomegranate Banner](extra_media/add_ingredients_gif.gif)
+![Pomegranate Banner](extra_media/walkthrough.gif)
 
 ## Modals
 Below, you can see how we allow a user to easily edit items in their kitchen. This modal, like our user login demonstrated above, allows for a smooth UI/UX. Here, we render edit container based on the modal 'edit' type under case 'edit'. In a future, more cases could be added under the switch if needed. Modal will be closed if the user either clicks outside of the form or on 'X'. 
