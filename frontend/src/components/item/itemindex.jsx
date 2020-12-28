@@ -159,6 +159,7 @@ export class ItemIndex extends React.Component {
                                 onChange={this.update('quantity')}
                                 placeholder="Item quantity"
                             />
+                            <div className='date-label'>Expiration Date:</div>
                             <input
                                 type="date"
                                 value={this.state.expirationDate}
