@@ -15,7 +15,7 @@ class Recipe extends React.Component {
     }
 
     componentWillUnmount() {
-        this.props.clearRecipeState();
+        this.props.clearCurrentRecipeState();
     }
 
     handleClick() {
@@ -42,9 +42,10 @@ class Recipe extends React.Component {
                         const warning = document.querySelector('.warning')
                         warning.innerText = `${ingre.name} is missing from kitchen`
                     }
-                    this.props.editItem(item)
+                    this.props.editItem(item);
                 })
             })
+            this.props.clearRecipeState();
         }
     }
 
