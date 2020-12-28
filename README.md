@@ -9,7 +9,7 @@ Let Pomegranate help you discover exciting new meals you can create with the ing
 
 # Background and Overview
 
-If given a choice between a healthy, convenient, delicious home-cooked meal and eating out, most American's would choose the former. COVID has dramatically accelerated this movement. Even people who didn't have an interest in cooking find themselves subscribing to meal kits and learning how to cook a meal. It's become a necessity. However most people find themselves wasting almost 40% of everything they buy because they don't know what to do with it. Why bother finding a recipe to cook that leftover tomoato from yesterday's stew and the asperagas you only bought because it was on sale at Trader Joe's. This app takes the hard work out of the equation by suggesting exciting ways to prepare those leftovers you might otherwise throw out.
+If given a choice between a healthy, convenient, delicious home-cooked meal and eating out, most Americans would choose the former. COVID has dramatically accelerated this movement. Even people who didn't have an interest in cooking find themselves subscribing to meal kits and learning how to cook a meal. It has become a necessity. However most people find themselves wasting almost 40% of everything they buy because they don't know what to do with it. This app takes the hard work out of the equation by suggesting exciting ways to prepare those leftovers you might otherwise throw out.
 
 # Technologies Stack
 
@@ -32,16 +32,58 @@ If given a choice between a healthy, convenient, delicious home-cooked meal and 
 
 ## MongoDB and Express
 
-Here, we stored all user login information, their kitchen info, and all ingredients in their kitchen. When they input each ingredient, we keep track of which items have expired and display them in red in the kitchen show page. We also allow a user to update each ingredients information in an ingredient show page. 
+Here, we stored all user login information, their kitchen info, and all ingredients in their kitchen. When they input each ingredient, we keep track of which items have expired and display them in red in the kitchen show page. We also allow a user to update each ingredient's information in an ingredient show page. 
 
 ![User Auth Demo](extra_media/login_gif.gif)
 
 ## React, Redux, Node
 
-We created smooth, clean modals to input user and ingredient data. We also used it to create get requests to our Spoonacular and Google APIs and then display that information in meaningful, user-friendly ways. We can suggest recipes the user can use based on the ingredients in their kitchen, show each recipe in greater detail, and even locate nearby grocery stores with Google Maps if a user is missing any ingredients for a suggested recipe. We even keep track of each ingredient's expiration date and show it in red if it has expired.
+Pomegranate pulls infromation from the Spoonacular and Google APIs and then displays that information in meaningful, user-friendly ways. We suggest recipes the user can make based on the ingredients in their kitchen, show each recipe in greater detail, and even locate nearby grocery stores with Google Maps if a user is missing any ingredients for a suggested recipe. We even keep track of each ingredient's expiration date and display it in red if it has expired.
 
 ![Pomegranate Banner](extra_media/add_ingredients_gif.gif)
 
+## Modals
+Below, you can see how we allow a user to easily edit items in their kitchen. This modal, like our user login demonstrated above, allows for a smooth UI/UX. Here, we (code talk here). 
+
+![Edit Item Model](extra_media/model_demo.gif)
+
+```javascript
+function Modal({ modal, closeModal }) {
+    if (!modal) {
+        return null;
+    }
+    let component;
+//*********** YOU HAVE ACCESS TO THE USER ID USING modal.userId ****************//
+    switch (modal.modal) {
+        case 'edit':
+            component = <ItemEditContainer />;
+            break;
+        default:
+            return null;
+    }
+    return (
+        <div className="modal-background" onClick={closeModal}>
+            <div className="modal-child" onClick={e => e.stopPropagation()}>
+                {component}
+            </div>
+        </div>
+    );
+}
+
+const mapStateToProps = state => {
+    return {
+        modal: state.ui.modal
+    };
+};
+const mapDispatchToProps = dispatch => {
+    return {
+        closeModal: () => {
+            dispatch(closeModal());
+        },
+    };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+```
 ## Styling
 
 Out top priority was to make Pomegranate elegant and functional. Our home page utilizes CSS positioning strategies to add a beautiful background image.
