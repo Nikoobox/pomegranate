@@ -44,7 +44,7 @@ We created smooth, clean modals to input user and ingredient data. We also used 
 
 ## Styling
 
-Pomegranate top priority is to make an app elegant looking and functional. Home page utilized CSS positioning strategy to add beautiful background image.
+Out top priority was to make Pomegranate elegant and functional. Our home page utilizes CSS positioning strategies to add a beautiful background image.
 ### Home Page
 ```
 .splash-container{
