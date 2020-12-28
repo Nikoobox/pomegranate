@@ -25,23 +25,24 @@ class Recipe extends React.Component {
                 Object.values(this.props.items).map( item =>{
 
                     if(ingre.name.includes(item.name) && item.quantity >= ingre.amount) {
-                        const cooked = document.querySelector('.cooked')
+                        const cooked = document.querySelector('.cooked');
                         let word;
                         if(ingre.amount >= 2) {
-                            word = 'portions'
+                            word = 'portions';
                         } else {
-                            word = 'portion'
+                            word = 'portion';
                         }
-                        cooked.innerText = `You used ${ingre.amount} ${word} of ${ingre.name} from your kitchen`
-                        item.quantity = `${item.quantity - ingre.amount}`
+                        cooked.innerText = `You used ${ingre.amount} ${word} of ${ingre.name} from your kitchen`;
+                        item.quantity = `${item.quantity - ingre.amount}`;
                         
                     } else if(ingre.name.includes(item.name) && item.quantity < ingre.amount) {
-                        const error = document.querySelector('.not-enough')
-                        error.innerText = `Sorry, you do not have enough ${item.name}, you need at least ${ingre.amount}`
+                        const error = document.querySelector('.not-enough');
+                        error.innerText = `Sorry, you do not have enough ${item.name}, you need at least ${ingre.amount}`;
                     } else {
-                        const warning = document.querySelector('.warning')
-                        warning.innerText = `you need more ${ingre.amount, ingre.name}`
+                        const warning = document.querySelector('.warning');
+                        warning.innerText = ``;
                     }
+                    item.quantity = `${item.quantity}`;
                     this.props.editItem(item);
                 })
             })
@@ -57,7 +58,7 @@ class Recipe extends React.Component {
                     <div className='recipe-box'>
                         <div className='show-recipe-card'>
                             <div className='image-box'>
-                                <img src={this.props.recipe.image}/>
+                                <img src={this.props.recipe.image} alt="recipe"/>
                                     <a href={this.props.recipe.sourceUrl} className='more-info' rel='noopener noreferrer' target="_blank">For more information <GrNotes /></a> 
                             </div>
                             <div className='information-box'>
