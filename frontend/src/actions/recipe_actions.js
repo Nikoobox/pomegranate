@@ -7,6 +7,7 @@ import {
 export const RECEIVE_RECIPES = "RECEIVE_RECIPES";
 export const RECEIVE_RECIPE_INFO = "RECEIVE_RECIPE_INFO";
 export const CLEAR_RECIPES = "CLEAR_RECIPES";
+export const CLEAR_CURRENT_RECIPE = "CLEAR_CURRENT_RECIPE";
 
 const receiveRecipes = (recipes) => {
     return {
@@ -28,6 +29,12 @@ const clearRecipes = () => {
     }
 }
 
+const clearCurrentRecipe = () => {
+    return {
+        type: CLEAR_CURRENT_RECIPE
+    }
+}
+
 export const fetchRecipe = (items) => dispatch => {
         return getRecipeByIngred(items).then(recipes => dispatch(receiveRecipes(recipes)))
 };
@@ -38,4 +45,8 @@ export const fetchRecipeInfo = (recipeId) => dispatch => {
 
 export const clearRecipeState = () => dispatch => {
     return dispatch(clearRecipes());
+};
+
+export const clearCurrentRecipeState = () => dispatch => {
+    return dispatch(clearCurrentRecipe());
 };
