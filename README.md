@@ -46,7 +46,7 @@ We created smooth, clean modals to input user and ingredient data. We also used 
 
 Pomegranate top priority is to make an app elegant looking and functional. Home page utilized CSS positioning strategy to add beautiful background image.
 ### Home Page
-```css
+```javascript
 .splash-container{
     height:100vh;
     width:100%;
@@ -67,7 +67,7 @@ Pomegranate top priority is to make an app elegant looking and functional. Home 
 We used SCSS throught the project for better CSS structuring and readability. Smooth transitions were used for every hover effect and modal.
 
 ### Recipes Section
-```css
+```javascript
 .recipes-container{
     width:100%;
     margin:50px 0;
