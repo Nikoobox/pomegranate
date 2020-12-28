@@ -34,7 +34,7 @@ If given a choice between a healthy, convenient, delicious home-cooked meal and 
 
 Here, we stored all user login information, their kitchen info, and all ingredients in their kitchen. When they input each ingredient, we keep track of which items have expired and display them in red in the kitchen show page. We also allow a user to update each ingredient's information in an ingredient show page. 
 
-![User Auth Demo](extra_media/login_gif.gif)
+![User Auth Demo](extra_media/login_demo.gif)
 
 ## React, Redux, Node
 
