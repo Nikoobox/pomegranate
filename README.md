@@ -43,7 +43,7 @@ Pomegranate pulls infromation from the Spoonacular and Google APIs and then disp
 ![Pomegranate Banner](extra_media/add_ingredients_gif.gif)
 
 ## Modals
-Below, you can see how we allow a user to easily edit items in their kitchen. This modal, like our user login demonstrated above, allows for a smooth UI/UX. Here, we (code talk here). 
+Below, you can see how we allow a user to easily edit items in their kitchen. This modal, like our user login demonstrated above, allows for a smooth UI/UX. Here, we render edit container based on the modal 'edit' type under case 'edit'. In a future, more cases could be added under the switch if needed. Modal will be closed if the user either clicks outside of the form or on 'X'. 
 
 ![Edit Item Model](extra_media/model_demo.gif)
 
