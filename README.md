@@ -67,7 +67,7 @@ Pomegranate top priority is to make an app elegant looking and functional. Home 
 We used SCSS throught the project for better CSS structuring and readability. Smooth transitions were used for every hover effect and modal.
 
 ### Recipes Section
-```
+```javascript
 .recipes-container{
     width:100%;
     margin:50px 0;
@@ -137,20 +137,4 @@ We used SCSS throught the project for better CSS structuring and readability. Sm
         }
     }
 }
-```
-### Colors Variables
-We used colors variables to experiment with overall website look. 
-
-```css
-$mainGrey: #333333;
-$lightGreyPlaceholder: #9a9a9a;
-$mainRed: #a1272e;
-$mainLightRed: #eed9d0;
-$mainGreen:#446c49;
-$Greenish:#498586;
-$lightGreenCards: #89bbc0;
-$darkGreenCards: #437a80;
-$GreenishDark:#091617;
-$mainYellow:#f7dca5;
-$mainYellowLignt:#f7f6f3;
 ```
