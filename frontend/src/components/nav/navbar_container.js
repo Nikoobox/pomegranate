@@ -7,11 +7,21 @@ import { getUser } from './../../actions/session_actions';
 
 import NavBar from './navbar';
 
-const mapStateToProps = state => ({
-    loggedIn: state.session.isAuthenticated,
-    userId: state.session.user.id,
-    kitchenName: ''
-});
+const mapStateToProps = state => {
+    if (state.session.isAuthenticated){
+        return {
+            loggedIn: state.session.isAuthenticated,
+            userId: state.session.user.id,
+            kitchenName: ''
+        }
+    }else{
+        return {
+            loggedIn: state.session.isAuthenticated,
+            kitchenName: ''
+        }
+    }
+    
+};
 
 const mapDispatchToProps = dispatch => ({
     logout: () => dispatch(logout()),

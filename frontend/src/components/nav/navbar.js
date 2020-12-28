@@ -12,7 +12,7 @@ class NavBar extends React.Component {
         super(props);
         this.logoutUser = this.logoutUser.bind(this);
         this.getLinks = this.getLinks.bind(this);
-        this.state = this.props;
+        this.state = {kitchenName: ''};
     }
 
     logoutUser(e) {
@@ -23,14 +23,12 @@ class NavBar extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getUser(this.props.userId)
-        .then(res=>{
-        //     const kitchenName = document.getElementById('kitchen-name-link');
-            console.log(res.user.data.kitchenName)
-            this.setState({ kitchenName: res.user.data.kitchenName})
-            // this.state.kitchenName = res.user.data.kitchenName;
-        //     // console.log(res.user.data.kitchen_name);
-        })
+        if (this.props.loggedIn){
+            this.props.getUser(this.props.userId)
+            .then(res=>{
+                this.setState({ kitchenName: res.user.data.kitchenName})
+            })
+        }
     }
 
     // Selectively render links dependent on whether the user is logged in
@@ -49,7 +47,8 @@ class NavBar extends React.Component {
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
-            <Dropdown.Item id='kitchen-name-link'>{this.state.kitchenName}</Dropdown.Item>
+                            <Dropdown.Item id='kitchen-name-link'>{this.state.kitchenName}</Dropdown.Item>
+            
                             <LinkContainer to='/browse/contacts'>
                                 <Dropdown.Item >Contacts</Dropdown.Item>
                             </LinkContainer>
