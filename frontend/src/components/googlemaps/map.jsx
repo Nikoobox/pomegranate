@@ -85,10 +85,12 @@ class MapShow extends React.Component {
                         <div>You are here</div>
                     </InfoWindow>
                 </Marker>
+                <h3>To find a specific store, enter its name below or click <a href="https://www.google.com/maps/search/?api=1&query=grocery" target="_blank"><button>here</button></a> to see all nearby store options.</h3>
                 <AutoComplete
                     style={ {width: "100%", height: "40px" }}
                     onPlaceSelected={this.onPlaceSelected}
                     types={['establishment']}
+                    placeholder="Store Name"
                 />
             </GoogleMap>
             ))
