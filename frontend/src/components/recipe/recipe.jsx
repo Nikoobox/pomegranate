@@ -9,14 +9,13 @@ class Recipe extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchRecipeInfo(this.props.id)
-        // debugger;
+        this.props.fetchRecipeInfo(this.props.id);
         this.props.getUserItems(this.props.userId);
         window.scrollTo(0, 0);
     }
 
     componentWillUnmount() {
-        this.props.clearRecipeState();
+        this.props.clearCurrentRecipeState();
     }
 
     handleClick() {
@@ -43,45 +42,49 @@ class Recipe extends React.Component {
                         const warning = document.querySelector('.warning')
                         warning.innerText = `you need more ${ingre.amount, ingre.name}`
                     }
-                    this.props.editItem(item)
+                    this.props.editItem(item);
                 })
             })
+            this.props.clearRecipeState();
         }
     }
 
     render() {
-        // debugger;
-        if(this.props.recipe)
+
+        if(this.props.recipe) {
             return (
-            <div className='show-recipe-container'>
-                <div className='recipe-box'>
-                    <div className='show-recipe-card'>
-                        <div className='image-box'>
-                            <img src={this.props.recipe.image}/>
-                                <a href={this.props.recipe.sourceUrl} className='more-info' rel='noopener noreferrer' target="_blank">For more information <GrNotes /></a> 
-                        </div>
-                        <div className='information-box'>
-                            <div className='title'><span>Recipe Name: </span> {this.props.recipe.title} </div> 
-                            <div className='time'><span>Cooking Time: </span>{this.props.recipe.readyInMinutes} minutes</div> 
-                            <div className='instructions'><span>Instructions: </span> {this.props.recipe.instructions}</div>
-
-                            <div className="cooked"></div>
-                            <div className="not-enough"></div>
-                            <div className="warning"></div>
-                            <div className='btn-container'>
-                                <button onClick={this.handleClick} className='cook'>Cook this recipe</button>
-
-                                <button onClick={() => { this.props.history.push('/browse') }} className='jump-to-recipes'>Jump back to recipes</button>
-
+                <div className='show-recipe-container'>
+                    <div className='recipe-box'>
+                        <div className='show-recipe-card'>
+                            <div className='image-box'>
+                                <img src={this.props.recipe.image}/>
+                                    <a href={this.props.recipe.sourceUrl} className='more-info' rel='noopener noreferrer' target="_blank">For more information <GrNotes /></a> 
                             </div>
+                            <div className='information-box'>
+                                <div className='title'><span>Recipe Name: </span> {this.props.recipe.title} </div> 
+                                <div className='time'><span>Cooking Time: </span>{this.props.recipe.readyInMinutes} minutes</div> 
+                                <div className='instructions'><span>Instructions: </span> {this.props.recipe.instructions}</div>
+
+                                <div className="cooked"></div>
+                                <div className="not-enough"></div>
+                                <div className="warning"></div>
+                                <div className='btn-container'>
+                                    <button onClick={this.handleClick} className='cook'>Cook this recipe</button>
+
+                                    <button onClick={() => { this.props.history.push('/browse') }} className='jump-to-recipes'>Jump back to recipes</button>
+
+                                </div>
+                            </div>
+
                         </div>
 
                     </div>
-
+                
                 </div>
-            
-            </div>
             )
+        } else {
+            return null;
+        }
     }
 }
 
