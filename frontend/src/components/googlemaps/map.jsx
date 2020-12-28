@@ -31,7 +31,7 @@ class MapShow extends React.Component {
     // this method sets the default location to users home address 
     componentDidMount(){
         this.props.getUser(this.props.userId).then(res => {
-            debugger;
+            // debugger;
             Geocode.fromAddress(res.user.data.address).then(
             response => {
                 const { lat, lng } = response.results[0].geometry.location;
@@ -85,13 +85,16 @@ class MapShow extends React.Component {
                         <div>You are here</div>
                     </InfoWindow>
                 </Marker>
-                <h3>To find a specific store, enter its name below or click <a href="https://www.google.com/maps/search/?api=1&query=grocery" target="_blank"><button>here</button></a> to see all nearby store options.</h3>
+                <div className='map-instructions'>To find a specific store, enter its name below: </div>
                 <AutoComplete
-                    style={ {width: "100%", height: "40px" }}
+                    style={ {width: "40%", height: "40px" }}
                     onPlaceSelected={this.onPlaceSelected}
                     types={['establishment']}
                     placeholder="Store Name"
                 />
+                <div className='map-instructions'>
+                    Or click <a href="https://www.google.com/maps/search/?api=1&query=grocery" target="_blank"><button className='button-here'>here</button></a> to see all nearby store options.
+                </div>
             </GoogleMap>
             ))
         );
@@ -99,13 +102,15 @@ class MapShow extends React.Component {
 
         return (
             <div id="map">
-                <h1 style={{marginTop: "80px"}}>Nearby Stores</h1>
-                <Map
-                    googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyDWRrh9zLyd_Xu6eMqomtLpTDFNX-O_y4A&libraries=geometry,drawing,places`}
-                    loadingElement={<div style={{ height: `100%` }} />}
-                    containerElement={<div style={{ height: `400px` }} />}
-                    mapElement={<div style={{ height: `100%` }} />}
-                />
+                <div className='map-container'>
+                    <div className='map-title'>Nearby Stores</div>
+                    <Map
+                        googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyDWRrh9zLyd_Xu6eMqomtLpTDFNX-O_y4A&libraries=geometry,drawing,places`}
+                        loadingElement={<div style={{ height: `100%` }} />}
+                        containerElement={<div style={{ height: `400px` }} />}
+                        mapElement={<div style={{ height: `100%` }} />}
+                    />
+                </div>
             </div>
         )
     }
