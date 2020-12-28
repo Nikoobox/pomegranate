@@ -9,7 +9,7 @@ const mapStateToProps = state => {
     return {
         items: state.items,
         userId: state.session.user.id,
-        recipes: state.recipes,
+        recipes: state.recipes.recipesList,
         errors: state.errors.item, 
         user:state.session.user
     };

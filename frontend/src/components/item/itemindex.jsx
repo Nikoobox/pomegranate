@@ -105,7 +105,7 @@ export class ItemIndex extends React.Component {
            
         let recipes;
         if (Array.isArray(this.props.recipes)) {
-            recipes = Object.values(this.props.recipes).map(recipe => {
+            recipes = this.props.recipes.map(recipe => {
                 return (
                     <div key={recipe.id} className='recipe-card'>
                         <div className='recipe-card-link'>

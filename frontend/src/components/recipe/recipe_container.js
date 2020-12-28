@@ -5,10 +5,10 @@ import { clearRecipeState, fetchRecipeInfo } from '../../actions/recipe_actions'
 import Recipe from './recipe';
 
 const mapStateToProps = (state, {match}) => {
-    const id = match.params.recipeId
+    const id = match.params.recipeId;
     return {
         id,
-        recipe: state.recipes,
+        recipe: state.recipes.currentRecipe,
         items: state.items,
         userId: state.session.user.id
     };
