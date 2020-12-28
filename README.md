@@ -141,7 +141,7 @@ We used SCSS throught the project for better CSS structuring and readability. Sm
 ### Colors Variables
 We used colors variables to experiment with overall website look. 
 
-```
+```css
 $mainGrey: #333333;
 $lightGreyPlaceholder: #9a9a9a;
 $mainRed: #a1272e;
