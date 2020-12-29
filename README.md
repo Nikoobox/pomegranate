@@ -30,17 +30,28 @@ If given a choice between a healthy, convenient, delicious home-cooked meal and 
 # Technologies and Challenges
 
 
-## MongoDB and Express
+## User Authentication
 
-Here, we stored all user login information, their kitchen info, and all ingredients in their kitchen. When they input each ingredient, we keep track of which items have expired and display them in red in the kitchen show page. We also allow a user to update each ingredient's information in an ingredient show page. 
+(Here, we stored all user login information, their kitchen info, and all ingredients in their kitchen. When they input each ingredient, we keep track of which items have expired and display them in red in the kitchen show page. We also allow a user to update each ingredient's information in an ingredient show page.)-not sure if this goes here
+
+Visitors are prompted to sign up or log in to access content. 
+Site utilizes BCrypt for password security.
+Validation errors are displayed when the user rpovides wrong credentials.
 
 ![User Auth Demo](extra_media/login_demo.gif)
 
-## React, Redux, Node
+## Kitchen Inventory
+(Pomegranate pulls infromation from the Spoonacular and Google APIs and then displays that information in meaningful, user-friendly ways. We suggest recipes the user can make based on the ingredients in their kitchen, show each recipe in greater detail, and even locate nearby grocery stores with Google Maps if a user is missing any ingredients for a suggested recipe. We even keep track of each ingredient's expiration date and display it in red if it has expired.)
 
-Pomegranate pulls infromation from the Spoonacular and Google APIs and then displays that information in meaningful, user-friendly ways. We suggest recipes the user can make based on the ingredients in their kitchen, show each recipe in greater detail, and even locate nearby grocery stores with Google Maps if a user is missing any ingredients for a suggested recipe. We even keep track of each ingredient's expiration date and display it in red if it has expired.
+After loggin in or signin up, the users add items with 'Add Item Form', where they are required to enter the name, quantity, expiration date and item type. We keep track of which items have expired and display them in red in the kitchen show page. We also allow a user to update each ingredient's information by utilizing 'edit' modal.
 
 ![Pomegranate Banner](extra_media/walkthrough.gif)
+
+## Recipe Generator
+After adding the items, the users can click 'Generate Recipe' button. Pomegranate pulls infromation from the Spoonacular then displays that information in meaningful, user-friendly ways. We suggest recipes the user can make based on the ingredients in their kitchen, show each recipe in greater detail, and even locate nearby grocery stores with Google Maps if a user is missing any ingredients for a suggested recipe. We even keep track of each ingredient's expiration date and display it in red if it has expired. If the recipe is cooked, items quantity is adjusted accordingly and the 'low inventory warning' is displayed if applicable
+
+## Google Maps
+Google Maps APi is used to locate nearby grocery stores if a user is missing any ingredients for a suggested recipe. 
 
 ## Modals
 Below, you can see how we allow a user to easily edit items in their kitchen. This modal, like our user login demonstrated above, allows for a smooth UI/UX. Here, we render edit container based on the modal 'edit' type under case 'edit'. In a future, more cases could be added under the switch if needed. Modal will be closed if the user either clicks outside of the form or on 'X'. 
