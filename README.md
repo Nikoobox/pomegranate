@@ -56,7 +56,7 @@ Google Maps APi is used to locate nearby grocery stores if a user is missing any
 ## Page Not Found - 404 Error
 Users are redirected to 404 page whenever they try to access non existing URL.
 <div>
-  <img width="40%" src="extra_media/page_not_found.gif">
+  <img width="40%" src="extra_media/page_not_found.png">
 </div>
 <p>&nbsp;</p>
 
