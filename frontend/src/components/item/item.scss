@@ -137,17 +137,14 @@
                         text-align: center;
                     }
                     .low-quantity-box{
-                        // display:flex;
                         margin-bottom: 15px;
                         .message-box{
                             color: $mainRed;
                             display:flex;
                             align-items: center;
                             .icon{
-                                // height: 28px;
                                 margin-right:5px;
                             }
-                            
                         }
                     }
                     .item-quantity{
