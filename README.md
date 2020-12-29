@@ -9,7 +9,7 @@ Let Pomegranate help you discover exciting new meals you can create with the ing
 
 # Background and Overview
 
-If given a choice between a healthy, convenient, delicious home-cooked meal and eating out, most Americans would choose the former. COVID has dramatically accelerated this movement. Even people who didn't have an interest in cooking find themselves subscribing to meal kits and learning how to cook a meal. It has become a necessity. However most people find themselves wasting almost 40% of everything they buy because they don't know what to do with it. This app takes the hard work out of the equation by suggesting exciting ways to prepare those leftovers you might otherwise throw out.
+If given a choice between a healthy, convenient, delicious home-cooked meal and eating out, most people would choose the former. COVID has dramatically accelerated this movement. Even people who didn't have an interest in cooking find themselves subscribing to meal kits and learning how to cook a meal. It has become a necessity. However most people find themselves wasting almost 40% of everything they buy because they don't know what to do with it. This app takes the hard work out of the equation by suggesting exciting ways to prepare those leftovers you might otherwise throw out.
 
 # Technologies Stack
 
@@ -32,29 +32,24 @@ If given a choice between a healthy, convenient, delicious home-cooked meal and 
 
 ## User Authentication
 
-(Here, we stored all user login information, their kitchen info, and all ingredients in their kitchen. When they input each ingredient, we keep track of which items have expired and display them in red in the kitchen show page. We also allow a user to update each ingredient's information in an ingredient show page.)-not sure if this goes here
-
-Visitors are prompted to sign up or log in to access content. 
-Site utilizes BCrypt for password security.
-Validation errors are displayed when the user rpovides wrong credentials.
+Visitors are prompted to sign up or log in on our splash page. Pomegranate utilizes BCrypt to salt and encrypt a user's password into our database for added security. Validation errors are displayed if a user provides incorrect credentials.
 
 ![User Auth Demo](extra_media/login_demo.gif)
 
 ## Kitchen Inventory
-(Pomegranate pulls infromation from the Spoonacular and Google APIs and then displays that information in meaningful, user-friendly ways. We suggest recipes the user can make based on the ingredients in their kitchen, show each recipe in greater detail, and even locate nearby grocery stores with Google Maps if a user is missing any ingredients for a suggested recipe. We even keep track of each ingredient's expiration date and display it in red if it has expired.)
 
-After loggin in or signin up, the users add items with 'Add Item Form', where they are required to enter the name, quantity, expiration date and item type. We keep track of which items have expired and display them in red in the kitchen show page. We also allow a user to update each ingredient's information by utilizing 'edit' modal.
+After logging in, the user can add items to their kitchen with Pomegranate's 'Add Item Form.' The Kitchen can keep track of what items are available to use in its recipe generator after the user inputs the item's name, quantity, expiration date, and selects an option from the item type drop-down. If an item expires, Pomegranate will display it in red. We also allow a user to update each item's information by utilizing the edit modal.
 
 ![Pomegranate Banner](extra_media/walkthrough.gif)
 
 ## Recipe Generator
-After adding the items, the users can click 'Generate Recipe' button. Pomegranate pulls infromation from the Spoonacular then displays that information in meaningful, user-friendly ways. We suggest recipes the user can make based on the ingredients in their kitchen, show each recipe in greater detail, and even locate nearby grocery stores with Google Maps if a user is missing any ingredients for a suggested recipe. We even keep track of each ingredient's expiration date and display it in red if it has expired. If the recipe is cooked, items quantity is adjusted accordingly and the 'low inventory warning' is displayed if applicable
+After adding the items, a user can click the 'Generate Recipe' button. Based on the ingredients in a user's kitchen, Pomegranate finds recipes using the Spoonacular API, then displays those recipes in meaningful, user-friendly ways. Each recipe can be clicked to show cooking instructions in greater detail. Underneath each recipe will be a list of items it would use from the kitchen, and the items (if any) a user would have to purchase. In the recipe show page, a user can click a button to automatically decrement items in their kitchen to reflect their updated inventory and display a "Low Inventory" warning if applicable.
 
 ## Google Maps
-Google Maps APi is used to locate nearby grocery stores if a user is missing any ingredients for a suggested recipe. 
+In case a user needs to purchase an ingredient or two to cook one of Pomegranate's recipes, the app can use the Google Maps API to locate nearby grocery stores.
 
 ## Page Not Found - 404 Error
-Users are redirected to 404 page whenever they try to access non existing URL.
+Users are redirected to a custom 404 page if they try to access a non-existent URL.
 <div>
   <img width="40%" src="extra_media/page_not_found.png">
 </div>
@@ -62,7 +57,7 @@ Users are redirected to 404 page whenever they try to access non existing URL.
 
 # Code Highlights
 ## Modals
-Below, you can see how we allow a user to easily edit items in their kitchen. This modal, like our user login demonstrated above, allows for a smooth UI/UX. Here, we render edit container based on the modal 'edit' type under case 'edit'. In a future, more cases could be added under the switch if needed. Modal will be closed if the user either clicks outside of the form or on 'X'. 
+Below, you can see how we allow a user to easily edit items in their kitchen. This modal, like our user login demonstrated above, allows for a smooth UI/UX. Here, we render the edit container based on the modal 'edit' type under case 'edit'. In the future, more cases could be added under the switch. The modal automatically closes if the user either clicks outside of the form or on 'X'. 
 
 ![Edit Item Model](extra_media/model_demo.gif)
 
