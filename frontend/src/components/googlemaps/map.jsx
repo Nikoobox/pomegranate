@@ -1,4 +1,5 @@
 import React from "react";
+import {MdLocalGroceryStore} from 'react-icons/md';
 
 import {
     withScriptjs,
@@ -68,7 +69,9 @@ class MapShow extends React.Component {
             lat: newLat,
             lng: newLng
             }
-        });
+        })
+           
+     
     }
 
     render() {
@@ -80,9 +83,11 @@ class MapShow extends React.Component {
                 <Marker 
                     position={{ lat: this.state.markerPosition.lat, lng: this.state.markerPosition.lng }}
                 >
+                   
                     <InfoWindow>
-                        <div>You are here</div>
+                        <div id="info-content">Your Kitchen</div>
                     </InfoWindow>
+                   
                 </Marker>
                 <div className='map-instructions'>To find a specific store, enter its name below: </div>
                 <div className='input-box'>
