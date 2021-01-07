@@ -1,5 +1,5 @@
 .item-container{
-    width: 100vw;
+    // width: 100vw;
     display:flex;
     margin-bottom:50px;
     
@@ -11,11 +11,11 @@
     }
     .item-form{
         margin-top: 140px;
-        margin-left:30px;
+        // margin-left:30px;
         width:250px;
         background:#b86f53;
         padding:20px;
-        border-radius: 5px;
+        border-radius: 16px;
         display:block;
         .welcome-message{
             text-align:center;
@@ -90,46 +90,50 @@
             border-bottom: 1px solid #d7d7d7;
             margin-right:30px;
             display:flex;
+            // align-items: flex-start;
             justify-content: space-around;
             flex-wrap: wrap;
             .item-box{
                 display:flex;
                 flex-direction: column;
-                align-items: center;
+                align-items: flex-start;
                 justify-content: start;
                 width:240px;
                 background-color: white;
                 margin: 20px;
                 padding:20px;
-                border-radius: 5px;
-                background-color: $lightGreenCards;
+                border-radius: 16px;
+                border: 1px solid  rgba(67,122,128,1);
+                // background-color: $lightGreenCards;
                 .item-box-link{
                     width:100%;
                     display:flex;
-                    align-items: center;
+                    align-items: flex-start;
                     flex-direction:column;
                     position: relative;
-                    &:hover{
-                        cursor:pointer;
-                    }
+                    // &:hover{
+                    //     cursor:pointer;
+                    // }
                     .gear{
-                        color:$mainGrey;
+                        color:$lightGreyPlaceholder;
                         position: absolute;
                         right:0;
-                        font-size:24px;
+                        font-size:26px;
+                        transition: 0.2s ease-out all;
                         &:hover{
                             color: black;
+                            cursor:pointer;
                         }
                     }
                     .item-name{
                         width:100%;
-                        text-align:center;
-                        font-size: 20px;
-                        font-weight:bold;
+                        // text-align:center;
+                        font-size: 26px;
+                        // font-weight:bold;
                         top:0;
                         margin-bottom: 5px;
                         padding-bottom:5px;
-                        border-bottom: 2px solid $darkGreenCards;
+                        // border-bottom: 2px solid $darkGreenCards;
                     }
                     .item-quantity{
                         font-size: 16px;
@@ -148,12 +152,12 @@
                         }
                     }
                     .item-quantity{
-                        font-size: 16px;
+                        font-size: 15px;
                         margin-bottom: 15px;
                     }
                 }
                 .item-box-expiration{
-                    font-weight:300;
+                    // font-weight:300;
                 }
                 .expired {
                     color: $mainRed;
@@ -196,7 +200,7 @@
         justify-content: space-between;
         .recipe-card{
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            border-radius: 5px;
+            border-radius:16px;
             width:20%;
             margin:20px;
             .recipe-image-box{

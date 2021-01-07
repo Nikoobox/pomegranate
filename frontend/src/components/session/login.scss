@@ -34,7 +34,7 @@
         width:300px;;
         background:$Greenish;
         padding:20px;
-        border-radius: 5px;
+        border-radius: 16px;
         input{
             width:100%;
             border:0;
@@ -88,8 +88,7 @@
             }
         }
         .demo-form-container{
-                // display:flex;
-                text-align:center;
+            text-align:center;
             margin-top:10px;
             font-size: 14px;
             color:white;
