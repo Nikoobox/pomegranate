@@ -118,10 +118,10 @@ export class ItemIndex extends React.Component {
                                     </Link> 
                                 </div> :
                                 <div className='recipe-image-box' >
-                                     <img 
-                                        src={recipe.image} alt={recipe.title} 
-                                        className='recipe-image' 
-                                    />
+                                    <Link to={`/browse/${recipe.id}`} >
+                                        <img src={recipe.image} alt={recipe.title} className='recipe-image'/>
+                                         <AiFillCloseCircle className='not-ok' />
+                                    </Link>
                                     <AiFillCloseCircle className='not-ok' />
                                  </div>
                             }
