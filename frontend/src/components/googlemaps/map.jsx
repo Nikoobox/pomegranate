@@ -99,7 +99,7 @@ class MapShow extends React.Component {
                         className='input'
                     />
                     <div className='map-instructions2'>
-                        Or click <a href="https://www.google.com/maps/search/?api=1&query=grocery" target="_blank"><button className='button-here'>here</button></a> to see all nearby store options.
+                        Click <a href="https://www.google.com/maps/search/?api=1&query=grocery" target="_blank"><button className='button-here'>here</button></a> to see nearby stores listed on Google.
                     </div>
                 </div>
             </GoogleMap>

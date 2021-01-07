@@ -20,7 +20,7 @@ const mapDispatchToProps = (dispatch) => {
         clearRecipeState: () => dispatch(clearRecipeState()),
         clearCurrentRecipeState: () => dispatch(clearCurrentRecipeState()),
         getUserItems: (userId) => dispatch(getUserItems(userId)),
-        editItem: (itemId) => dispatch(editItem(itemId))
+        editItem: (item) => dispatch(editItem(item))
     }
 }
 

@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 import {GrNotes} from 'react-icons/gr';
 
 class Recipe extends React.Component {
     constructor(props) {
-        super(props);
+        super(props)
 
-        // this.handleClick = this.handleClick.bind(this);
+        this.handleCook = this.handleCook.bind(this);
     }
 
     componentDidMount() {
@@ -18,10 +18,35 @@ class Recipe extends React.Component {
         this.props.clearCurrentRecipeState();
     }
 
+    handleCook() {
+        let recipeItems = {};
+        for (let i = 0; i < this.props.recipe.extendedIngredients.length; i++){
+            let nameR = this.props.recipe.extendedIngredients[i].name;
+            let amountR = this.props.recipe.extendedIngredients[i].amount;
+            recipeItems[nameR] = amountR
+        }
+        let kitchenItemsArr = Object.values(this.props.items)
+        for (let i = 0; i < kitchenItemsArr.length; i++) {
+            let nameK = kitchenItemsArr[i].name;
+            let amountK = kitchenItemsArr[i].quantity;
+            if (recipeItems[nameK] && ((amountK - recipeItems[nameK])>=0)){
+                let item = kitchenItemsArr[i];
+                let newAmount = amountK - recipeItems[nameK];
+                item.quantity = newAmount.toString()
+                this.props.editItem(item)
+            }else{
+                const error = document.querySelector('.not-enough')
+                error.innerText = `Something's off (maybe rename an item in your kitchen? Maybe it's time for a Trader Joe's run?). Jump back to recipes and try again!`;
+            }
+        }
+    }
+
+
 
     render() {
-        
         if(this.props.recipe) {
+
+            const filteredIngredients = this.props.recipe.extendedIngredients.filter(ingre => ingre.id !== null)
 
             return (
                 <div className='show-recipe-container'>
@@ -35,22 +60,25 @@ class Recipe extends React.Component {
                                 <div className='title'><span>Recipe Name: </span> {this.props.recipe.title} </div> 
                                 <div className='time'><span>Cooking Time: </span>{this.props.recipe.readyInMinutes} minutes</div> 
                                 <div className='instructions'><span>Instructions: </span> {this.props.recipe.instructions}</div>
-                                <div> Required Ingredients: 
-                                    {this.props.recipe.extendedIngredients.map(ingre => `${ingre.name} - ${ingre.amount},`)}
+                                <div className='ingredients'> <span>Required Ingredients: </span>  
+                                    {filteredIngredients.map(ingre => 
+                                        `${ingre.name} (${ingre.amount} ${ingre.amount===1?'item':'items'}), `)}
                                 </div>
-                                <div> Items in kitchen: 
-                                    {Object.values(this.props.items).map( item => `${item.name} - ${item.quantity}, please update inventory manually`)}
+                                <div className='ingredients'> <span>Kitchen Ingredients: </span>
+                                    {Object.values(this.props.items).map(item => `${item.name} (${item.quantity} ${item.quantity === 1 ? 'item':'items'}), `)}
                                 </div>
+                                <div className="not-enough"></div>
+                                
                                 <div className='btn-container'>
-                                    <button onClick={this.handleClick} className='cook'>Cook this recipe</button>
+                                    <button onClick={this.handleCook} className='cook'>Cook this recipe</button>
                                     <button onClick={() => { this.props.history.push('/browse') }} className='jump-to-recipes'>Jump back to recipes</button>
                                 </div>
+                                <div className='empty-container'>
+                                        {/* for extra space below */}
+                                </div>
                             </div>
-
                         </div>
-
                     </div>
-                
                 </div>
             )
         } else {
