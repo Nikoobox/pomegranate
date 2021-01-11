@@ -11,7 +11,7 @@ import {
 import Geocode from "react-geocode";
 import AutoComplete from 'react-google-autocomplete'
 
-Geocode.setApiKey("AIzaSyDWRrh9zLyd_Xu6eMqomtLpTDFNX-O_y4A");
+Geocode.setApiKey(process.env.REACT_APP_GOOGLE);
 
 class MapShow extends React.Component {
     constructor(props) {
