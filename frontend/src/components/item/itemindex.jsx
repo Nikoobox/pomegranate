@@ -143,7 +143,7 @@ export class ItemIndex extends React.Component {
                                 </div>
                                     {recipe.missedIngredients.length !== 0 ? <Link to="/googlemap"><div className='map-icon-container'>
                                     <FaMapMarkerAlt className='map-icon'/>
-                                        <div className='message'>See nearby stores </div>
+                                        <div className='message'>Your Location</div>
                                         </div>
                                     </Link> : "" }
                             </div>
