@@ -84,9 +84,12 @@ class MapShow extends React.Component {
                     position={{ lat: this.state.markerPosition.lat, lng: this.state.markerPosition.lng }}
                 >
                    
+                    {/* 
+                        Add "Your Kitchen" Tag to window. 
                     <InfoWindow>
                         <div id="info-content">Your Kitchen</div>
-                    </InfoWindow>
+                    </InfoWindow> 
+                    */}
                    
                 </Marker>
                 <div className='map-instructions'>To find a specific store, enter its name below: </div>
