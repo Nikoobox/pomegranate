@@ -41,21 +41,21 @@ class NavBar extends React.Component {
                         <div className='logo-name'>Pomegranate</div>
                     </Link>
                     <div className='dropdown-container'>
-                    <Dropdown>
-                        <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                <FaHamburger />
-                        </Dropdown.Toggle>
+                        <Dropdown>
+                            <Dropdown.Toggle variant="success" id="dropdown-basic">
+                                    <FaHamburger />
+                            </Dropdown.Toggle>
 
-                        <Dropdown.Menu>
-                            <LinkContainer to='/browse'>
-                                <Dropdown.Item id='kitchen-name-link'>{this.state.kitchenName}</Dropdown.Item>
-                            </LinkContainer>
-                            <LinkContainer to='/browse/contacts'>
-                                <Dropdown.Item >Contacts</Dropdown.Item>
-                            </LinkContainer>
-                            <Dropdown.Item onClick={this.logoutUser} className='dropdown-logout'>Logout</Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
+                            <Dropdown.Menu>
+                                <LinkContainer to='/browse'>
+                                    <Dropdown.Item id='kitchen-name-link'>{this.state.kitchenName}</Dropdown.Item>
+                                </LinkContainer>
+                                <LinkContainer to='/browse/contacts'>
+                                    <Dropdown.Item >Contacts</Dropdown.Item>
+                                </LinkContainer>
+                                <Dropdown.Item onClick={this.logoutUser} className='dropdown-logout'>Logout</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
                     </div> 
                 </div>
             );

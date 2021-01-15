@@ -8,7 +8,7 @@
     position:fixed;
     top:0;
     width:100%;
-    padding: 30px 30px 20px;
+    padding: 40px 30px 20px;
     .navbar-logo-cont{
         display:flex;
         align-items: center;
@@ -35,7 +35,6 @@
         }
     }
     .dropdown-container{
-      
         .dropdown-toggle{
             display:flex;
             flex-direction: column;
@@ -45,24 +44,29 @@
         .dropdown-menu.show{
             background:white;
             z-index: 102;
-            margin-right:10px;
+            // inset: 0 20px auto auto!important;
+            left:20px;
+            position:absolute;
+            // left:20px;
             margin-top:5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            padding:20px;
+            font-size:18px;
+            padding:30px;
             color:black;
             display:flex;
             flex-direction:column;
+            border-radius: 16px;;
             .dropdown-item{
                 padding:10px 5px;
                 transition: ease-out all 0.2s;
                 &:hover{
-                    background:$mainYellowLignt;
+                    background-color: rgb(245, 245, 245);
                 }
             }
             .dropdown-logout{
                 border-top:1px solid rgba(0,0,0,0.1);
                 margin-top:15px;
-                padding-top:5px;
+                padding-top:15px;
             }
         }
         button{
