@@ -14,14 +14,14 @@ class Footer extends React.Component {
 
                 <div className="footer-left">
                     Completed by 
-                    <Link to='/browse/contacts'>Room12 Team</Link>
+                    <Link to='/browse/contacts'>Room12</Link>
                 </div>
 
-                <div className="footer-message">
-                    Pomegranate MERN project
-                </div>
 
                 <div className="social">
+                    {/* <div className="footer-message">
+                        MERN project
+                    </div> */}
                     Github
                     <a href='https://github.com/Nikoobox/pomegranate' rel='noopener noreferrer' target="_blank">
                         <FaGithubSquare />

@@ -31,7 +31,7 @@ class Recipe extends React.Component {
             let amountK = kitchenItemsArr[i].quantity;
             if (recipeItems[nameK] && ((amountK - recipeItems[nameK])>=0)){
                 let item = kitchenItemsArr[i];
-                let newAmount = amountK - recipeItems[nameK];
+                let newAmount = Math.floor(amountK - recipeItems[nameK]);
                 item.quantity = newAmount.toString()
                 this.props.editItem(item)
             }else{

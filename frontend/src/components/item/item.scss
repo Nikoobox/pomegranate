@@ -1,5 +1,4 @@
 .item-container{
-    // width: 100vw;
     display:flex;
     margin-bottom:50px;
     
@@ -11,7 +10,6 @@
     }
     .item-form{
         margin-top: 140px;
-        // margin-left:30px;
         width:250px;
         background:#b86f53;
         padding:20px;
@@ -90,54 +88,38 @@
             border-bottom: 1px solid #d7d7d7;
             margin-right:30px;
             display:flex;
-            // align-items: flex-start;
-            justify-content: space-around;
+            align-items: flex-start;
             flex-wrap: wrap;
             .item-box{
                 display:flex;
                 flex-direction: column;
                 align-items: flex-start;
-                justify-content: start;
+                justify-content: center;
                 width:240px;
-                background-color: white;
-                margin: 20px;
-                padding:20px;
-                border-radius: 16px;
-                border: 1px solid  rgba(67,122,128,1);
-                // background-color: $lightGreenCards;
+                height: 210px;
+                margin: 15px;
+                padding:40px 30px 40px 50px;
+                position:relative;
                 .item-box-link{
                     width:100%;
                     display:flex;
                     align-items: flex-start;
                     flex-direction:column;
-                    position: relative;
-                    // &:hover{
-                    //     cursor:pointer;
-                    // }
-                    .gear{
-                        color:$lightGreyPlaceholder;
-                        position: absolute;
-                        right:0;
-                        font-size:26px;
-                        transition: 0.2s ease-out all;
-                        &:hover{
-                            color: black;
-                            cursor:pointer;
-                        }
-                    }
                     .item-name{
                         width:100%;
-                        // text-align:center;
-                        font-size: 26px;
-                        // font-weight:bold;
-                        top:0;
-                        margin-bottom: 5px;
+                        font-size: 22px;
+                        // top:0;
+                        letter-spacing:1px;
+                        // margin-bottom: 5px;
                         padding-bottom:5px;
-                        // border-bottom: 2px solid $darkGreenCards;
+                        font-weight:bold;
+                       
+                    }
                     }
                     .item-quantity{
                         font-size: 16px;
-                        margin-bottom: 15px;
+                        margin-bottom: 10px;
+                        font-weight:500;
                         text-align: center;
                     }
                     .low-quantity-box{
@@ -153,12 +135,25 @@
                     }
                     .item-quantity{
                         font-size: 15px;
-                        margin-bottom: 15px;
+                        margin-bottom: 20px;
                     }
                 }
                 .item-box-expiration{
-                    // font-weight:300;
-                }
+                    font-size:14px;
+                    margin-bottom:10px;
+                    }
+                    .gear-box{
+                       line-height: 1;
+                       display:flex;
+                       align-items: center;
+                       justify-content: center;
+                       transition: 0.1s ease all;
+                       font-weight:500;
+                           &:hover{
+                               color: black;
+                               cursor:pointer;
+                               font-weight:bold;
+                           }
                 .expired {
                     color: $mainRed;
                 }
@@ -166,6 +161,20 @@
         }
     }
 } 
+.item-box::after {
+    content: "";
+    background-image: url(../../images/greencircle.png);
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;  
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
 .recipes-container{
     width:100%;
     margin:50px 0;
@@ -257,7 +266,6 @@
                 .map-icon-container{
                     display:flex;
                     align-items: center;
-                    // justify-content: center;
                     margin:10px 0;
                     color:$mainGrey;
                     transition: 0.3s ease all;

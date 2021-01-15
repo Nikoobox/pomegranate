@@ -16,29 +16,35 @@ class ItemShow extends React.Component {
                 </div>
             </div>
             :
-            <div className='item-quantity'>(You have {item.quantity} items)</div>
+            <div className='item-quantity'>You have {item.quantity} items</div>
         const date = new Date(item.expirationDate);
         let dateDiv;
         if (date.toDateString() === "Wed Dec 31 1969") {
             dateDiv = <div className='item-box-expiration'>No expiration date.</div>
         } else {
             if (date < new Date()) {
-                dateDiv = <div className='item-box-expiration expired'>This product expired on<br />{date.toDateString()}.</div>
+                dateDiv = <div className='item-box-expiration expired'>This product expired on {date.toDateString()}.</div>
             } else {
-                dateDiv = <div className='item-box-expiration'>This product will expire on<br />{date.toDateString()}.</div>
+                dateDiv = <div className='item-box-expiration'>This product will expire on {date.toDateString()}.</div>
             }
         }
         return (
            <div className='item-box'>
                 <div className='item-box-link'>
-                    <BsGearFill className='gear' onClick={() => {
-                        this.props.openModal('edit', item._id);
-                    }}/>
-                    <div className='item-name'>{item.name}</div>
+                   
+                    <div className='item-name'>
+                        {item.name.toUpperCase()}
+                       
+                    </div>
                     {quantities}
                 </div>
                 {dateDiv}
-                
+                <div className='gear-box' onClick={() => {
+                    this.props.openModal('edit', item._id);
+                }}>
+                    Edit 
+                    {/* <BsGearFill className='gear'  /> */}
+                </div>
            </div>
         )
     }

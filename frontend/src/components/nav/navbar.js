@@ -47,8 +47,9 @@ class NavBar extends React.Component {
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
-                            <Dropdown.Item id='kitchen-name-link'>{this.state.kitchenName}</Dropdown.Item>
-            
+                            <LinkContainer to='/browse'>
+                                <Dropdown.Item id='kitchen-name-link'>{this.state.kitchenName}</Dropdown.Item>
+                            </LinkContainer>
                             <LinkContainer to='/browse/contacts'>
                                 <Dropdown.Item >Contacts</Dropdown.Item>
                             </LinkContainer>
