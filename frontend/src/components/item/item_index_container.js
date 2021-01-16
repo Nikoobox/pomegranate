@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 // import { receiveCurrentUser } from '../../actions/session_actions';
-import { getUserItems, createItem, clearItemState } from '../../actions/item_actions';
+import { getUserItems, createItem, clearItemState, deleteItem } from '../../actions/item_actions';
 import { fetchRecipe, clearRecipeState } from '../../actions/recipe_actions';
 import ItemIndex from './itemindex';
 import { openModal } from '../../actions/modal_actions';
@@ -22,7 +22,8 @@ const mapDispatchToProps = (dispatch) => {
         createItem: item => dispatch(createItem(item)),
         getUserItems: userId => dispatch(getUserItems(userId)),
         fetchRecipe: (ingredients) => dispatch(fetchRecipe(ingredients)),
-        openModal: (modal, itemId) => dispatch(openModal(modal, itemId))
+        openModal: (modal, itemId) => dispatch(openModal(modal, itemId)),
+        deleteItem: itemId => dispatch(deleteItem(itemId)),
     }
 }
 

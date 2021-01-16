@@ -1,8 +1,10 @@
 import React from 'react'
 import ItemShow from './itemshow';
+import Trashbin from './Trashbin';
 import {Link} from 'react-router-dom';
 import { FaMapMarkerAlt, FaArrowDown } from "react-icons/fa";
 import {AiFillCheckCircle, AiFillCloseCircle} from 'react-icons/ai';
+
 import Select from 'react-select'
 
 
@@ -90,7 +92,13 @@ export class ItemIndex extends React.Component {
         });
 
         const items = Object.values(this.props.items).map(item => {
-            return <ItemShow key={item._id} item={item} history={this.props.history} openModal={this.props.openModal}/>
+            return <ItemShow 
+            key={item._id} 
+            item={item} 
+            history={this.props.history} 
+            openModal={this.props.openModal} 
+            draggable='true'
+            />
         });
 
         const options = [
@@ -192,6 +200,14 @@ export class ItemIndex extends React.Component {
                                 {this.renderErrors()}
                             </div>
                         </form>
+
+                        <div className='trashbin-container'>
+                            {/* Garbage Bin */}
+                            <Trashbin id='board-1' deleteItem={this.props.deleteItem}/>
+                            <div className='trash-icon-box'>
+                                {/* <BsTrash /> */}
+                            </div>
+                        </div>
                     </div>
 
                     <div className='items'>

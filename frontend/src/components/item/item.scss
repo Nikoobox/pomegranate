@@ -5,8 +5,9 @@
     .form-container{
         width:30%;
         display: flex;
-        justify-content: center;
-        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
     }
     .item-form{
         margin-top: 140px;
@@ -74,6 +75,20 @@
             }
         }
     }
+    .trashbin-container{
+        margin-top:30px;
+        .trashbin-box{
+            height:70px;
+            width:70px;
+            // background:yellow;
+            margin:50% auto auto ;
+            svg{
+                height:100%;
+                width:100%;
+                color:$mainGrey;
+            }
+        }
+    }
     .items{
         margin-top:100px;
         margin-left:auto;
@@ -85,7 +100,7 @@
             text-align:center;
         }
         .items-container{
-            border-bottom: 1px solid #d7d7d7;
+            // border-bottom: 1px solid #d7d7d7;
             margin-right:30px;
             display:flex;
             align-items: flex-start;
@@ -108,12 +123,9 @@
                     .item-name{
                         width:100%;
                         font-size: 22px;
-                        // top:0;
                         letter-spacing:1px;
-                        // margin-bottom: 5px;
                         padding-bottom:5px;
                         font-weight:bold;
-                       
                     }
                     }
                     .item-quantity{
@@ -123,8 +135,9 @@
                         text-align: center;
                     }
                     .low-quantity-box{
-                        margin-bottom: 15px;
+                        margin-bottom: 5px;
                         .message-box{
+                            font-size:14px;
                             color: $mainRed;
                             display:flex;
                             align-items: center;
@@ -134,8 +147,9 @@
                         }
                     }
                     .item-quantity{
+                        text-align: left;
                         font-size: 15px;
-                        margin-bottom: 20px;
+                        margin-bottom: 15px;
                     }
                 }
                 .item-box-expiration{
@@ -177,7 +191,7 @@
 
 .recipes-container{
     width:100%;
-    margin:50px 0;
+    margin:0;
     .fetch-rec-button-box{
         width:100%;
         display: flex;

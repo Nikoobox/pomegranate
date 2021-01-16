@@ -1,9 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { BsGearFill, BsExclamationTriangle  } from "react-icons/bs";
-// import { withRouter } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import { BsGearFill, BsExclamationTriangle, BsTrash  } from "react-icons/bs";
 
 class ItemShow extends React.Component {
+
+    dragStart = e => {
+        const target = e.target;
+        e.dataTransfer.setData('card_id', target.id);
+
+        // setTimeout(()=>{
+            
+        //     target.style.display = 'none';
+        // }, 0)
+    }
+
+    dragOver = e => {
+        console.log(e);
+        e.stopPropagation();
+    }
+
     render() {
         // console.log(this.props);
         const { item } = this.props;
@@ -12,7 +27,7 @@ class ItemShow extends React.Component {
                 <div className='item-quantity'>You have {item.quantity} item</div>
                 <div className='message-box'>
                     <BsExclamationTriangle className='icon'/> 
-                    <div className='text'>Low inventory reminder</div>
+                    <div className='text'>Low inventory!</div>
                 </div>
             </div>
             :
@@ -29,7 +44,12 @@ class ItemShow extends React.Component {
             }
         }
         return (
-           <div className='item-box'>
+           <div className='item-box'
+                id = {item._id}
+                draggable={this.props.draggable}
+                onDragStart={this.dragStart}
+                onDragOver={this.dragOver}
+           >
                 <div className='item-box-link'>
                    
                     <div className='item-name'>
