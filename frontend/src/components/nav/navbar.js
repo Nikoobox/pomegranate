@@ -4,7 +4,6 @@ import { withRouter } from 'react-router-dom';
 import pom_logo from '../../images/pom_logo_0.png';
 import { Dropdown } from 'react-bootstrap';
 import { FaHamburger } from 'react-icons/fa'
-import { clearItemState } from '../../actions/item_actions';
 import { LinkContainer } from 'react-router-bootstrap'
 
 class NavBar extends React.Component {
@@ -77,6 +76,9 @@ class NavBar extends React.Component {
 
     render() {
         // console.log(this.props)
+        if (this.props.loggedIn && (this.state.kitchenName === '')){
+            return null;
+        }
         return (
             <div>
                 {this.getLinks()}
