@@ -1,0 +1,130 @@
+.Misc{
+    width:255px!important;
+}
+.Misc::after {
+    content: "";
+    background-image: url(../../images/yellowcircle.png);
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;  
+    background-repeat: no-repeat;
+    background-size: cover; 
+}  
+.Grains{
+   width:255px!important;
+}
+.Grains::after {
+    content: "";
+    background-image: url(../../images/yellowcircle.png);
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;  
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+.Fruits{
+}
+.Fruits::after {
+    content: "";
+    background-image: url(../../images/greencircle.png);
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;  
+    background-repeat: no-repeat;
+    background-size: cover; 
+}  
+
+.Beverages{
+}
+.Beverages::after {
+    content: "";
+    background-image: url(../../images/greencircle.png);
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;  
+    background-repeat: no-repeat;
+    background-size: cover; 
+}    
+.Meat{
+    // margin: 15px;
+    width:245px!important;
+    padding:40px 15px 40px 65px!important;
+}
+.Meat::after {
+    content: "";
+    background-image: url(../../images/pinkcircle.png);
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;  
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+.Dairy{
+    width:245px!important;
+    padding:40px 15px 40px 65px!important;
+}
+.Dairy::after {
+    content: "";
+    background-image: url(../../images/pinkcircle.png);
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;  
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
+// .Dairy::after {
+//     content: "";
+//     background-image: url(../../images/greencircle.png);
+//     opacity: 0.6;
+//     top: 0;
+//     left: 0;
+//     bottom: 0;
+//     right: 0;
+//     position: absolute;
+//     z-index: -1;  
+//     background-repeat: no-repeat;
+//     background-size: cover; 
+// }
+// .item-box::after {
+//     content: "";
+//     background-image: url(../../images/greencircle.png);
+//     opacity: 0.6;
+//     top: 0;
+//     left: 0;
+//     bottom: 0;
+//     right: 0;
+//     position: absolute;
+//     z-index: -1;  
+//     background-repeat: no-repeat;
+//     background-size: cover; 
+// }
+// .item-box .Misc::after {
+//     content: "";
+//     background-image: url(../../images/yellowcircle.png);
+//       background-repeat: no-repeat;
+// }
