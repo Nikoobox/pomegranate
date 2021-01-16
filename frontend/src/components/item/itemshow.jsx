@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import { BsGearFill, BsExclamationTriangle, BsTrash  } from "react-icons/bs";
 
 class ItemShow extends React.Component {
@@ -20,7 +19,7 @@ class ItemShow extends React.Component {
     }
 
     render() {
-        // console.log(this.props);
+        console.log(this.props);
         const { item } = this.props;
         const quantities = item.quantity <= 1 ?
             <div className='low-quantity-box'>
@@ -44,11 +43,12 @@ class ItemShow extends React.Component {
             }
         }
         return (
-           <div className='item-box'
+            <div className={`item-box ${this.props.item.type}`}
                 id = {item._id}
                 draggable={this.props.draggable}
                 onDragStart={this.dragStart}
                 onDragOver={this.dragOver}
+                // className = {this.props.item.type}
            >
                 <div className='item-box-link'>
                    

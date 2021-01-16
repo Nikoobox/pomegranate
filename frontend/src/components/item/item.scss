@@ -76,11 +76,10 @@
         }
     }
     .trashbin-container{
-        margin-top:30px;
+        margin-top:40px;
         .trashbin-box{
-            height:70px;
-            width:70px;
-            // background:yellow;
+            height:60px;
+            width:60px;
             margin:50% auto auto ;
             svg{
                 height:100%;
@@ -106,6 +105,9 @@
             align-items: flex-start;
             flex-wrap: wrap;
             .item-box{
+                // background-image: url(../../images/greencircle.png);
+                background-repeat: no-repeat;
+                background-size: cover; 
                 display:flex;
                 flex-direction: column;
                 align-items: flex-start;
@@ -171,23 +173,55 @@
                 .expired {
                     color: $mainRed;
                 }
-            }   
+            }
+            .item-box.Misc {
+                background-image: url(../../images/yellowcircle.png);
+                width:255px;
+            }  
+            .item-box.Fruits {
+                background-image: url(../../images/greencircle.png);
+                width:255px;
+            }  
+             .item-box.Grains {
+                background-image: url(../../images/yellowcircle.png);
+                width:255px;
+            } 
+            .item-box.Beverages {
+                background-image: url(../../images/greencircle.png);
+            }    
+            .item-box.Meat {
+                background-image: url(../../images/pinkcircle.png);
+            } 
+            .item-box.Dairy {
+                background-image: url(../../images/pinkcircle.png);
+            } 
         }
     }
 } 
-.item-box::after {
-    content: "";
-    background-image: url(../../images/greencircle.png);
-    opacity: 0.6;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;  
-    background-repeat: no-repeat;
-    background-size: cover; 
-}
+
+// .item-box .Misc::after {
+//     content: "";
+//     background-image: url(../../images/yellowcircle.png);
+//       background-repeat: no-repeat;
+// }
+// .item-box::after {
+//     content: "";
+//     background-image: url(../../images/greencircle.png);
+//     opacity: 0.6;
+//     top: 0;
+//     left: 0;
+//     bottom: 0;
+//     right: 0;
+//     position: absolute;
+//     z-index: -1;  
+//     background-repeat: no-repeat;
+//     background-size: cover; 
+// }
+// .item-box .Misc::after {
+//     content: "";
+//     background-image: url(../../images/yellowcircle.png);
+//       background-repeat: no-repeat;
+// }
 
 .recipes-container{
     width:100%;

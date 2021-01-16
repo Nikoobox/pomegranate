@@ -204,9 +204,9 @@ export class ItemIndex extends React.Component {
                         <div className='trashbin-container'>
                             {/* Garbage Bin */}
                             <Trashbin id='board-1' deleteItem={this.props.deleteItem}/>
-                            <div className='trash-icon-box'>
+                            {/* <div className='trash-icon-box'> */}
                                 {/* <BsTrash /> */}
-                            </div>
+                            {/* </div> */}
                         </div>
                     </div>
 
