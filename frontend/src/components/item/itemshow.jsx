@@ -19,7 +19,7 @@ class ItemShow extends React.Component {
     }
 
     render() {
-        console.log(this.props);
+        // console.log(this.props);
         const { item } = this.props;
         const quantities = item.quantity <= 1 ?
             <div className='low-quantity-box'>
