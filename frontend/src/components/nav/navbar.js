@@ -22,11 +22,16 @@ class NavBar extends React.Component {
     }
 
     componentDidMount() {
+        //
+    }
+
+    componentDidUpdate() {
         if (this.props.loggedIn){
             this.props.getUser(this.props.userId)
             .then(res=>{
-                // console.log(res)
-                this.setState({ kitchenName: res.user.data.kitchenName})
+                this.setState(()=>{
+                    return { kitchenName: res.user.data.kitchenName}
+                })  
             })
         }
     }
@@ -34,33 +39,30 @@ class NavBar extends React.Component {
     // Selectively render links dependent on whether the user is logged in
     getLinks() {
         if (this.props.loggedIn) {
-            // if(this.props.kitchenName !==''){
-                return (
-                    <div className='navbar'>
-                        <Link to='/' className='navbar-logo-cont'>
-                            <div className='logo-img'><img src={pom_logo}/></div>
-                            <div className='logo-name'>Pomegranate</div>
-                        </Link>
-                        <div className='dropdown-container'>
-                            <Dropdown>
-                                <Dropdown.Toggle variant="success" id="dropdown-basic">
-                                        <FaHamburger />
-                                </Dropdown.Toggle>
-                                <Dropdown.Menu>
-                                    <LinkContainer to='/browse'>
-                                        <Dropdown.Item id='kitchen-name-link'>{this.state.kitchenName !== ''?this.state.kitchenName:''}</Dropdown.Item>
-                                    </LinkContainer>
-                                    <LinkContainer to='/browse/contacts'>
-                                        <Dropdown.Item >Contacts</Dropdown.Item>
-                                    </LinkContainer>
-                                    <Dropdown.Item onClick={this.logoutUser} className='dropdown-logout'>Logout</Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown>
-                        </div> 
-                    </div>
-                );
-
-            // }
+            return (
+                <div className='navbar'>
+                    <Link to='/' className='navbar-logo-cont'>
+                        <div className='logo-img'><img src={pom_logo}/></div>
+                        <div className='logo-name'>Pomegranate</div>
+                    </Link>
+                    <div className='dropdown-container'>
+                        <Dropdown>
+                            <Dropdown.Toggle variant="success" id="dropdown-basic">
+                                    <FaHamburger />
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                                <LinkContainer to='/browse'>
+                                    <Dropdown.Item id='kitchen-name-link'>{this.state.kitchenName !== ''?this.state.kitchenName:''}</Dropdown.Item>
+                                </LinkContainer>
+                                <LinkContainer to='/browse/contacts'>
+                                    <Dropdown.Item >Contacts</Dropdown.Item>
+                                </LinkContainer>
+                                <Dropdown.Item onClick={this.logoutUser} className='dropdown-logout'>Logout</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
+                    </div> 
+                </div>
+            );
         } else {
             return (
                 <div className='navbar'>
@@ -78,10 +80,6 @@ class NavBar extends React.Component {
     }
 
     render() {
-        // console.log(this.props)
-        // if (this.state.kitchenName === ''){
-        //     return null;
-        // }
         return (
             <div>
                 {this.getLinks()}
