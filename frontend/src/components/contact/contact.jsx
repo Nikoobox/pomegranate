@@ -103,7 +103,7 @@ class Contact extends React.Component {
                                 <div className='portfolio social'>
                                     <a href="https://italolujanpedreschi.github.io/" rel='noopener noreferrer' target="_blank">Portfolio</a></div>
                                 <div className='github social'><a href="https://github.com/ItaloLujanPedreschi" rel='noopener noreferrer' target="_blank">Github</a></div>
-                                <div className='linkedin social'><a href="https://www.linkedin.com/in/italo-lujan-98169373/" rel='noopener noreferrer' target="_blank">LinkedIn</a></div>
+                                <div className='linkedin social'><a href="https://www.linkedin.com/in/italo-lujan-pedreschi-98169373/" rel='noopener noreferrer' target="_blank">LinkedIn</a></div>
                                 <div className='angellist social'><a href="https://angel.co/u/italo-lujan-pedreschi" >AngelList</a></div>
                             </div>
                         </div>
