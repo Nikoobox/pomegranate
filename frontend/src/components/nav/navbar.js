@@ -22,19 +22,26 @@ class NavBar extends React.Component {
     }
 
     componentDidMount() {
-        //
-    }
-
-    componentDidUpdate() {
-        if (this.props.loggedIn){
+        if (this.props.loggedIn) {
             this.props.getUser(this.props.userId)
-            .then(res=>{
-                this.setState(()=>{
-                    return { kitchenName: res.user.data.kitchenName}
-                })  
-            })
+                .then(res => {
+                    this.setState(() => {
+                        return { kitchenName: res.user.data.kitchenName }
+                    })
+                })
         }
     }
+
+    // componentDidUpdate() {
+    //     if (this.props.loggedIn){
+    //         this.props.getUser(this.props.userId)
+    //         .then(res=>{
+    //             this.setState(()=>{
+    //                 return { kitchenName: res.user.data.kitchenName}
+    //             })  
+    //         })
+    //     }
+    // }
 
     // Selectively render links dependent on whether the user is logged in
     getLinks() {
