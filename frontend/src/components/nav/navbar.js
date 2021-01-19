@@ -21,27 +21,28 @@ class NavBar extends React.Component {
         this.props.clearRecipeState();
     }
 
-    componentDidMount() {
-        if (this.props.loggedIn) {
-            this.props.getUser(this.props.userId)
-                .then(res => {
-                    this.setState(() => {
-                        return { kitchenName: res.user.data.kitchenName }
-                    })
-                })
-        }
-    }
-
-    // componentDidUpdate() {
-    //     if (this.props.loggedIn){
+    // componentDidMount() {
+    //     if (this.props.loggedIn) {
     //         this.props.getUser(this.props.userId)
-    //         .then(res=>{
-    //             this.setState(()=>{
-    //                 return { kitchenName: res.user.data.kitchenName}
-    //             })  
-    //         })
+    //             .then(res => {
+    //                 this.setState(() => {
+    //                     return { kitchenName: res.user.data.kitchenName }
+    //                 })
+    //             })
     //     }
     // }
+
+    componentDidUpdate() {
+        
+        if (this.props.loggedIn && (this.state.kitchenName==='')){
+            this.props.getUser(this.props.userId)
+            .then(res=>{
+                this.setState(()=>{
+                    return { kitchenName: res.user.data.kitchenName}
+                })  
+            })
+        }
+    }
 
     // Selectively render links dependent on whether the user is logged in
     getLinks() {
