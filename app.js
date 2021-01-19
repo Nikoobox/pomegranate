@@ -7,7 +7,6 @@ const User = require('./models/User');
 const bodyParser = require('body-parser');
 const users = require('./routes/api/users');
 const items = require('./routes/api/items');
-
 const path = require('path');
 
 if (process.env.NODE_ENV === 'production') {
@@ -28,6 +27,15 @@ mongoose
     .connect(db, { useNewUrlParser: true })
     .then(() => console.log("Connected to MongoDB successfully"))
     .catch(err => console.log(err));
+
+app.get('/', function (req, res) {
+    res.sendFile(__dirname + './index.html');
+    // , function (err) {
+        // if (err) {
+        //     res.status(500).send(err)
+        // }
+    // })
+})
 
 app.use(passport.initialize());
 require("./config/passport")(passport);
