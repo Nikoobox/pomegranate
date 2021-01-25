@@ -115,7 +115,7 @@ class MapShow extends React.Component {
                 <div className='map-container'>
                     <div className='map-title'>Nearby Stores</div>
                     <Map
-                        googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyDWRrh9zLyd_Xu6eMqomtLpTDFNX-O_y4A&libraries=geometry,drawing,places`}
+                        googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE}&libraries=geometry,drawing,places`}
                         loadingElement={<div style={{ height: `100%` }} />}
                         containerElement={<div style={{ height: `400px` }} />}
                         mapElement={<div style={{ height: `100%` }} />}
