@@ -14,9 +14,6 @@ function Modal({ modal, closeModal }) {
         case 'edit':
             component = <ItemEditContainer />;
             break;
-        // case 'test':
-        //     component = <TestContainer />;
-        //     break;
         default:
             return null;
     }
