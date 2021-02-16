@@ -10,7 +10,6 @@ import ItemIndexContainer from "./item/item_index_container";
 import RecipeContainer from "./recipe/recipe_container";
 import MapContainer from "./googlemaps/map_container";
 import PageNotFound from "./page_not_found/page_not_found";
-import Map from "./googlemaps/map";
 import Modal from './item_edit/modal';
 import Contact from "./contact/contact";
 

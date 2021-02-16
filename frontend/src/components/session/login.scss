@@ -27,35 +27,39 @@
         margin-bottom:20px;
         font-size:24px;
         color:white;
-        font-weight:300;
+        font-weight:500;
     }
 
     .log-form{
-        width:300px;;
+        width:320px;;
         background:$Greenish;
-        padding:20px;
+        padding:25px;
         border-radius: 16px;
         input{
             width:100%;
-            border:0;
-            border-radius:0;
+            border:2px solid black;
+            border-radius: 16px;
             padding: 15px 13px;
             margin-bottom:8px;
             font-size: 16px;
         }
         .submit-btn-container{
             button{
-                padding: 11px 13px;
+                padding: 12px 13px;
                 margin:10px 0;
                 width:100%;
                 font-size: 18px;
+                border-radius:16px;
                 border: 2px white solid;
                 color:$Greenish;
                 transition: ease-out all 0.2s;
+                border:2px solid black;
+                font-weight:600;
+                transition: 0.2s ease all;
                 &:hover{
                     color:white;
-                    background-color: $Greenish;
-                    border: 2px white solid;
+                    background-color: $GreenishDark;
+                    border: 2px $GreenishDark solid;
                     cursor: pointer;
                 }
             }

@@ -69,7 +69,7 @@ class SignupForm extends React.Component {
         return (
             <div className='login-signup-form-container'>
                 <form onSubmit={this.handleSubmit} className='log-form'>
-                    <div className='welcome-message'>Join Pomegranate</div>  
+                    <div className='welcome-message'>JOIN POMEGRANATE</div>  
                     <div className="signup-form">
                        
                         <input type="text"
@@ -103,18 +103,18 @@ class SignupForm extends React.Component {
                         />
                      
                         <div className='submit-btn-container'>
-                            <button> Submit
+                            <button> SUBMIT
                         </button>
                         </div> 
                         <div className='error-container'>
                             {this.renderErrors()}
                         </div>
                         <div className='form-sign-button'>
-                            Already have an account? Please <Link to={'/login'} className='sign-button'>Login</Link>
+                            Already have an account? Please <Link to={'/login'} className='sign-button'>LOGIN</Link>
                         </div>
                     </div>
                     <div className='demo-form-container'>
-                        Or login as a <span className="demo-form-button" onClick={this.loginGuest}>Demo User</span>
+                        Or login as a <span className="demo-form-button" onClick={this.loginGuest}>DEMO USER</span>
                     </div>
                 </form>
             </div>

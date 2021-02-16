@@ -47,24 +47,27 @@
         a{
             margin:10px;
             button{
+                // border: black solid 2px;
                 padding: 8px 16px;
                 font-size:18px;
                 border-radius:30px;
                 background-color: rgba(255,255,255,0);
             }
             .login{
+                border: $mainGreen solid 2px;
                 transition: ease-out all 0.2s;
                 &:hover{
-                    border: $mainGreen solid 1px;
+                    border: $mainGreen solid 2px;
                     background:$mainGreen;
                     color:white;
                     cursor: pointer;
                 }
             }
             .signup{
+                border: $mainGreen solid 2px;
                 transition: ease-out all 0.2s;
                 &:hover{
-                    border: $mainGreen solid 1px;
+                    border: $mainGreen solid 2px;
                     background:$mainRed;
                     background:$mainGreen;
                     color:white;
@@ -72,10 +75,10 @@
                 }
             }
             .demo{
+                border: black  solid 2px;
                 transition: ease-out all 0.2s;
                 &:hover{
-                    border: $mainGreen solid 1px;
-                    background:$mainRed;
+                    background:black;
                     color:white;
                     cursor: pointer;
                 }

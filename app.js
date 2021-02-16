@@ -20,25 +20,19 @@ mongoose
     .connect(db, { useNewUrlParser: true })
     .then(() => console.log("Connected to MongoDB successfully"))
     .catch(err => console.log(err));
+  
+app.use(passport.initialize());
+require("./config/passport")(passport);
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use("/api/users", users);
+app.use("/api/items", items);
 
+app.use(express.static('frontend/build'));
     
-    app.use(passport.initialize());
-    require("./config/passport")(passport);
-    app.use(bodyParser.urlencoded({ extended: false }));
-    app.use(bodyParser.json());
-    app.use("/api/users", users);
-    app.use("/api/items", items);
-    
-
-    app.use(express.static('frontend/build'));
-    // app.get('/', (req, res) => {
-    //     res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
-    // })
-
-        
-    app.get('*', (req, res) => {
-        res.redirect("/#");
-    })
+app.get('*', (req, res) => {
+    res.redirect("/#");
+})
 
 
 const port = process.env.PORT || 5000;

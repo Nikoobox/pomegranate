@@ -6,7 +6,7 @@
 .item-edit-form{
     margin-top: 140px;
     width:320px;
-    background:#b86f53;
+    background: $Greenish;
     padding:20px 30px 30px;
     border-radius: 16px;
     position: relative;
@@ -17,7 +17,7 @@
         color:white;
         transition:0.2s ease all;
         &:hover{
-            color:$mainDarkRed;
+            color:#062829;
             cursor: pointer;
         }
     }
@@ -26,18 +26,19 @@
         margin-bottom:15px;
         font-size:24px;
         color:white;
-        font-weight:300;
+        font-weight:500;
     }
     input{
         width:100%;
-        border:0;
-        border-radius:0;
-        padding: 10px 10px;
+        border:2px solid black;
+        border-radius:16px;
+        padding: 12px 12px;
         margin-bottom:8px;
         font-size: 16px;
     }
     .label{
         margin-bottom: 5px;
+        margin-left:5px;
         color:white;
     }
     .form-control{
@@ -54,16 +55,17 @@
         }
     }
     .edit-item-btn-container{
-        padding: 10px 10px;
-        margin:35px 0 10px;
+        padding: 15px 15px;
+        margin:35px 0 15px;
         width:100%;
         font-size: 16px;
         border: 0;
-        color:#76402b;
+        background-color: #062829;
+        color:white;
         transition: ease-out all 0.2s;
         &:hover{
             color:white;
-            background-color: #76402b;
+            background-color: #031b1b;
             cursor: pointer;
         }
         &[disabled]:hover {
@@ -74,13 +76,14 @@
     }
     .delete-item-btn-container{
         button{
-            padding: 10px 10px;
+            border:none;
+            padding: 15px 15px;
             background-color: $mainRed;
             width:100%;
             font-size: 16px;
             color:white;
             transition: ease-out all 0.2s;
-            border:0;
+            border-radius:16px;
             &:hover{
                 color:white;
                 background-color: $mainDarkRed;

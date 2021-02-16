@@ -12,7 +12,7 @@
     .item-form{
         margin-top: 140px;
         width:250px;
-        background:#b86f53;
+        background: $Greenish;
         padding:20px;
         border-radius: 16px;
         display:block;
@@ -21,24 +21,24 @@
             margin-bottom:15px;
             font-size:20px;
             color:white;
-            font-weight:300;
+            font-weight:500;
         }
         .date-label{
-            margin: 0 0 5px;
+            margin: 0 0 5px 5px;
             color:white;
             font-size:14px;
         }
         input{
             width:100%;
-            border:0;
-            border-radius:0;
+            border: 2px solid black;
+            border-radius:16px;
             padding: 10px 10px;
             margin-bottom:8px;
             font-size: 16px;
         }
         .form-control{
             width:100%;
-            border:0;
+            border: 1px solid black;
             border-radius:0;
             padding:10px;
             font-size:16px;
@@ -51,16 +51,18 @@
         }
         .submit-item-btn-container{
             button{
+                font-weight:600;
                 padding: 10px 10px;
-                margin:10px 0;
+                margin:20px 0;
                 width:100%;
                 font-size: 16px;
-                border: 0;
-                color:#76402b;
+                border-radius: 16px;
+                border: 2px solid black;
+                color:black;
                 transition: ease-out all 0.2s;
                 &:hover{
                     color:white;
-                    background-color: #76402b;
+                    background-color: #062829;
                     cursor: pointer;
                 }
             }
@@ -77,6 +79,9 @@
     }
     .trashbin-container{
         margin-top:40px;
+        @media (max-width: 1300px) {
+            margin-top: 10px;
+        }
         .trashbin-box{
             height:60px;
             width:60px;
@@ -115,6 +120,15 @@
                 margin: 15px;
                 padding:40px 25px 40px 55px;
                 position:relative;
+                cursor: move; /* fallback if grab cursor is unsupported */
+                cursor: grab;
+                cursor: -moz-grab;
+                cursor: -webkit-grab;
+                &:active{
+                    cursor: grabbing;
+                    cursor: -moz-grabbing;
+                    cursor: -webkit-grabbing;
+                }
                 .item-box-link{
                     width:100%;
                     display:flex;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BsGearFill, BsExclamationTriangle, BsTrash  } from "react-icons/bs";
+import { BsExclamationTriangle} from "react-icons/bs";
 
 class ItemShow extends React.Component {
 

@@ -102,8 +102,10 @@ class ItemEdit extends React.Component {
         const customStyles = {
             control: base => ({
                 ...base,
-                border: 0,
+                border: '2px solid black',
                 boxShadow: 'none',
+                borderRadius: 16,
+                padding: '4px'
             })
         };
 
@@ -127,9 +129,9 @@ class ItemEdit extends React.Component {
             <div className="item-edit-page">
                 <form onSubmit={this.handleSubmit} className='item-edit-form'>
                     <div className='close' onClick={() => this.props.closeModal()}><AiOutlineClose/></div>
-                    <div className='welcome-message'>Edit Item Form</div>
+                    <div className='welcome-message'>EDIT ITEM FORM</div>
                     <div className='label'>
-                        Item name
+                        ITEM NAME
                     </div> 
                     <input type="text"
                         value={this.state.name}
@@ -137,7 +139,7 @@ class ItemEdit extends React.Component {
                         placeholder="Enter name"
                     />
                     <div className='label'>
-                        Quantity
+                        QUANTITY
                     </div>
                     <input type="number"
                         value={this.state.quantity}
@@ -145,7 +147,7 @@ class ItemEdit extends React.Component {
                         placeholder="Enter quantity"
                     />
                     <div className='label'>
-                        Expiration date
+                        EXPIRATION DATE
                     </div>
                     <input type="date"
                         value={this.state.expirationDate}
@@ -153,7 +155,7 @@ class ItemEdit extends React.Component {
                         placeholder="Enter date"
                     />                  
                     <div className='label'>
-                        Type
+                        TYPE
                     </div>    
                     <Select
                         styles={customStyles}
@@ -164,7 +166,7 @@ class ItemEdit extends React.Component {
                     />
                     <input
                         type="submit"
-                        value="Edit Item"
+                        value="EDIT ITEM"
                         className='edit-item-btn-container'
                         disabled={disabled} />
                     
@@ -173,7 +175,7 @@ class ItemEdit extends React.Component {
                             onClick={this.handleDelete}
                             type="button"
                         >
-                            Delete Item
+                            DELETE ITEM
                         </button>
                     </div>
                     {/* <div className='error-container'>

@@ -82,8 +82,9 @@ export class ItemIndex extends React.Component {
         const customStyles = {
             control: base => ({
                 ...base,
-                border: 0,
+                border: '2px solid black' ,
                 boxShadow: 'none',
+                borderRadius: 16
             })
         };
         
@@ -166,7 +167,7 @@ export class ItemIndex extends React.Component {
                 <div className='item-container'>
                     <div className='form-container'>
                         <form onSubmit={this.handleSubmit} className='item-form'>
-                            <div className='welcome-message'>Add Item Form</div>   
+                            <div className='welcome-message'>ADD ITEM FORM</div>   
                             <input
                                 type="text"
                                 value={this.state.name}
@@ -179,7 +180,7 @@ export class ItemIndex extends React.Component {
                                 onChange={this.update('quantity')}
                                 placeholder="Item quantity"
                             />
-                            <div className='date-label'>Expiration Date:</div>
+                            <div className='date-label'>EXPIRATION DATE:</div>
                             <input
                                 type="date"
                                 value={this.state.expirationDate}
@@ -194,7 +195,7 @@ export class ItemIndex extends React.Component {
                                 onChange={this.updateType}
                                 />
                             <div className='submit-item-btn-container'>
-                                <button>Add Item</button>
+                                <button>ADD ITEM</button>
                             </div>
                             <div className='error-container'>
                                 {this.renderErrors()}
