@@ -2,7 +2,7 @@ import React from 'react'
 import ItemShow from './itemshow';
 import Trashbin from './Trashbin';
 import {Link} from 'react-router-dom';
-import { FaMapMarkerAlt, FaArrowDown } from "react-icons/fa";
+import { FaMapMarkerAlt} from "react-icons/fa";
 import {AiFillCheckCircle, AiFillCloseCircle} from 'react-icons/ai';
 
 import Select from 'react-select'
@@ -78,7 +78,6 @@ export class ItemIndex extends React.Component {
     }
 
     render() {
-        // console.log(this.props)
         const customStyles = {
             control: base => ({
                 ...base,

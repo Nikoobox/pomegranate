@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import pom_logo from '../../images/pom_logo_0.png';
-// import back_img from '../../images/back1.jpg';
+
 
 class MainPage extends React.Component {
     constructor(props) {
@@ -11,7 +10,6 @@ class MainPage extends React.Component {
     }
 
     loginGuest() {
-        // this.setState({ email: 'demo@mail.com', password: 'hunter12' });
         let demo = {
             email: 'demo@gmail.com',
             password: 'room12'

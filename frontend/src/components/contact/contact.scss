@@ -9,19 +9,22 @@
 } 
 .about-container::before{
     content:'';
-    position:absolute;
+    position:fixed;
     background-image: url(../../images/back3.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     z-index: -1;;
     opacity:0.4;
     width : 100%;
-    height: 100%
+    height: 100vh
 }
 
 .about-box{
-    // padding-top:8%;
     width:100%;
+    @media(max-width: 768px){
+        padding-top:200px;
+        padding-bottom: 100px;
+    }
     .card-cont-1{
         display:flex;
         align-items: center;
@@ -29,6 +32,11 @@
         flex-wrap: wrap;
         margin-right:8%;
         margin-bottom:6%;
+        @media(max-width: 768px){
+            justify-content: center;
+            margin-right:0;
+            margin-bottom:0;
+        }
         .card{
             width:470px;
             display:flex;
@@ -41,6 +49,9 @@
                     font-size:38px;
                     font-weight:bold;
                     margin-bottom:5px;
+                    @media(max-width: 768px){
+                        font-size:30px;
+                    }
                 }
                 .name2{
                     font-size:24px;
@@ -51,10 +62,16 @@
                     display:flex;
                     align-items: baseline;
                     margin: 15px 0;
+                    @media(max-width: 768px){
+                        margin: 10px 0;
+                    }
                     .two{
                         margin-left:5px;
                         font-size:18px;
                         font-weight:bold;
+                    }
+                    @media(max-width: 768px){
+                        font-size:16px;
                     }
                 }
             }
@@ -66,13 +83,23 @@
 }
 
 .card1{
+    @media(max-width: 768px){
+        margin-bottom:10%;
+        width:100%;
+    }
     .box1{
-    border-right: 4px solid $mainGreen;
+        border-right: 4px solid $mainGreen;
+        @media(max-width: 768px){
+            width:40%;
+        }
     }
     .social{
         margin:15px 0;
         transition: 0.2s all ease-out;
         font-weight: bold;
+        @media(max-width: 768px){
+            margin:10px 0;
+        }
         a{
             &:hover{
                 color: $mainGreen;
@@ -81,13 +108,22 @@
     }
 }
 .card2{
+    @media(max-width: 768px){
+        margin-bottom:10%;
+    }
     .box2{
         border-right: 4px solid $mainDarkRed;
+        @media(max-width: 768px){
+            width:40%;
+        }
     }
     .social{
         margin:15px 0;
         transition: 0.2s all ease-out;
         font-weight: bold;
+        @media(max-width: 768px){
+            margin:10px 0;
+        }
         a{
             &:hover{
                 color: $mainDarkRed;
@@ -97,13 +133,23 @@
 }
 .card3{
     margin-right:50px;
+    @media(max-width: 768px){
+        margin-right:0;
+        margin-bottom:10%;
+    }
     .box3{
         border-right: 4px solid $lightGreenCards;
+        @media(max-width: 768px){
+            width:40%;
+        }
     }
     .social{
         margin:15px 0;
         transition: 0.2s all ease-out;
         font-weight: bold;
+        @media(max-width: 768px){
+            margin:10px 0;
+        }
         a{
             &:hover{ 
                 color: $lightGreenCards;
@@ -114,11 +160,17 @@
 .card4{
     .box4{
         border-right: 4px solid $mainDarkYellow;
+        @media(max-width: 768px){
+            width:40%;
+        }
     }
     .social{
         margin:15px 0;
         transition: 0.2s all ease-out;
         font-weight: bold;
+        @media(max-width: 768px){
+            margin:10px 0;
+        }
         a{
             &:hover{ 
                 color: $mainDarkYellow;
@@ -133,10 +185,17 @@
     justify-content: flex-start;
     flex-wrap: wrap;
     margin-left:10%;
+    @media(max-width: 768px){
+        margin-left: 0;
+        justify-content: center;
+    }
     .card{
         margin-left:2%;
         width:470px;
         display:flex;
+        @media(max-width: 768px){
+            margin-left:0;
+        }
         .name-box{
             padding-right: 10px;
             display:flex;
@@ -146,6 +205,9 @@
                 font-size:38px;
                 font-weight:bold;
                 margin-bottom:5px;
+                @media(max-width: 768px){
+                    font-size:30px;
+                }
             }
             .name2{
                 font-size:24px;
@@ -156,6 +218,9 @@
                 display:flex;
                 align-items: baseline;
                 margin: 15px 0;
+                @media(max-width: 768px){
+                    margin: 10px 0;
+                }
                 .two{
                     margin-left:5px;
                     font-size:18px;

@@ -44,10 +44,8 @@
         .dropdown-menu.show{
             background:white;
             z-index: 102;
-            // inset: 0 20px auto auto!important;
             left:20px;
             position:absolute;
-            // left:20px;
             margin-top:5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             font-size:18px;
@@ -55,7 +53,7 @@
             color:black;
             display:flex;
             flex-direction:column;
-            border-radius: 16px;;
+            border-radius: 16px;
             .dropdown-item{
                 padding:10px 5px;
                 transition: ease-out all 0.2s;
@@ -107,5 +105,7 @@
 .transparent {
     background:transparent;
 }
-
+.navbar.white{
+    background-color: rgba(255, 255, 255, 0.5);
+}
 

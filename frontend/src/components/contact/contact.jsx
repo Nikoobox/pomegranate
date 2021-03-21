@@ -1,9 +1,26 @@
 import React from 'react';
 
+
 class Contact extends React.Component {
     constructor(props) {
         super(props);
     }
+
+    // componentDidMount(){
+    //     window.addEventListener('scroll',this.toggleNavbar)
+    // }
+
+    // componentWillUnmount() {
+    //     window.$nv.className = `navbar`
+    //     window.$ft.className = `footer-container`
+    // }
+
+    // toggleNavbar=()=>{
+    //     window.$nv = document.querySelector('.navbar');
+    //     window.$ft = document.querySelector('.footer-container');
+    //     window.$nv.className = `navbar white`
+    //     window.$ft.className = `footer-container white`
+    // }
 
     render() {
         return (
@@ -69,7 +86,7 @@ class Contact extends React.Component {
                                     <div className='two'>Frontend-Engineer</div>
                                 </div>
                                 <div className='info-box'>
-                                    <div className='one'>Favorite Food : </div>
+                                    <div className='one'>Fav Food : </div>
                                     <div className='two'>Russian Dumplings</div>
                                 </div>
                                 <div className='portfolio social'>

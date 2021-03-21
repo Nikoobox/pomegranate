@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router-dom';
 import pom_logo from '../../images/pom_logo_0.png';
 import { Dropdown } from 'react-bootstrap';
-import { FaHamburger } from 'react-icons/fa'
-import { LinkContainer } from 'react-router-bootstrap'
+import { FaHamburger } from 'react-icons/fa';
+import { LinkContainer } from 'react-router-bootstrap';
+
+
+let nv, ft;
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -21,16 +24,22 @@ class NavBar extends React.Component {
         this.props.clearRecipeState();
     }
 
-    // componentDidMount() {
-    //     if (this.props.loggedIn) {
-    //         this.props.getUser(this.props.userId)
-    //             .then(res => {
-    //                 this.setState(() => {
-    //                     return { kitchenName: res.user.data.kitchenName }
-    //                 })
-    //             })
-    //     }
-    // }
+    componentDidMount(){
+        window.addEventListener('scroll',this.toggleNavbar)
+    }
+
+    toggleNavbar=()=>{
+        nv = document.querySelector('.navbar');
+        ft = document.querySelector('.footer-container');
+        if (window.pageYOffset>10){
+            nv.className = `navbar white`;
+            ft.className = `footer-container white`;
+        }else{
+            nv.className = `navbar`;
+            ft.className = `footer-container`;
+        }
+    }
+
 
     componentDidUpdate() {
         
