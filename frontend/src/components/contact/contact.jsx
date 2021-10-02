@@ -14,7 +14,6 @@ class Contact extends React.Component {
     //     window.$nv.className = `navbar`
     //     window.$ft.className = `footer-container`
     // }
-
     // toggleNavbar=()=>{
     //     window.$nv = document.querySelector('.navbar');
     //     window.$ft = document.querySelector('.footer-container');
